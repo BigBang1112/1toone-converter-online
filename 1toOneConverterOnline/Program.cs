@@ -1,0 +1,18 @@
+﻿using _1toOneConverterOnline;
+using _1toOneConverterOnline.Services;
+using Microsoft.AspNetCore.Components.Web;
+using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+
+GBX.NET.Lzo.SetLzo(typeof(GBX.NET.LZO.MiniLZO));
+
+GBX.NET.Managers.NodeCacheManager.CacheClassTypesIfNotCached();
+
+var builder = WebAssemblyHostBuilder.CreateDefault(args);
+builder.RootComponents.Add<App>("#app");
+builder.RootComponents.Add<HeadOutlet>("head::after");
+
+builder.Services.AddSingleton(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+
+builder.Services.AddSingleton<ISettingsService, SettingsService>();
+
+await builder.Build().RunAsync();

@@ -1,0 +1,43 @@
+﻿@inherits LayoutComponentBase
+
+@inject ISettingsService Settings
+
+@if (IsLoaded)
+{
+    <section id="content">
+        <nav>
+            <NavMenu />
+        </nav>
+
+        <main>
+            @Body
+        </main>
+    </section>
+
+    <footer>
+    
+    </footer>
+}
+else
+{
+    <p>@StatusMessage</p>
+    <p>Almost there...</p>
+}
+
+@code {
+    public bool IsLoaded { get; set; }
+    public string StatusMessage { get; set; } = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        await Settings.LoadMainSettingsAsync();
+        await Settings.LoadConversionSettingsAsync(async (env) =>
+        {
+            StatusMessage = $"Loading {env}Conversion.xml...";
+            await Task.Delay(10);
+            StateHasChanged();
+        });
+
+        IsLoaded = true;
+    }
+}

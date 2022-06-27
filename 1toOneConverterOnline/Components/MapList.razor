@@ -1,0 +1,108 @@
+﻿@implements IDisposable
+@inject IJSRuntime JS
+
+<div class="list" id="filedrop">
+    <div class="controls">
+        <header>
+            <div>3 Maps to convert</div>
+        </header>
+        <footer>
+            <div class="btn" @onclick="ClearAsync">Clear</div>
+            <div class="btn">Settings</div>
+        </footer>
+    </div>
+    <ul>
+        <li class="add">
+            <form
+                method="post"
+                action=""
+                enctype="multipart/form-data"
+            >
+                <label for="file">
+                    <header>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 16 16"
+                        >
+                            <path
+                                fill-rule="evenodd"
+                                d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"
+                            />
+                        </svg>
+                    </header>
+                    <input
+                        type="file"
+                        name="files[]"
+                        id="file"
+                        accept=".gbx"
+                        multiple
+                    />
+                    <footer>
+                        <strong>Choose a file</strong> or drag
+                        it in here
+                    </footer>
+                </label>
+            </form>
+        </li>
+
+        @foreach (var map in Maps)
+        {
+            <li class="item desert">
+                <header>@map.Item1</header>
+                <footer>@map.Item2</footer>
+            </li>
+        }
+
+        <li class="item bay selected">
+            <header>some random bay map</header>
+            <footer>ThaumicTom</footer>
+        </li>
+        <li class="item desert">
+            <header>Sahara</header>
+            <footer>ThaumicTom</footer>
+        </li>
+        <li class="item snow">
+            <header>Freefall II</header>
+            <footer>ThaumicTom</footer>
+        </li>
+    </ul>
+</div>
+
+@code {
+    private DotNetObjectReference<MapList>? objRef;
+
+    public Stack<(string, string)> Maps { get; } = new();
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (!firstRender)
+        {
+            return;
+        }
+
+        objRef = DotNetObjectReference.Create(this);
+        await JS.InvokeVoidAsync("start", objRef);
+    }
+
+    public Task ClearAsync()
+    {
+        Maps.Clear();
+        return Task.CompletedTask;
+    }
+
+    [JSInvokable]
+    public async Task OnUploadAsync(string name, int size, DateTimeOffset lastModifiedDate, byte[] data)
+    {
+        Maps.Push((name, size.ToString()));
+
+        using var ms = new MemoryStream(data);
+        using var node = await GBX.NET.GameBox.ParseNodeAsync(ms);
+
+        StateHasChanged();
+    }
+    
+    public void Dispose()
+    {
+        objRef?.Dispose();
+    }
+}
