@@ -1,4 +1,25 @@
 ﻿@page "/"
 
-<MapList />
-<MapInfo />
+<MapList @ref="mapList" OnMapItemClick="OnMapItemClickAsync" OnClear="OnClearAsync"/>
+<MapInfo @ref="mapInfo" />
+
+@code {
+    private MapList? mapList;
+    private MapInfo? mapInfo;
+
+    public async Task OnMapItemClickAsync(MapItem mapItem)
+    {
+        if (mapInfo is not null)
+        {
+            await mapInfo.ShowAsync(mapItem);
+        }
+    }
+
+    public async Task OnClearAsync()
+    {
+        if (mapInfo is not null)
+        {
+            await mapInfo.Close();
+        }
+    }
+}

@@ -1,10 +1,14 @@
-﻿@implements IDisposable
+﻿@using GBX.NET.Engines.Game
+
+@implements IDisposable
+
 @inject IJSRuntime JS
+@inject ISettingsService Settings
 
 <div class="list" id="filedrop">
     <div class="controls">
         <header>
-            <div>3 Maps to convert</div>
+            <div>0/@Maps.Count maps converted</div>
         </header>
         <footer>
             <div class="btn" @onclick="ClearAsync">Clear</div>
@@ -47,31 +51,24 @@
 
         @foreach (var map in Maps)
         {
-            <li class="item desert">
-                <header>@map.Item1</header>
-                <footer>@map.Item2</footer>
+            <li class="item @map.EnvironmentModern?.ToLower() @(map.Selected ? "selected" : "")" @onclick="() => OnMapItemClickAsync(map)">
+                <header>@(map.Map is null ? map.FileName : map.Name)</header>
+                <footer>@(map.Description ?? map.AuthorName ?? $"Loading... ({map.FileSize} bytes)")</footer>
             </li>
         }
-
-        <li class="item bay selected">
-            <header>some random bay map</header>
-            <footer>ThaumicTom</footer>
-        </li>
-        <li class="item desert">
-            <header>Sahara</header>
-            <footer>ThaumicTom</footer>
-        </li>
-        <li class="item snow">
-            <header>Freefall II</header>
-            <footer>ThaumicTom</footer>
-        </li>
     </ul>
 </div>
 
 @code {
     private DotNetObjectReference<MapList>? objRef;
 
-    public Stack<(string, string)> Maps { get; } = new();
+    public List<MapItem> Maps { get; } = new();
+
+    [Parameter]
+    public EventCallback<MapItem> OnMapItemClick { get; set; }
+
+    [Parameter]
+    public EventCallback OnClear { get; set; }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
@@ -84,20 +81,63 @@
         await JS.InvokeVoidAsync("start", objRef);
     }
 
-    public Task ClearAsync()
+    public async Task ClearAsync()
     {
         Maps.Clear();
-        return Task.CompletedTask;
+
+        await OnClear.InvokeAsync();
+    }
+
+    public async Task OnMapItemClickAsync(MapItem mapItem)
+    {
+        Maps.ForEach(x => x.Selected = false);
+
+        mapItem.Selected = true;
+        
+        await OnMapItemClick.InvokeAsync(mapItem);
     }
 
     [JSInvokable]
     public async Task OnUploadAsync(string name, int size, DateTimeOffset lastModifiedDate, byte[] data)
     {
-        Maps.Push((name, size.ToString()));
+        var mapItem = new MapItem(name, size, lastModifiedDate);
+
+        Maps.Insert(0, mapItem);
+
+        StateHasChanged();
+        await Task.Delay(10);
 
         using var ms = new MemoryStream(data);
         using var node = await GBX.NET.GameBox.ParseNodeAsync(ms);
 
+        if (node is not CGameCtnChallenge map)
+        {
+            mapItem.Description = $"File isn't a map.";
+            
+            StateHasChanged();
+            return;
+        }
+
+        mapItem.Map = map;
+
+        if (Settings.MainSettings?.Environments is null)
+        {
+            mapItem.Description = $"Environments are not defined in Settings.json!";
+            
+            StateHasChanged();
+            return;
+        }
+
+        if (!Settings.MainSettings.Environments.Contains(map.Collection.ToString()))
+        {
+            mapItem.Description = $"The map's environment '{map.Collection}' doesn't match: {string.Join(", ", Settings.MainSettings.Environments)}";
+
+            StateHasChanged();
+            return;
+        }
+        
+        await OnMapItemClick.InvokeAsync(mapItem);
+        
         StateHasChanged();
     }
     

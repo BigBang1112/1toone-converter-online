@@ -1,12 +1,60 @@
-﻿<div class="info">
-    <img src="img/thumb.jpg" alt="" />
-    <ul>
-        <li>some random bay map</li>
-        <li><span>Author</span><span>ThaumicTom</span></li>
-        <li><span>Time</span><span>0:41.158</span></li>
-        <li><span>Mood</span><span>Sunset</span></li>
-        <li><span>Car</span><span>BayCar</span></li>
-        <li><button class="big">Download conversion</button></li>
-    </ul>
-    <button class="big">Download all conversions</button>
-</div>
+﻿@if (MapItem is not null)
+{
+    <div class="info">
+
+            @if (MapItem.ThumbnailBase64 is null)
+            {
+                <img src="" alt="" />
+            }
+            else
+            {
+                <img src="data:image/png;base64,@MapItem.ThumbnailBase64" alt="" />
+            }
+            <ul>
+                <li>@(MapItem.Name ?? MapItem.FileName)</li>
+                
+                @if (MapItem.Map is not null)
+                {
+
+                <li><span>Author</span><span>@MapItem.AuthorName</span></li>
+                <li><span>Time</span><span>@MapItem.Map.TMObjective_AuthorTime.ToTmString(useHundredths: true)</span></li>
+                <li><span>Mood</span><span>@MapItem.Map.Decoration?.Id</span></li>
+                <li><span>Car</span><span>@MapItem.Map.PlayerModel?.Id</span></li>
+
+                @if (MapItem.Map.Cost.HasValue)
+                {
+                    <li><span>Cost</span><span>@MapItem.Map.Cost.Value</span></li>
+                }
+
+                @if (MapItem.Map.Blocks is not null)
+                {
+                    <li><span>Blocks</span><span>@MapItem.Map.Blocks?.Count</span></li>
+                }
+
+                <li><button class="big">Download conversion</button></li>
+                
+                }
+
+            </ul>
+
+        <button class="big">Download all conversions</button>
+    </div>
+}
+
+@code {
+    public MapItem? MapItem { get; private set; }
+
+    public Task ShowAsync(MapItem mapItem)
+    {
+        MapItem = mapItem;
+        StateHasChanged();
+        return Task.CompletedTask;
+    }
+
+    public Task Close()
+    {
+        MapItem = null;
+        StateHasChanged();
+        return Task.CompletedTask;
+    }
+}
