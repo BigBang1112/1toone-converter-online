@@ -1,6 +1,6 @@
 {
-  "name": "1toOneConverterOnline",
-  "short_name": "1toOneConverterOnline",
+  "name": "1toOne Converter Online",
+  "short_name": "1toOneConverter",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#ffffff",
