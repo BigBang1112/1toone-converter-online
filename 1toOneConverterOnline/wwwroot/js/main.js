@@ -21,9 +21,7 @@ const dragleave = (e) => {
 
 const getFiles = async (fileList) => {
     for (let i = 0; i < fileList.length; i++) {
-        console.log("ok");
         const item = fileList.item(i);
-        console.log("ok2");
 
         const fileData = new Uint8Array(await item.arrayBuffer());
 
