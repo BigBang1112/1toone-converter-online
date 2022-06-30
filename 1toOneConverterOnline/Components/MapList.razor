@@ -4,6 +4,7 @@
 
 @inject IJSRuntime JS
 @inject ISettingsService Settings
+@inject IConversionService Conversion
 
 <div class="list" id="filedrop">
     <div class="controls">
@@ -93,7 +94,7 @@
         Maps.ForEach(x => x.Selected = false);
 
         mapItem.Selected = true;
-        
+
         await OnMapItemClick.InvokeAsync(mapItem);
     }
 
@@ -113,7 +114,7 @@
         if (node is not CGameCtnChallenge map)
         {
             mapItem.Description = $"File isn't a map.";
-            
+
             StateHasChanged();
             return;
         }
@@ -123,7 +124,7 @@
         if (Settings.MainSettings?.Environments is null)
         {
             mapItem.Description = $"Environments are not defined in Settings.json!";
-            
+
             StateHasChanged();
             return;
         }
@@ -135,9 +136,15 @@
             StateHasChanged();
             return;
         }
-        
+
         await OnMapItemClick.InvokeAsync(mapItem);
-        
+
+        StateHasChanged();
+        await Task.Delay(10);
+
+        // Passes the same map reference, so variable `map` is the final result.
+        Conversion.Convert(new Map(mapItem.Map));
+
         StateHasChanged();
     }
     
