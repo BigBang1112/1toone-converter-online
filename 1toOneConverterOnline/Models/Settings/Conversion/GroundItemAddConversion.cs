@@ -1,4 +1,5 @@
-﻿using System.Xml.Serialization;
+﻿using GBX.NET.Engines.Game;
+using System.Xml.Serialization;
 
 namespace _1toOneConverterOnline.Models.Settings.Conversion;
 
@@ -12,4 +13,9 @@ public class GroundItemAddConversion : Conversion
 
     public FlagName? HeightFlag { get; init; }
     public ItemData? GroundItem { get; init; }
+
+    public override void Convert(Map map)
+    {
+        throw new NotImplementedException();
+    }
 }

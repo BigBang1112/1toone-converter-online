@@ -6,5 +6,5 @@ public class OldDecoration
 {
     [XmlAttribute]
     public string? Name { get; init; }
-    public Vec3 GridOffset { get; init; }
+    public Int3 GridOffset { get; init; }
 }

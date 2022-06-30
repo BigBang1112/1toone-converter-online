@@ -1,4 +1,5 @@
-﻿using System.Xml.Serialization;
+﻿using GBX.NET.Engines.Game;
+using System.Xml.Serialization;
 
 namespace _1toOneConverterOnline.Models.Settings.Conversion;
 
@@ -18,5 +19,5 @@ namespace _1toOneConverterOnline.Models.Settings.Conversion;
 [XmlInclude(typeof(TitleConversion))]
 public abstract class Conversion
 {
-
+    public abstract void Convert(Map map);
 }
