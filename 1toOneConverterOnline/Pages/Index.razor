@@ -1,7 +1,16 @@
 ﻿@page "/"
+@inject IJSRuntime JS
 
 <MapList @ref="mapList" OnMapItemClick="OnMapItemClickAsync" OnClear="OnClearAsync"/>
-<MapInfo @ref="mapInfo" />
+
+<div class="info">
+    <MapInfo @ref="mapInfo" />
+
+    @if (mapList?.Maps.Count > 0)
+    {
+        <button class="big" @onclick="OnDownloadAllAsync">Download all conversions</button>
+    }
+</div>
 
 @code {
     private MapList? mapList;
@@ -21,5 +30,55 @@
         {
             await mapInfo.Close();
         }
+    }
+
+    public async Task OnDownloadAllAsync()
+    {
+        if (mapList is null || mapList.Maps.Count == 0)
+        {
+            return;
+        }
+
+        using var ms = new MemoryStream();
+
+        if (mapList.Maps.Count(x => x.Successful) == 1)
+        {
+            var map = mapList.Maps.First(x => x.Successful);
+
+            if (map.Map is not null && map.Successful)
+            {
+                map.Map.Save(ms);
+                await DownloadAsync(map.FileName, ms);
+            }
+
+            return;
+        }
+
+        using (var zip = new ZipArchive(ms, ZipArchiveMode.Create))
+        {
+            foreach (var map in mapList.Maps)
+            {
+                if (map.Map is null || !map.Successful)
+                {
+                    continue;
+                }
+
+                using var stream = zip.CreateEntry(map.FileName).Open();
+
+                map.Map.Save(stream);
+            }
+        }
+
+        await DownloadAsync("Conversion.zip", ms);
+    }
+
+    private async Task DownloadAsync(string name, byte[] data)
+    {
+        await JS.InvokeVoidAsync("download", name, data);
+    }
+
+    private async Task DownloadAsync(string name, MemoryStream stream)
+    {
+        await DownloadAsync(name, stream.ToArray());
     }
 }

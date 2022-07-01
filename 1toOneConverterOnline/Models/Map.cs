@@ -6,7 +6,7 @@ namespace _1toOneConverterOnline.Models;
 public class Map
 {
     public CGameCtnChallenge Challenge { get; init; }
-    
+
     public Vec3 GridSize { get; set; }
     public Vec3 GridOffset { get; set; }
 

@@ -9,7 +9,7 @@
 <div class="list" id="filedrop">
     <div class="controls">
         <header>
-            <div>0/@Maps.Count maps converted</div>
+            <div>@Maps.Count(x => x.Successful)/@Maps.Count maps converted</div>
         </header>
         <footer>
             <div class="btn" @onclick="ClearAsync">Clear</div>
@@ -52,9 +52,9 @@
 
         @foreach (var map in Maps)
         {
-            <li class="item @map.EnvironmentModern?.ToLower() @(map.Selected ? "selected" : "")" @onclick="() => OnMapItemClickAsync(map)">
+            <li class="item @map.BasicInfo?.Environment.ToLower() @(map.Selected ? "selected" : "")" @onclick="() => OnMapItemClickAsync(map)">
                 <header>@(map.Map is null ? map.FileName : map.Name)</header>
-                <footer>@(map.Description ?? map.AuthorName ?? $"Loading... ({map.FileSize} bytes)")</footer>
+                <footer>@(map.Description ?? (map.Map is null ? $"Loading... ({map.FileSize} bytes)" : "Preparing..."))</footer>
             </li>
         }
     </ul>
@@ -120,6 +120,7 @@
         }
 
         mapItem.Map = map;
+        mapItem.BasicInfo = new MapBasicInfo(map);
 
         if (Settings.MainSettings?.Environments is null)
         {
@@ -139,11 +140,16 @@
 
         await OnMapItemClick.InvokeAsync(mapItem);
 
+        mapItem.Description = "Converting...";
+
         StateHasChanged();
         await Task.Delay(10);
 
         // Passes the same map reference, so variable `map` is the final result.
         Conversion.Convert(new Map(mapItem.Map));
+
+        mapItem.Description = "Finished!";
+        mapItem.Successful = true;
 
         StateHasChanged();
     }

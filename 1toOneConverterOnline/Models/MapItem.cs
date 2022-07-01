@@ -12,18 +12,12 @@ public class MapItem
     public DateTimeOffset LastModified { get; }
 
     public CGameCtnChallenge? Map { get; set; }
+    public MapBasicInfo? BasicInfo { get; set; }
     public string? Description { get; set; }
     public bool Selected { get; set; }
+    public bool Successful { get; set; }
 
     public string? Name => Map?.MapName is null ? null : TextFormatter.Deformat(Map.MapName);
-    public string? AuthorName => Map?.AuthorNickname is null ? Map?.AuthorLogin : TextFormatter.Deformat(Map.AuthorNickname);
-
-    public string? EnvironmentModern => Map?.Collection.ToString() switch
-    {
-        "Alpine" => "Snow",
-        "Speed" => "Desert",
-        _ => Map?.Collection,
-    };
 
     public string? ThumbnailBase64
     {

@@ -1,46 +1,39 @@
-﻿@inject IJSRuntime JS
-
-@if (MapItem is not null)
+﻿@if (MapItem is not null)
 {
-    <div class="info">
-
-        @if (MapItem.ThumbnailBase64 is null)
-        {
-            <img src="" alt="" />
-        }
-        else
-        {
-            <img src="data:image/png;base64,@MapItem.ThumbnailBase64" alt="" />
-        }
-        <ul>
-            <li>@(MapItem.Name ?? MapItem.FileName)</li>
+    @if (MapItem.ThumbnailBase64 is null)
+    {
+        <img src="" alt="" />
+    }
+    else
+    {
+        <img src="data:image/png;base64,@MapItem.ThumbnailBase64" alt="" />
+    }
+    <ul>
+        <li>@(MapItem.Name ?? MapItem.FileName)</li>
                 
-            @if (MapItem.Map is not null)
-            {
+        @if (MapItem.BasicInfo is not null)
+        {
 
-            <li><span>Author</span><span>@MapItem.AuthorName</span></li>
-            <li><span>Time</span><span>@MapItem.Map.TMObjective_AuthorTime.ToTmString(useHundredths: true)</span></li>
-            <li><span>Mood</span><span>@MapItem.Map.Decoration?.Id</span></li>
-            <li><span>Car</span><span>@MapItem.Map.PlayerModel?.Id</span></li>
+        <li><span>Author</span><span>@MapItem.BasicInfo.AuthorName</span></li>
+        <li><span>Time</span><span>@MapItem.BasicInfo.AuthorTime.ToTmString(useHundredths: true)</span></li>
+        <li><span>Mood</span><span>@MapItem.BasicInfo.Mood</span></li>
+        <li><span>Car</span><span>@MapItem.BasicInfo.Car</span></li>
 
-            @if (MapItem.Map.Cost.HasValue)
-            {
-                <li><span>Cost</span><span>@MapItem.Map.Cost.Value</span></li>
-            }
+        @if (MapItem.Map?.Cost is not null)
+        {
+            <li><span>Cost</span><span>@MapItem.Map.Cost.Value</span></li>
+        }
 
-            @if (MapItem.Map.Blocks is not null)
-            {
-                <li><span>Blocks</span><span>@MapItem.Map.Blocks?.Count</span></li>
-            }
+        @if (MapItem.BasicInfo.BlockCount.HasValue)
+        {
+            <li><span>Blocks</span><span>@MapItem.BasicInfo.BlockCount</span></li>
+        }
 
-            <li><button class="big">Download conversion</button></li>
+        <li><button class="big">Download conversion</button></li>
                 
-            }
+        }
 
-        </ul>
-
-        <button class="big" @onclick="OnDownloadAllAsync">Download all conversions</button>
-    </div>
+    </ul>
 }
 
 @code {
@@ -58,13 +51,5 @@
         MapItem = null;
         StateHasChanged();
         return Task.CompletedTask;
-    }
-
-    public async Task OnDownloadAllAsync()
-    {
-        using var msOut = new MemoryStream();
-        MapItem.Map.Save(msOut);
-
-        await JS.InvokeVoidAsync("download", MapItem.FileName, msOut.ToArray());
     }
 }
