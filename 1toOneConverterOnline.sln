@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Položky řešení", "Polo�
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1toOneConverterOnline.Tests", "1toOneConverterOnline.Tests\1toOneConverterOnline.Tests.csproj", "{D1C03F45-5BAD-427E-BB37-3F077DA1AA8D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1toOneConverterOnline.Tests", "1toOneConverterOnline.Tests\1toOneConverterOnline.Tests.csproj", "{D1C03F45-5BAD-427E-BB37-3F077DA1AA8D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
