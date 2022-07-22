@@ -48,7 +48,7 @@
             if (map.Map is not null && map.Successful)
             {
                 map.Map.Save(ms);
-                await DownloadAsync(map.FileName, ms);
+                await DownloadAsync(ReplaceExtension(map.FileName), ms);
             }
 
             return;
@@ -63,13 +63,23 @@
                     continue;
                 }
 
-                using var stream = zip.CreateEntry(map.FileName).Open();
+                using var stream = zip.CreateEntry(ReplaceExtension(map.FileName)).Open();
 
                 map.Map.Save(stream);
             }
         }
 
-        await DownloadAsync("Conversion.zip", ms);
+        await DownloadAsync($"Conversion-{DateTime.Now.ToString("yyyyMMddHHmmss")}.zip", ms);
+    }
+
+    private string ReplaceExtension(string originalFileName)
+    {
+        if (originalFileName.EndsWith(".Challenge.Gbx"))
+        {
+            return originalFileName.Replace(".Challenge.Gbx", ".Map.Gbx");
+        }
+
+        return originalFileName;
     }
 
     private async Task DownloadAsync(string name, byte[] data)
