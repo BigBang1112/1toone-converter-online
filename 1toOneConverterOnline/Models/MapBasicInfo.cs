@@ -19,16 +19,22 @@ public class MapBasicInfo
     {
         AuthorName = map.AuthorNickname is null ? map.AuthorLogin : TextFormatter.Deformat(map.AuthorNickname);
         AuthorTime = map.TMObjective_AuthorTime;
+        Environment = map.Collection.ToString();
+        Mood = map.Decoration?.Id;
 
-        Environment = map.Collection.ToString() switch
+        Car = map.PlayerModel?.Id switch
         {
-            "Alpine" => "Snow",
-            "Speed" => "Desert",
-            _ => map.Collection,
+            "American" => "DesertCar",
+            "SnowCar" => "SnowCar",
+            "Rally" => "RallyCar",
+            "SpeedCar" or "IslandCar" => "IslandCar",
+            "BayCar" => "BayCar",
+            "StadiumCar" => "StadiumCar",
+            "CoastCar" => "CoastCar",
+            "" => "Default",
+            _ => map.PlayerModel?.Id,
         };
 
-        Mood = map.Decoration?.Id;
-        Car = map.PlayerModel?.Id;
         BlockCount = map.Blocks?.Count;
     }
 }

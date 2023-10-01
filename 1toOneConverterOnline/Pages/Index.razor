@@ -4,11 +4,11 @@
 <MapList @ref="mapList" OnMapItemClick="OnMapItemClickAsync" OnClear="OnClearAsync"/>
 
 <div class="info">
-    <MapInfo @ref="mapInfo" />
+    <MapInfo @ref="mapInfo" OnDownloadConversion="OnDownloadAsync" />
 
     @if (mapList?.Maps.Count > 0)
     {
-        <button class="big" @onclick="OnDownloadAllAsync">Download all conversions</button>
+        <button class="big" @onclick="OnDownloadAllAsync" disabled="@(!mapList.Maps.Any(x => x.Successful))">Download all conversions</button>
     }
 </div>
 
@@ -32,6 +32,21 @@
         }
     }
 
+    public async Task OnDownloadAsync()
+    {
+        var map = mapList?.Maps.FirstOrDefault(x => x.Selected);
+
+        if (map is null || map.Map is null || !map.Successful)
+        {
+            return;
+        }
+
+        using var ms = new MemoryStream();
+
+        map.Map.Save(ms);
+        await DownloadAsync(ReplaceExtension(map.FileName), ms);
+    }
+
     public async Task OnDownloadAllAsync()
     {
         if (mapList is null || mapList.Maps.Count == 0)
@@ -39,9 +54,16 @@
             return;
         }
 
+        var successfulMapCount = mapList.Maps.Count(x => x.Successful);
+
+        if (successfulMapCount == 0)
+        {
+            return;
+        }
+
         using var ms = new MemoryStream();
 
-        if (mapList.Maps.Count(x => x.Successful) == 1)
+        if (successfulMapCount == 1)
         {
             var map = mapList.Maps.First(x => x.Successful);
 
