@@ -3,7 +3,7 @@ using System.Xml.Serialization;
 
 namespace _1toOneConverterOnline.Models.Settings.Conversion;
 
-sealed class BlockToBlockConversion : Conversion
+public sealed class BlockToBlockConversion : Conversion
 {
     [XmlElement("BlockToBlock")]
     public List<BlockToBlock>? BlockToBlocks { get; init; }

@@ -2,7 +2,7 @@
 
 namespace _1toOneConverterOnline.Models.Settings.Conversion;
 
-sealed class BlockData : BlockToItem
+public sealed class BlockData : BlockToItem
 {
     [XmlElement("AltName")]
     public AlternativeName[]? AltNames { get; init; }

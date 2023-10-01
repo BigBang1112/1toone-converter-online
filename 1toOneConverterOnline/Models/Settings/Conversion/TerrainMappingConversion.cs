@@ -2,7 +2,7 @@
 
 namespace _1toOneConverterOnline.Models.Settings.Conversion;
 
-sealed class TerrainMappingConversion : Conversion
+public sealed class TerrainMappingConversion : Conversion
 {
     public FlagName? HeightFlag { get; init; }
     public FlagName? SecondaryTerrainFlag { get; init; }

@@ -2,7 +2,7 @@
 
 namespace _1toOneConverterOnline.Models.Settings.Conversion;
 
-sealed class BlockTypeData : BlockToItem
+public sealed class BlockTypeData : BlockToItem
 {
     private BlockType? type;
 

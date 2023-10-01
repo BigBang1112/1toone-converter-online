@@ -2,7 +2,7 @@
 
 namespace _1toOneConverterOnline.Models.Settings.Conversion;
 
-readonly struct Int3
+public readonly struct Int3
 {
     [XmlAttribute]
     public int X { get; init; }

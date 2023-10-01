@@ -1,9 +1,8 @@
-﻿using GBX.NET.Engines.Game;
-using System.Xml.Serialization;
+﻿using System.Xml.Serialization;
 
 namespace _1toOneConverterOnline.Models.Settings.Conversion;
 
-sealed class GroundItemAddConversion : Conversion
+public sealed class GroundItemAddConversion : Conversion
 {
     public Id? Collection { get; init; }
     public Id? DefaultAuthor { get; init; }

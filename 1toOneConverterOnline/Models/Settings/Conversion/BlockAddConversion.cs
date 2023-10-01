@@ -1,6 +1,6 @@
 ﻿namespace _1toOneConverterOnline.Models.Settings.Conversion;
 
-sealed class BlockAddConversion : Conversion
+public sealed class BlockAddConversion : Conversion
 {
     public List<Block>? ExtraBlocks { get; init; }
 

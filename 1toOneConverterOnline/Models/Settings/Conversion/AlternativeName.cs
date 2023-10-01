@@ -2,7 +2,7 @@
 
 namespace _1toOneConverterOnline.Models.Settings.Conversion;
 
-sealed class AlternativeName
+public sealed class AlternativeName
 {
     [XmlAttribute]
     public string? BlockName { get; init; }

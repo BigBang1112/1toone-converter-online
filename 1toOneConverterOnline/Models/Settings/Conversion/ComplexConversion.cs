@@ -1,6 +1,6 @@
 ﻿namespace _1toOneConverterOnline.Models.Settings.Conversion;
 
-sealed class ComplexConversion : Conversion
+public sealed class ComplexConversion : Conversion
 {
     public List<Conversion>? Conversions { get; init; }
 

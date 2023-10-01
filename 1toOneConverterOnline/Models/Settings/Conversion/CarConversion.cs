@@ -1,6 +1,6 @@
 ﻿namespace _1toOneConverterOnline.Models.Settings.Conversion;
 
-sealed class CarConversion : Conversion
+public sealed class CarConversion : Conversion
 {
     public Ident? CarMeta { get; init; }
 

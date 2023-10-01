@@ -2,7 +2,7 @@
 
 namespace _1toOneConverterOnline.Models.Settings.Conversion;
 
-sealed class ItemClipAddConversion : Conversion
+public sealed class ItemClipAddConversion : Conversion
 {
     public Id? Collection { get; init; }
     public Id? DefaultAuthor { get; init; }

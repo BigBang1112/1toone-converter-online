@@ -3,7 +3,7 @@ using System.Xml.Serialization;
 
 namespace _1toOneConverterOnline.Models.Settings.Conversion;
 
-sealed class EnviConversion : Conversion
+public sealed class EnviConversion : Conversion
 {
     [XmlElement("NewDeco")]
     public NewDecoration[]? NewDecos { get; init; }

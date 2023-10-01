@@ -1,5 +1,5 @@
 ﻿namespace _1toOneConverterOnline.Models.Settings.Conversion;
 
-sealed class ItemData : BlockToItem
+public sealed class ItemData : BlockToItem
 {
 }

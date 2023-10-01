@@ -1,8 +1,6 @@
-﻿using GBX.NET.Engines.Game;
+﻿namespace _1toOneConverterOnline.Models.Settings.Conversion;
 
-namespace _1toOneConverterOnline.Models.Settings.Conversion;
-
-sealed class MultiBlockAddConversion : Conversion
+public sealed class MultiBlockAddConversion : Conversion
 {
     public Block? NewBlock { get; init; }
     public ElementValue<byte> XStep { get; init; }

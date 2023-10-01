@@ -3,7 +3,7 @@
 namespace _1toOneConverterOnline.Models.Settings.Conversion;
 
 [Flags]
-enum MultiRot
+public enum MultiRot
 {
     [XmlEnum("0")] Zero = 1,
     [XmlEnum("1")] One = 2,

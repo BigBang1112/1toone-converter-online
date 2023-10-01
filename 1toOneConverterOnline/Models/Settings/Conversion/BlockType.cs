@@ -2,7 +2,7 @@
 
 namespace _1toOneConverterOnline.Models.Settings.Conversion;
 
-enum BlockType
+public enum BlockType
 {
     [XmlEnum("Air")] Air,
     [XmlEnum("Gnd")] Ground, // Ground

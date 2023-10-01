@@ -2,7 +2,7 @@
 
 namespace _1toOneConverterOnline.Models.Settings.Conversion;
 
-sealed class OldDecoration
+public sealed class OldDecoration
 {
     [XmlAttribute]
     public string? Name { get; init; }

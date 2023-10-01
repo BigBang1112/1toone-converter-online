@@ -3,7 +3,7 @@ using System.Xml.Serialization;
 
 namespace _1toOneConverterOnline.Models.Settings.Conversion;
 
-sealed class BlockToItemConversion : Conversion
+public sealed class BlockToItemConversion : Conversion
 {
     private Dictionary<string, BlockData>? blockDictionary;
 
