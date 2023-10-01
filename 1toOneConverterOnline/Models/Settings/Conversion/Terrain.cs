@@ -2,7 +2,7 @@
 
 namespace _1toOneConverterOnline.Models.Settings.Conversion;
 
-public class Terrain
+sealed class Terrain
 {
     public TerrainBlock[]? ConvexBlocks { get; init; }
     public TerrainBlock[]? WallBlocks { get; init; }

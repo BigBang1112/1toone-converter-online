@@ -6,7 +6,7 @@ namespace _1toOneConverterOnline.Models;
 /// <summary>
 /// Map info that won't get modified by conversion.
 /// </summary>
-public class MapBasicInfo
+public sealed class MapBasicInfo
 {
     public string? AuthorName { get; }
     public TimeInt32? AuthorTime { get; }

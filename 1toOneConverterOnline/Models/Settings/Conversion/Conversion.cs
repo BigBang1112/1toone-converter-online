@@ -1,5 +1,4 @@
-﻿using GBX.NET.Engines.Game;
-using System.Xml.Serialization;
+﻿using System.Xml.Serialization;
 
 namespace _1toOneConverterOnline.Models.Settings.Conversion;
 
@@ -17,7 +16,7 @@ namespace _1toOneConverterOnline.Models.Settings.Conversion;
 [XmlInclude(typeof(PylonAddConversion))]
 [XmlInclude(typeof(TerrainMappingConversion))]
 [XmlInclude(typeof(TitleConversion))]
-public abstract class Conversion
+abstract class Conversion
 {
     public abstract void Convert(Map map);
 }

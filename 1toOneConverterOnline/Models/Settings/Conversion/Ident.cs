@@ -2,7 +2,7 @@
 
 namespace _1toOneConverterOnline.Models.Settings.Conversion;
 
-public class Ident
+sealed class Ident
 {
     [XmlElement("ID")]
     public Id? Id { get; init; }

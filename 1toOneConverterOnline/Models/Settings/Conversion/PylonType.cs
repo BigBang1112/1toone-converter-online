@@ -1,6 +1,6 @@
 ﻿namespace _1toOneConverterOnline.Models.Settings.Conversion;
 
-public enum PylonType : byte
+enum PylonType : byte
 {
     None,
     Prevent,

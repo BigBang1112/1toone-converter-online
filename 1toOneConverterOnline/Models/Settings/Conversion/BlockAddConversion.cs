@@ -1,8 +1,6 @@
-﻿using GBX.NET.Engines.Game;
+﻿namespace _1toOneConverterOnline.Models.Settings.Conversion;
 
-namespace _1toOneConverterOnline.Models.Settings.Conversion;
-
-public class BlockAddConversion : Conversion
+sealed class BlockAddConversion : Conversion
 {
     public List<Block>? ExtraBlocks { get; init; }
 

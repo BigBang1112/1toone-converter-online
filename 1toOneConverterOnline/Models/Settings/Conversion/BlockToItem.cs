@@ -2,7 +2,7 @@
 
 namespace _1toOneConverterOnline.Models.Settings.Conversion;
 
-public class BlockToItem
+class BlockToItem
 {
     [XmlAttribute]
     public string? ItemName { get; init; }

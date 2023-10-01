@@ -1,9 +1,8 @@
-﻿using GBX.NET.Engines.Game;
-using System.Xml.Serialization;
+﻿using System.Xml.Serialization;
 
 namespace _1toOneConverterOnline.Models.Settings.Conversion;
 
-public class ItemClipAddConversion : Conversion
+sealed class ItemClipAddConversion : Conversion
 {
     public Id? Collection { get; init; }
     public Id? DefaultAuthor { get; init; }

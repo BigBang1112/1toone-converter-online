@@ -2,7 +2,12 @@
 
 namespace _1toOneConverterOnline.Services;
 
-public class ConversionService : IConversionService
+interface IConversionService
+{
+    void Convert(Map map);
+}
+
+sealed class ConversionService : IConversionService
 {
     private readonly ISettingsService _settings;
 

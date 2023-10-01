@@ -2,7 +2,7 @@
 
 namespace _1toOneConverterOnline.Models.Settings.Conversion;
 
-public class BlockClearConversion : Conversion
+sealed class BlockClearConversion : Conversion
 {
     public override void Convert(Map map)
     {

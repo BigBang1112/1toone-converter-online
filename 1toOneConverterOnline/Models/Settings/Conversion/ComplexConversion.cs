@@ -1,8 +1,6 @@
-﻿using GBX.NET.Engines.Game;
+﻿namespace _1toOneConverterOnline.Models.Settings.Conversion;
 
-namespace _1toOneConverterOnline.Models.Settings.Conversion;
-
-public class ComplexConversion : Conversion
+sealed class ComplexConversion : Conversion
 {
     public List<Conversion>? Conversions { get; init; }
 

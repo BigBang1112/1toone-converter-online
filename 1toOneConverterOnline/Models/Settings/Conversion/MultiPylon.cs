@@ -2,7 +2,7 @@
 
 namespace _1toOneConverterOnline.Models.Settings.Conversion;
 
-public struct MultiPylon
+readonly struct MultiPylon
 {
     [XmlAttribute]
     public PylonType Type { get; init; }

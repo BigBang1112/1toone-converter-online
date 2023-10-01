@@ -3,7 +3,7 @@ using System.Xml.Serialization;
 
 namespace _1toOneConverterOnline.Models.Settings.Conversion;
 
-public class GroundItemAddConversion : Conversion
+sealed class GroundItemAddConversion : Conversion
 {
     public Id? Collection { get; init; }
     public Id? DefaultAuthor { get; init; }

@@ -2,7 +2,7 @@
 
 namespace _1toOneConverterOnline.Models.Settings.Conversion;
 
-public class PylonAddConversion : Conversion
+sealed class PylonAddConversion : Conversion
 {
     public override void Convert(Map map)
     {

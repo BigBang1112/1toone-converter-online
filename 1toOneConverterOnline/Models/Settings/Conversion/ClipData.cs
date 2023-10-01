@@ -2,7 +2,7 @@
 
 namespace _1toOneConverterOnline.Models.Settings.Conversion;
 
-public class ClipData
+sealed class ClipData
 {
     [XmlAttribute]
     public string? Clip { get; init; }

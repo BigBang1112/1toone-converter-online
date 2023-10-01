@@ -1,6 +1,6 @@
 ﻿namespace _1toOneConverterOnline.Models.Settings.Conversion;
 
-public enum ClipMode
+enum ClipMode
 {
     Default,
     ForceAir

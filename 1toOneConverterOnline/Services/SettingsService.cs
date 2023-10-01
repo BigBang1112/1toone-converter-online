@@ -5,7 +5,16 @@ using System.Xml.Serialization;
 
 namespace _1toOneConverterOnline.Services;
 
-public class SettingsService : ISettingsService
+interface ISettingsService
+{
+    MainSettings? MainSettings { get; }
+    Dictionary<string, ComplexConversion>? Conversions { get; }
+
+    Task LoadConversionSettingsAsync(Func<string, Task> progress, CancellationToken cancellationToken = default);
+    Task LoadMainSettingsAsync(CancellationToken cancellationToken = default);
+}
+
+sealed class SettingsService : ISettingsService
 {
     private readonly HttpClient _http;
 

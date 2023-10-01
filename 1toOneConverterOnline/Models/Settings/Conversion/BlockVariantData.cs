@@ -2,7 +2,7 @@
 
 namespace _1toOneConverterOnline.Models.Settings.Conversion;
 
-public class BlockVariantData : BlockToItem
+sealed class BlockVariantData : BlockToItem
 {
     private byte? variant;
 

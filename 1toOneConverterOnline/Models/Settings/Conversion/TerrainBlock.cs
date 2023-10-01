@@ -2,7 +2,7 @@
 
 namespace _1toOneConverterOnline.Models.Settings.Conversion;
 
-public class TerrainBlock
+sealed class TerrainBlock
 {
     [XmlAttribute]
     public string? BlockName { get; init; }

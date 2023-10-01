@@ -2,7 +2,7 @@
 
 namespace _1toOneConverterOnline.Models.Settings.Conversion;
 
-public class Id
+sealed class Id
 {
     [XmlAttribute("CollectionID")]
     public uint CollectionId { get; init; }

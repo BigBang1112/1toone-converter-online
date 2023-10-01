@@ -1,6 +1,6 @@
 ﻿namespace _1toOneConverterOnline.Models.Settings.Conversion;
 
-public class MinimalItem
+sealed class MinimalItem
 {
     public Ident? Meta { get; init; }
     public Vec3 Rot { get; init; }

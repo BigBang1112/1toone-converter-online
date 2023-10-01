@@ -3,7 +3,7 @@ using GBX.NET.Engines.Game;
 
 namespace _1toOneConverterOnline.Models;
 
-public class Map
+sealed class Map
 {
     public CGameCtnChallenge Challenge { get; init; }
 

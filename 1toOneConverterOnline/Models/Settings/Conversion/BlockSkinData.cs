@@ -2,7 +2,7 @@
 
 namespace _1toOneConverterOnline.Models.Settings.Conversion;
 
-public class BlockSkinData : BlockToItem
+sealed class BlockSkinData : BlockToItem
 {
     [XmlAttribute]
     public string? SkinRegex { get; init; }

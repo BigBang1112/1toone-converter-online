@@ -2,7 +2,7 @@
 
 namespace _1toOneConverterOnline.Models.Settings.Conversion;
 
-public class MultiBlockAddConversion : Conversion
+sealed class MultiBlockAddConversion : Conversion
 {
     public Block? NewBlock { get; init; }
     public ElementValue<byte> XStep { get; init; }

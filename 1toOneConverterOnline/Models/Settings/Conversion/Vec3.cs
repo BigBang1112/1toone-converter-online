@@ -2,7 +2,7 @@
 
 namespace _1toOneConverterOnline.Models.Settings.Conversion;
 
-public struct Vec3
+readonly struct Vec3
 {
     [XmlAttribute]
     public float X { get; init; }

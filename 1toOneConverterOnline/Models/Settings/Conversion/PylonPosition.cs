@@ -1,6 +1,6 @@
 ﻿namespace _1toOneConverterOnline.Models.Settings.Conversion;
 
-public enum PylonPosition : byte
+enum PylonPosition : byte
 {
     Both,
     Left,

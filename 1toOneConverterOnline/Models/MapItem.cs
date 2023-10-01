@@ -3,7 +3,7 @@ using TmEssentials;
 
 namespace _1toOneConverterOnline.Models;
 
-public class MapItem
+public sealed class MapItem
 {
     private string? thumbnailBase64;
 

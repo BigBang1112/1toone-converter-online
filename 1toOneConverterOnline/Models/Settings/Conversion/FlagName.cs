@@ -2,7 +2,7 @@
 
 namespace _1toOneConverterOnline.Models.Settings.Conversion;
 
-public class FlagName
+sealed class FlagName
 {
     [XmlAttribute]
     public string? Name { get; init; }
