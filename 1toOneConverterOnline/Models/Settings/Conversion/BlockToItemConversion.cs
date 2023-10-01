@@ -1,4 +1,5 @@
-﻿using GBX.NET.Engines.Game;
+﻿using GBX.NET;
+using GBX.NET.Engines.Game;
 using System.Xml.Serialization;
 
 namespace _1toOneConverterOnline.Models.Settings.Conversion;
@@ -76,13 +77,17 @@ public sealed class BlockToItemConversion : Conversion
             return false;
         }
 
-        PlaceItem(map, block, blockData);
+        var blockSize = new Int2(
+            blockData.BlockXSize is 0 ? 1 : blockData.BlockXSize,
+            blockData.BlockZSize is 0 ? 1 : blockData.BlockZSize);
+
+        PlaceItem(map, block, blockData, blockSize);
 
         // TBD
         return true;
     }
 
-    private void PlaceItem(Map map, CGameCtnBlock block, BlockToItem blockData, GBX.NET.Int3 posOffset = default, int rotOffset = default)
+    private void PlaceItem(Map map, CGameCtnBlock block, BlockToItem blockData, Int2 blockSize, GBX.NET.Int3 posOffset = default, int rotOffset = default)
     {
         posOffset = new GBX.NET.Int3(blockData.XOffset, blockData.YOffset, blockData.ZOffset) + posOffset;
 
@@ -93,9 +98,24 @@ public sealed class BlockToItemConversion : Conversion
                 blockData.ItemAuthor ?? DefaultAuthor ?? "");
 
             var absolutePosition = (block.Coord + posOffset) * map.GridSize + map.GridOffset + (0, blockData.SmallYOffset, 0);
+            var pitchYawRoll = new GBX.NET.Vec3(((int)block.Direction + blockData.RotOffset + rotOffset) % 4 * -MathF.PI / 2, 0, 0);
 
-            map.Challenge.PlaceAnchoredObject(ident, absolutePosition,
-                new GBX.NET.Vec3(((int)block.Direction + blockData.RotOffset + rotOffset) % 4 * -MathF.PI / 2, 0, 0));
+            var blockSizeForRotation = new Vec2(blockSize.X - 1, blockSize.Y - 1);
+
+            switch (block.Direction)
+            {
+                case Direction.East:
+                    absolutePosition -= (blockSizeForRotation.Y * map.GridSize.X, 0, 0);
+                    break;
+                case Direction.South:
+                    absolutePosition += (blockSizeForRotation.X * map.GridSize.X, 0, blockSizeForRotation.Y * map.GridSize.Z);
+                    break;
+                case Direction.West:
+                    absolutePosition += (0, 0, blockSizeForRotation.X * map.GridSize.X);
+                    break;
+            }
+
+            map.Challenge.PlaceAnchoredObject(ident, absolutePosition, pitchYawRoll);
         }
 
         if (blockData.Children is not null)
@@ -112,7 +132,7 @@ public sealed class BlockToItemConversion : Conversion
             {
                 var b = randomBlocks[Random.Shared.Next(randomBlocks.Count)];
 
-                PlaceItem(map, block, b, posOffset, blockData.RotOffset + rotOffset);
+                PlaceItem(map, block, b, blockSize, posOffset, blockData.RotOffset + rotOffset);
 
                 return;
             }
@@ -124,7 +144,7 @@ public sealed class BlockToItemConversion : Conversion
                     continue;
                 }
 
-                PlaceItem(map, block, b, posOffset, blockData.RotOffset + rotOffset);
+                PlaceItem(map, block, b, blockSize, posOffset, blockData.RotOffset + rotOffset);
             }
         }
     }
