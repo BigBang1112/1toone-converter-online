@@ -9,7 +9,7 @@
 <div class="list" id="filedrop">
     <div class="controls">
         <header>
-            <div>@Maps.Count(x => x.Successful)/@Maps.Count maps converted</div>
+            <div>@Maps.Count(x => x.Successful)/@Maps.Count maps successfully converted</div>
         </header>
         <footer>
             <div class="btn" @onclick="ClearAsync">Clear</div>
@@ -150,6 +150,13 @@
 
         mapItem.Description = "Finished!";
         mapItem.Successful = true;
+
+        foreach (var item in Maps)
+        {
+            item.Selected = false;
+        }
+
+        mapItem.Selected = true;
 
         StateHasChanged();
     }
