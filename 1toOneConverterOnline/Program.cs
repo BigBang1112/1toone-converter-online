@@ -2,6 +2,7 @@
 using _1toOneConverterOnline.Services;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using Microsoft.AspNetCore.Components.WebAssembly.Services;
 
 GBX.NET.Lzo.SetLzo(typeof(GBX.NET.LZO.MiniLZO));
 
@@ -13,5 +14,6 @@ builder.Services.AddSingleton(sp => new HttpClient { BaseAddress = new Uri(build
 
 builder.Services.AddSingleton<ISettingsService, SettingsService>();
 builder.Services.AddSingleton<IConversionService, ConversionService>();
+builder.Services.AddScoped<LazyAssemblyLoader>();
 
 await builder.Build().RunAsync();
