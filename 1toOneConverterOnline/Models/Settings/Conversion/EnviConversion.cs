@@ -86,7 +86,6 @@ public class EnviConversion : Conversion
 
         map.Challenge.AnchoredObjects ??= new List<CGameCtnAnchoredObject>();
         var itemsChunk = map.Challenge.CreateChunk<CGameCtnChallenge.Chunk03043040>();
-        itemsChunk.U03 = new byte[] { 0, 0, 0, 0 }; // temporary because I am dumb
 
         if (newDeco.WarpItems is not null)
         {

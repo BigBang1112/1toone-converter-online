@@ -5,8 +5,6 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 
 GBX.NET.Lzo.SetLzo(typeof(GBX.NET.LZO.MiniLZO));
 
-GBX.NET.Managers.NodeCacheManager.CacheClassTypesIfNotCached();
-
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
