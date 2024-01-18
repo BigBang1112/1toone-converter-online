@@ -44,7 +44,7 @@ sealed class SettingsService : ISettingsService
             return;
         }
 
-        Conversions = new Dictionary<string, ComplexConversion>();
+        Conversions = [];
 
         foreach (var environment in MainSettings.Environments)
         {
