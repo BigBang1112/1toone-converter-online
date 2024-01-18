@@ -71,6 +71,9 @@
     [Parameter]
     public EventCallback OnClear { get; set; }
 
+    [Parameter]
+    public Pages.Index? MainPage { get; set; }
+
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (!firstRender)
@@ -158,7 +161,7 @@
 
         mapItem.Selected = true;
 
-        StateHasChanged();
+        MainPage?.Update();
     }
     
     public void Dispose()
