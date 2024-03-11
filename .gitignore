@@ -386,9 +386,3 @@ FodyWeavers.xsd
 # JetBrains Rider
 .idea/
 *.sln.iml
-
-BigBang1112.WorldRecordReport/wwwroot/api
-BigBang1112.WorldRecordReport/Ghosts
-
-appsettings.json
-appsettings.Development.json
