@@ -1,8 +1,12 @@
-﻿@if (MapItem is not null)
+﻿@if (MapItem is null)
+{
+    <div class="box thumbnail">No map selected</div>
+}
+else
 {
     @if (MapItem.ThumbnailBase64 is null)
     {
-        <div class="thumbnail">
+        <div class="box thumbnail">
             No thumbnail
         </div>
     }

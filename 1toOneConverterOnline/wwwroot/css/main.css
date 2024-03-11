@@ -208,21 +208,19 @@ ul {
   width: 100%;
   border-radius: 0.25rem;
   box-shadow: 0 2px 5px #131820;
-  transform: rotate(180deg);
+  transform: scaleY(-1);
   aspect-ratio: 1 / 1;
 }
 .info div.thumbnail {
   width: 100%;
+  height: 288px;
+  background-color: rgb(29 36 47);
   border-radius: 0.25rem;
   box-shadow: 0 2px 5px #131820;
-  aspect-ratio: 1 / 1;
-  background: #121212;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-transform: uppercase;
-  color: #333;
-  font-size: 1.5rem;
+  background: repeating-linear-gradient(-45deg, #1d242f 0%, #1d242f 2%, #232b39 2%, #232b39 4%);
 }
 .info ul {
   background-color: #1d242f;
