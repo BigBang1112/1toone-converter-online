@@ -5,7 +5,7 @@ using System.Xml.Serialization;
 
 namespace _1toOneConverterOnline.Services;
 
-interface ISettingsService
+internal interface ISettingsService
 {
     MainSettings? MainSettings { get; }
     Dictionary<string, ComplexConversion>? Conversions { get; }
@@ -14,7 +14,7 @@ interface ISettingsService
     Task LoadMainSettingsAsync(CancellationToken cancellationToken = default);
 }
 
-sealed class SettingsService : ISettingsService
+internal sealed class SettingsService : ISettingsService
 {
     private readonly HttpClient _http;
 
@@ -28,7 +28,7 @@ sealed class SettingsService : ISettingsService
 
     public async Task LoadMainSettingsAsync(CancellationToken cancellationToken = default)
     {
-        using var response = await _http.GetAsync("Settings.json", cancellationToken);
+        using var response = await _http.GetAsync("appsettings.json", cancellationToken);
         
         response.EnsureSuccessStatusCode();
 

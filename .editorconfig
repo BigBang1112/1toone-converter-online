@@ -1,12 +1,14 @@
-# Další informace o souboru .editorconfig najdete v článku https://aka.ms/editorconfigdocs
-
-# All files
 [*]
 indent_style = space
 
-# Xml files
 [*.xml]
-indent_size = 2
+indent_size = 4
 
 [*.cs]
+csharp_style_prefer_range_operator = false
 csharp_style_namespace_declarations = file_scoped:warning
+csharp_style_prefer_primary_constructors = false
+
+dotnet_style_require_accessibility_modifiers = always
+dotnet_diagnostic.IDE0040.severity = warning
+dotnet_diagnostic.IDE0305.severity = none

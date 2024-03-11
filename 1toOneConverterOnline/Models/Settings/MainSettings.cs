@@ -1,6 +1,6 @@
 ﻿namespace _1toOneConverterOnline.Models.Settings;
 
-sealed class MainSettings
+internal sealed class MainSettings
 {
     public string[]? Environments { get; set; }
 }
