@@ -10,7 +10,7 @@ public sealed class MapBasicInfo
 {
     public string? AuthorName { get; }
     public TimeInt32? AuthorTime { get; }
-    public string Environment { get; }
+    public string? Environment { get; }
     public string? Mood { get; }
     public string? Car { get; }
     public int? BlockCount { get; }
@@ -18,8 +18,8 @@ public sealed class MapBasicInfo
     public MapBasicInfo(CGameCtnChallenge map)
     {
         AuthorName = map.AuthorNickname is null ? map.AuthorLogin : TextFormatter.Deformat(map.AuthorNickname);
-        AuthorTime = map.TMObjective_AuthorTime;
-        Environment = map.Collection.ToString();
+        AuthorTime = map.AuthorTime;
+        Environment = map.Collection?.ToString();
         Mood = map.Decoration?.Id;
 
         Car = map.PlayerModel?.Id switch

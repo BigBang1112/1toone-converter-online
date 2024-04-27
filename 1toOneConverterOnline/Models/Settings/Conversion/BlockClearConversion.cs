@@ -4,6 +4,6 @@ public sealed class BlockClearConversion : Conversion
 {
     public override void Convert(Map map)
     {
-        map.Challenge.ClearBlocks();
+        map.Challenge.RemoveAllBlocks();
     }
 }

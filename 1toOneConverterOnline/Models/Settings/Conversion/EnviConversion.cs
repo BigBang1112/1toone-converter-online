@@ -68,10 +68,10 @@ public sealed class EnviConversion : Conversion
         var mapSize = newDeco.MapSize ?? map.Challenge.Size;
 
         map.Challenge.Decoration = newDeco.Deco;
-        map.Challenge.Collection = newDeco.Deco.Collection;
+        map.Challenge.MapInfo = map.Challenge.MapInfo with { Collection = newDeco.Deco.Collection };
         map.Challenge.Size = mapSize;
 
-        foreach (var block in map.Challenge.Blocks ?? throw new Exception("Blocks == null"))
+        foreach (var block in map.Challenge.GetBlocks())
         {
             block.Coord += gridOffset;
         }
