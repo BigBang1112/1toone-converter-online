@@ -42,11 +42,11 @@ public class ConversionTest
             conversions.Add(env, conversion);
         }
 
-        var map = GameBox.ParseNode<CGameCtnChallenge>(inputFile);
+        var map = Gbx.ParseNode<CGameCtnChallenge>(inputFile);
 
         var mapModel = new Map(map);
 
-        conversions[map.Collection.ToString()].Convert(mapModel);
+        conversions[map.Collection.ToString()!].Convert(mapModel);
 
         var newFileName = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(inputFile)) + ".Map.Gbx";
         var outputFile = string.IsNullOrWhiteSpace(outputFolder) ? newFileName : Path.Combine(outputFolder, newFileName);

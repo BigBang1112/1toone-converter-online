@@ -23,7 +23,7 @@ internal sealed class ConversionService : IConversionService
             throw new Exception("No conversions are available.");
         }
 
-        var env = map.Challenge.Collection.ToString();
+        var env = map.Challenge.Collection.ToString() ?? throw new Exception("Collection is null.");
 
         if (!_settings.Conversions.TryGetValue(env, out var conversion))
         {

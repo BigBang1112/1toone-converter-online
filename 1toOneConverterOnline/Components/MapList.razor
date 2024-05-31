@@ -52,7 +52,7 @@
 
         @foreach (var map in Maps)
         {
-            <li class="item @map.BasicInfo?.Environment.ToLower() @(map.Selected ? "selected" : "")" @onclick="() => OnMapItemClickAsync(map)">
+            <li class="item @map.BasicInfo?.Environment?.ToLower() @(map.Selected ? "selected" : "")" @onclick="() => OnMapItemClickAsync(map)">
                 <header>@(map.Map is null ? map.FileName : map.Name)</header>
                 <footer>@(map.Description ?? (map.Map is null ? $"Loading... ({map.FileSize} bytes)" : "Preparing..."))</footer>
             </li>
@@ -94,7 +94,10 @@
 
     public async Task OnMapItemClickAsync(MapItem mapItem)
     {
-        Maps.ForEach(x => x.Selected = false);
+        foreach (var item in Maps)
+        {
+            item.Selected = false;
+        }
 
         mapItem.Selected = true;
 
@@ -112,7 +115,7 @@
         await Task.Delay(10);
 
         using var ms = new MemoryStream(data);
-        var node = await GBX.NET.GameBox.ParseNodeAsync(ms);
+        var node = await GBX.NET.Gbx.ParseNodeAsync(ms);
 
         if (node is not CGameCtnChallenge map)
         {
