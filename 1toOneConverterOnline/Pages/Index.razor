@@ -1,7 +1,7 @@
 ﻿@page "/"
 @inject IJSRuntime JS
 
-<MapList @ref="mapList" OnMapItemClick="OnMapItemClickAsync" OnClear="OnClearAsync" MainPage="this"/>
+<MapList @ref="mapList" OnMapItemClick="OnMapItemClickAsync" OnClear="OnClearAsync" MainPage="this" />
 
 <div class="info">
     <MapInfo @ref="mapInfo" OnDownloadConversion="OnDownloadAsync" />
@@ -46,7 +46,7 @@
             return;
         }
 
-        var ms = new MemoryStream();
+        using var ms = new MemoryStream();
         map.Map.Save(ms);
 
         await DownloadAsync(ReplaceExtension(map.FileName), ms);
@@ -109,9 +109,13 @@
         return originalFileName;
     }
 
+    private async Task DownloadAsync(string name, byte[] data)
+    {
+        await JS.InvokeVoidAsync("download", name, data);
+    }
+
     private async Task DownloadAsync(string name, MemoryStream stream)
     {
-        using var streamRef = new DotNetStreamReference(stream);
-        await JS.InvokeVoidAsync("downloadFileFromStream", name, streamRef);
+        await DownloadAsync(name, stream.ToArray());
     }
 }
