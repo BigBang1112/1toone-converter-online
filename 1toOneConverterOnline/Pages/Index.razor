@@ -46,7 +46,7 @@
             return;
         }
 
-        using var ms = new MemoryStream();
+        var ms = new MemoryStream();
         map.Map.Save(ms);
 
         await DownloadAsync(ReplaceExtension(map.FileName), ms);
