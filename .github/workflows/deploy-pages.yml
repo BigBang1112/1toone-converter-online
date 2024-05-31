@@ -22,17 +22,17 @@ concurrency:
 
 jobs:
 
-  build:
+  deploy:
   
     runs-on: ubuntu-latest
     
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           submodules: recursive
     
       - name: Setup .NET
-        uses: actions/setup-dotnet@v2
+        uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 8.0.x
 
@@ -40,7 +40,7 @@ jobs:
         run: dotnet workload install wasm-tools
           
       - name: Publish
-        run: dotnet publish 1toOneConverterOnline -c Release --nologo -o publish
+        run: dotnet publish 1toOneConverterOnline -c Release --nologo -o publish /p:ContinuousIntegrationBuild=true
         
       - name: Test
         run: dotnet test --no-build --verbosity normal
@@ -51,36 +51,14 @@ jobs:
       - name: Add .nojekyll file
         run: touch publish/wwwroot/.nojekyll
         
-      - name: Upload app artifact
-        uses: actions/upload-artifact@v3.1.0
-        with:
-          name: app
-          path: publish/wwwroot
-          retention-days: 1
-  
-  deploy:
-    needs: build
-  
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-      
-    runs-on: ubuntu-latest
-    
-    steps:
-      - name: Download app artifact
-        uses: actions/download-artifact@v3.0.0
-        with:
-          name: app
-        
       - name: Setup Pages
-        uses: actions/configure-pages@v2
+        uses: actions/configure-pages@v5
         
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: publish/wwwroot/.
           
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4
