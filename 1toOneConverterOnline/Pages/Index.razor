@@ -109,13 +109,9 @@
         return originalFileName;
     }
 
-    private async Task DownloadAsync(string name, byte[] data)
-    {
-        await JS.InvokeVoidAsync("download", name, data);
-    }
-
     private async Task DownloadAsync(string name, MemoryStream stream)
     {
-        await DownloadAsync(name, stream.ToArray());
+        using var streamRef = new DotNetStreamReference(stream);
+        await JS.InvokeVoidAsync("downloadFileFromStream", name, streamRef);
     }
 }
