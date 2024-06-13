@@ -15,6 +15,6 @@ public sealed class TerrainMappingConversion : Conversion
 
     public override void Convert(Map map)
     {
-        throw new NotImplementedException();
+        map.BaseHeight = BaseHeight.Value;
     }
 }

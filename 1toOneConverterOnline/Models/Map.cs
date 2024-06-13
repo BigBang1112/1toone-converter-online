@@ -9,6 +9,8 @@ public sealed class Map
 
     public Vec3 GridSize { get; set; }
     public Vec3 GridOffset { get; set; }
+    public Dictionary<CGameCtnBlock, List<Settings.Conversion.FlagName>> BlockFlags { get; } = [];
+    public int BaseHeight { get; set; }
 
     public Map(CGameCtnChallenge challenge)
     {

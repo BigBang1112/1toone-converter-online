@@ -46,17 +46,12 @@ public sealed class BlockToItemConversion : Conversion
 
         foreach (var block in map.Challenge.Blocks)
         {
-            /*if (BlockIgnoreFlags != null)
+            if (BlockIgnoreFlags?.Any(flag => map.BlockFlags.TryGetValue(block, out var flags) && flags.Contains(flag)) == true)
             {
-                foreach (var blockIgnoreFlag in BlockIgnoreFlags)
-                {
-                    if (file.TestFlag(blockIgnoreFlag.Name, block.Coords.X, block.Coords.Z))
-                        goto nextBlock; // D: Goto?!? What a maniac.
-                }
-            }*/
+                continue;
+            }
 
-
-            //BlockIgnoreFlags.Any(x => x.Name == block.Flags);
+            // bool isSecondaryTerrain = this.SecondaryTerrainFlag != null && file.TestFlag(this.SecondaryTerrainFlag.Name, (int) tuple.x, (int) tuple.z);
 
             if (ConvertBlock(map, block))
             {
@@ -87,9 +82,10 @@ public sealed class BlockToItemConversion : Conversion
         return true;
     }
 
-    private void PlaceItem(Map map, CGameCtnBlock block, BlockToItem blockData, Int2 blockSize, GBX.NET.Int3 posOffset = default, int rotOffset = default)
+    private void PlaceItem(Map map, CGameCtnBlock block, BlockToItem blockData, Int2 blockSize, GBX.NET.Int3 posOffset = default, int rotOffset = default, float smallYOffset = default)
     {
         posOffset = new GBX.NET.Int3(blockData.XOffset, blockData.YOffset, blockData.ZOffset) + posOffset;
+        smallYOffset += blockData.SmallYOffset;
 
         if (blockData.ItemName is not null)
         {
@@ -97,7 +93,7 @@ public sealed class BlockToItemConversion : Conversion
                 Collection ?? throw new Exception($"{nameof(BlockToItemConversion)}: Collection missing."),
                 blockData.ItemAuthor ?? DefaultAuthor ?? "");
 
-            var absolutePosition = (block.Coord + posOffset) * map.GridSize + map.GridOffset + (0, blockData.SmallYOffset, 0);
+            var absolutePosition = (block.Coord + posOffset) * map.GridSize + map.GridOffset + (0, smallYOffset, 0);
             var pitchYawRoll = new GBX.NET.Vec3(((int)block.Direction + blockData.RotOffset + rotOffset) % 4 * -MathF.PI / 2, 0, 0);
 
             var blockSizeForRotation = new Vec2(blockSize.X - 1, blockSize.Y - 1);
@@ -132,7 +128,7 @@ public sealed class BlockToItemConversion : Conversion
             {
                 var b = randomBlocks[Random.Shared.Next(randomBlocks.Count)];
 
-                PlaceItem(map, block, b, blockSize, posOffset, blockData.RotOffset + rotOffset);
+                PlaceItem(map, block, b, blockSize, posOffset, blockData.RotOffset + rotOffset, smallYOffset);
 
                 return;
             }
@@ -144,7 +140,7 @@ public sealed class BlockToItemConversion : Conversion
                     continue;
                 }
 
-                PlaceItem(map, block, b, blockSize, posOffset, blockData.RotOffset + rotOffset);
+                PlaceItem(map, block, b, blockSize, posOffset, blockData.RotOffset + rotOffset, smallYOffset);
             }
         }
     }
