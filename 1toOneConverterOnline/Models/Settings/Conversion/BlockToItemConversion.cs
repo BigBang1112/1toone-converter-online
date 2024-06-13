@@ -84,7 +84,7 @@ public sealed class BlockToItemConversion : Conversion
 
     private void PlaceItem(Map map, CGameCtnBlock block, BlockToItem blockData, Int2 blockSize, GBX.NET.Int3 posOffset = default, int rotOffset = default, float smallYOffset = default)
     {
-        posOffset = new GBX.NET.Int3(blockData.XOffset, blockData.YOffset, blockData.ZOffset) + posOffset;
+        posOffset += new GBX.NET.Int3(blockData.XOffset, blockData.YOffset, blockData.ZOffset);
         smallYOffset += blockData.SmallYOffset;
 
         if (blockData.ItemName is not null)
@@ -138,6 +138,19 @@ public sealed class BlockToItemConversion : Conversion
                 if (b is BlockVariantData variantData && variantData.Variant != block.Variant)
                 {
                     continue;
+                }
+
+                if (b is BlockTypeData typeData)
+                {
+                    if (typeData.TypeOfBlock == BlockType.Air && block.IsGround)
+                    {
+                        continue;
+                    }
+
+                    if (typeData.TypeOfBlock == BlockType.Ground && !block.IsGround)
+                    {
+                        continue;
+                    }
                 }
 
                 PlaceItem(map, block, b, blockSize, posOffset, blockData.RotOffset + rotOffset, smallYOffset);
