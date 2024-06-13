@@ -2,6 +2,7 @@
 using _1toOneConverterOnline.Models.Settings.Conversion;
 using GBX.NET;
 using GBX.NET.Engines.Game;
+using GBX.NET.LZO;
 using Microsoft.Extensions.Configuration;
 using System.Xml.Serialization;
 
@@ -41,6 +42,8 @@ public class ConversionTest
 
             conversions.Add(env, conversion);
         }
+
+        Gbx.LZO = new MiniLZO();
 
         var map = Gbx.ParseNode<CGameCtnChallenge>(inputFile);
 
