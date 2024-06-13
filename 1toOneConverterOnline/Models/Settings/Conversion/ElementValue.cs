@@ -1,3 +1,9 @@
-﻿namespace _1toOneConverterOnline.Models.Settings.Conversion;
+﻿using System.Xml.Serialization;
 
-public readonly record struct ElementValue<T>(T Value);
+namespace _1toOneConverterOnline.Models.Settings.Conversion;
+
+public sealed record ElementValue<T>
+{
+    [XmlAttribute]
+    public required T Value { get; init; }
+}
