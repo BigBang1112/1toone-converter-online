@@ -65,11 +65,10 @@ public sealed class EnviConversion : Conversion
         }
 
         var gridOffset = oldDeco.GridOffset;
-        var mapSize = newDeco.MapSize ?? map.Challenge.Size;
 
         map.Challenge.Decoration = newDeco.Deco;
         map.Challenge.MapInfo = map.Challenge.MapInfo with { Collection = newDeco.Deco.Collection };
-        map.Challenge.Size = mapSize;
+        map.Challenge.Size = MapSize;
 
         foreach (var block in map.Challenge.GetBlocks())
         {
