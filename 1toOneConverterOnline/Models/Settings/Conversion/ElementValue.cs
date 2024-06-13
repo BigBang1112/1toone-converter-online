@@ -2,7 +2,7 @@
 
 namespace _1toOneConverterOnline.Models.Settings.Conversion;
 
-public sealed record ElementValue<T>
+public readonly record struct ElementValue<T>
 {
     [XmlAttribute]
     public required T Value { get; init; }
