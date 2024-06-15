@@ -17,7 +17,9 @@ public sealed class MultiBlockAddConversion : Conversion
 
     public override void Convert(Map map)
     {
-        map.Challenge.Chunks.Get<CGameCtnChallenge.Chunk0304301F>()!.Version = 6;
+        map.Challenge.Chunks.Remove<CGameCtnChallenge.Chunk0304300F>();
+        map.Challenge.Chunks.Remove<CGameCtnChallenge.Chunk03043013>();
+        map.Challenge.Chunks.Create<CGameCtnChallenge.Chunk0304301F>().Version = 6;
 
         if (NewBlock is null || NewBlock.BlockName is null || map.Challenge.Blocks is null)
         {
