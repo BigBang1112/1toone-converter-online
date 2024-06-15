@@ -46,17 +46,24 @@ internal sealed class SettingsService : ISettingsService
 
         Conversions = [];
 
+        var responses = new Dictionary<string, Task<HttpResponseMessage>>();
+
         foreach (var environment in MainSettings.Environments)
+        {
+            responses.Add(environment, _http.GetAsync($"{environment}Conversion.xml", cancellationToken));
+        }
+
+        foreach (var (environment, responseTask) in responses)
         {
             await progress(environment);
 
-            using var response = await _http.GetAsync($"{environment}Conversion.xml", cancellationToken);
+            using var response = await responseTask;
 
             if (!response.IsSuccessStatusCode)
             {
                 continue;
             }
-            
+
             using var stream = await response.Content.ReadAsStreamAsync(cancellationToken);
 
             var serializer = new XmlSerializer(typeof(ComplexConversion));
