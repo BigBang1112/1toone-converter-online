@@ -36,12 +36,18 @@ public sealed class BlockToItemConversion : Conversion
 
         foreach (var block in Blocks)
         {
-            if (string.IsNullOrEmpty(block.BlockName))
+            if (!string.IsNullOrEmpty(block.BlockName))
             {
-                continue;
+                _ = blockDictionary.TryAdd(block.BlockName, block);
             }
 
-            _ = blockDictionary.TryAdd(block.BlockName, block);
+            foreach (var altName in block.AltNames ?? [])
+            {
+                if (!string.IsNullOrEmpty(altName.BlockName))
+                {
+                    _ = blockDictionary.TryAdd(altName.BlockName, block);
+                }
+            }
         }
 
         foreach (var block in map.Challenge.Blocks)
@@ -93,23 +99,37 @@ public sealed class BlockToItemConversion : Conversion
                 Collection ?? throw new Exception($"{nameof(BlockToItemConversion)}: Collection missing."),
                 blockData.ItemAuthor ?? DefaultAuthor ?? "");
 
-            var absolutePosition = (block.Coord + posOffset) * map.GridSize + map.GridOffset + (0, smallYOffset, 0);
+            var absolutePosition = (block.Coord + (0, posOffset.Y, 0)) * map.GridSize + map.GridOffset + (0, smallYOffset, 0);
             var pitchYawRoll = new GBX.NET.Vec3(((int)block.Direction + blockData.RotOffset + rotOffset) % 4 * -MathF.PI / 2, 0, 0);
 
             var blockSizeForRotation = new Vec2(blockSize.X - 1, blockSize.Y - 1);
 
+            float xOffset;
+            float zOffset;
+
             switch (block.Direction)
             {
+                case Direction.North:
+                    xOffset = posOffset.X;
+                    zOffset = posOffset.Z;
+                    break;
                 case Direction.East:
-                    absolutePosition -= (blockSizeForRotation.Y * map.GridSize.X, 0, 0);
+                    xOffset = -posOffset.Z + blockSizeForRotation.Y;
+                    zOffset = posOffset.X;
                     break;
                 case Direction.South:
-                    absolutePosition += (blockSizeForRotation.X * map.GridSize.X, 0, blockSizeForRotation.Y * map.GridSize.Z);
+                    xOffset = -posOffset.X + blockSizeForRotation.X;
+                    zOffset = -posOffset.Z + blockSizeForRotation.Y;
                     break;
                 case Direction.West:
-                    absolutePosition += (0, 0, blockSizeForRotation.X * map.GridSize.X);
+                    xOffset = posOffset.Z;
+                    zOffset = -posOffset.X + blockSizeForRotation.X;
                     break;
+                default:
+                    throw new Exception();
             }
+
+            absolutePosition += (xOffset, 0, zOffset) * map.GridSize;
 
             map.Challenge.PlaceAnchoredObject(ident, absolutePosition, pitchYawRoll);
         }
@@ -147,7 +167,7 @@ public sealed class BlockToItemConversion : Conversion
                         continue;
                     }
 
-                    if (typeData.TypeOfBlock == BlockType.Ground && !block.IsGround)
+                    if (typeData.TypeOfBlock is BlockType.Ground or BlockType.GroundPrimary or BlockType.GroundSecondary && !block.IsGround)
                     {
                         continue;
                     }
