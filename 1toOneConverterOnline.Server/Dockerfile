@@ -15,7 +15,7 @@ WORKDIR /src
 # copy csproj and restore as distinct layers
 COPY $APPNAME/*.csproj $APPNAME/
 COPY $APPNAME.Server/*.csproj $APPNAME.Server/
-RUN dotnet restore $APPNAME.Server/$APPNAME.Server.csproj -a $TARGETARCH -r linux-musl-x64 --no-cache
+RUN dotnet restore $APPNAME.Server/$APPNAME.Server.csproj -a $TARGETARCH --no-cache
 # copy and publish app and libraries
 COPY $APPNAME $APPNAME
 COPY $APPNAME.Server $APPNAME.Server
