@@ -15,4 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
-      run: docker build . --file 1toOneConverter.Server/Dockerfile --tag 1toone-converter-online:$(date +%s)
+      run: docker build . --file 1toOneConverterOnline.Server/Dockerfile --tag 1toone-converter-online:$(date +%s)
