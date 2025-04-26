@@ -34,7 +34,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: 8.0.x
+          dotnet-version: 9.0.x
 
       - name: Install wasm-tools
         run: dotnet workload install wasm-tools
@@ -47,9 +47,6 @@ jobs:
         
       - name: Change base in index.html to repository name
         run: sed -i 's/<base href="\/" \/>/<base href="\/1toone-converter-online\/" \/>/g' publish/wwwroot/index.html
-        
-      - name: Add .nojekyll file
-        run: touch publish/wwwroot/.nojekyll
         
       - name: Setup Pages
         uses: actions/configure-pages@v5
