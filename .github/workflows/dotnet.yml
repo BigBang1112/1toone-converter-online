@@ -20,7 +20,7 @@ jobs:
         dotnet-version: 9.0.x
         
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore 1toOneConverterOnline.sln
       
     - name: Build
       run: dotnet build 1toOneConverterOnline.sln --no-restore /p:ContinuousIntegrationBuild=true
