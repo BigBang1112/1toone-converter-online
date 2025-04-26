@@ -1,0 +1,18 @@
+services:
+  1tooneconverteronline.server:
+    image: ${DOCKER_REGISTRY-}1tooneconverteronlineserver
+    build:
+      context: .
+      dockerfile: 1toOneConverterOnline.Server/Dockerfile
+    environment:
+      OTEL_SERVICE_NAME: 1toOneConverterOnline
+      OTEL_EXPORTER_OTLP_ENDPOINT: http://seq/ingest/otlp
+      OTEL_EXPORTER_OTLP_PROTOCOL: http/protobuf
+
+  seq:
+    image: datalust/seq
+    restart: unless-stopped
+    ports:
+      - 8081:80
+    environment:
+      ACCEPT_EULA: Y
