@@ -43,7 +43,7 @@ jobs:
         run: dotnet publish 1toOneConverterOnline -c Release --nologo -o publish /p:ContinuousIntegrationBuild=true
         
       - name: Test
-        run: dotnet test --no-build --verbosity normal
+        run: dotnet test 1toOneConverterOnline.sln --no-build --verbosity normal
         
       - name: Change base in index.html to repository name
         run: sed -i 's/<base href="\/" \/>/<base href="\/1toone-converter-online\/" \/>/g' publish/wwwroot/index.html

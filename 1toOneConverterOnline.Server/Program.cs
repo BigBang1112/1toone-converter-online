@@ -7,6 +7,7 @@ using Serilog.Sinks.SystemConsole.Themes;
 using _1toOneConverterOnline.Server;
 using Microsoft.AspNetCore.CookiePolicy;
 using AspNet.Security.OAuth.Discord;
+using System.Security.Claims;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -105,11 +106,21 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+var allowedDiscordUserIds = builder.Configuration.GetSection("AllowedDiscordUserIds").Get<List<string>>() ?? [];
+
 app.Use(async (context, next) =>
 {
     if (!context.User.Identity?.IsAuthenticated ?? true)
     {
         await context.ChallengeAsync(DiscordAuthenticationDefaults.AuthenticationScheme, new AuthenticationProperties { RedirectUri = "/" });
+        return;
+    }
+
+    var userId = context.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+    if (userId is null || !allowedDiscordUserIds.Contains(userId))
+    {
+        context.Response.StatusCode = StatusCodes.Status403Forbidden;
+        await context.Response.WriteAsync("Access denied.");
         return;
     }
 
