@@ -11,6 +11,7 @@ FROM mcr.microsoft.com/dotnet/sdk:9.0 AS publish
 ARG BUILD_CONFIGURATION=Release
 ARG TARGETARCH
 ARG APPNAME=1toOneConverterOnline
+RUN apt-get install -y nodejs
 WORKDIR /src
 # copy csproj and restore as distinct layers
 COPY $APPNAME/*.csproj $APPNAME/
