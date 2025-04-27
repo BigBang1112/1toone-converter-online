@@ -12,6 +12,7 @@ ARG BUILD_CONFIGURATION=Release
 ARG TARGETARCH
 ARG APPNAME=1toOneConverterOnline
 RUN apt-get install -y nodejs
+RUN dotnet workload install wasm-tools
 WORKDIR /src
 # copy csproj and restore as distinct layers
 COPY $APPNAME/*.csproj $APPNAME/
