@@ -93,7 +93,7 @@
         </OldDeco>
         <OldDeco Name="Sunrise " />
       </NewDeco>
-      <MapSize X="48" Y="40" Z="48" />
+      <MapSize X="48" Y="48" Z="48" />
     </Conversion>
     <Conversion xsi:type="CarConversion">
       <CarMeta>

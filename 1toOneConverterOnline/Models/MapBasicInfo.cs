@@ -17,7 +17,7 @@ public sealed class MapBasicInfo
 
     public MapBasicInfo(CGameCtnChallenge map)
     {
-        AuthorName = map.AuthorNickname is null ? map.AuthorLogin : TextFormatter.Deformat(map.AuthorNickname);
+        AuthorName = string.IsNullOrWhiteSpace(map.AuthorNickname) ? map.AuthorLogin : TextFormatter.Deformat(map.AuthorNickname);
         AuthorTime = map.AuthorTime;
         Environment = map.Collection?.ToString();
         Mood = map.Decoration?.Id;

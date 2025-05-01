@@ -83,7 +83,7 @@ public sealed class EnviConversion : Conversion
             }
         }
 
-        map.Challenge.AnchoredObjects ??= new List<CGameCtnAnchoredObject>();
+        map.Challenge.AnchoredObjects ??= [];
         var itemsChunk = map.Challenge.CreateChunk<CGameCtnChallenge.Chunk03043040>();
 
         if (newDeco.WarpItems is not null)

@@ -22,17 +22,12 @@ public sealed class BlockToItemConversion : Conversion
     {
         int itemCount = 0;
 
-        if (map.Challenge.Blocks is null)
-        {
-            throw new Exception("Blocks == null");
-        }
-
         if (Blocks is null)
         {
             return;
         }
 
-        blockDictionary = new Dictionary<string, BlockData>();
+        blockDictionary = [];
 
         foreach (var block in Blocks)
         {
@@ -50,7 +45,7 @@ public sealed class BlockToItemConversion : Conversion
             }
         }
 
-        foreach (var block in map.Challenge.Blocks)
+        foreach (var block in map.Challenge.GetBlocks())
         {
             if (BlockIgnoreFlags?.Any(flag => map.BlockFlags.TryGetValue(block, out var flags) && flags.Contains(flag)) == true)
             {
@@ -140,7 +135,7 @@ public sealed class BlockToItemConversion : Conversion
 
             foreach (var b in blockData.Children.OfType<BlockRandomData>())
             {
-                randomBlocks ??= new();
+                randomBlocks ??= [];
                 randomBlocks.Add(b);
             }
 
@@ -149,6 +144,23 @@ public sealed class BlockToItemConversion : Conversion
                 var b = randomBlocks[Random.Shared.Next(randomBlocks.Count)];
 
                 PlaceItem(map, block, b, blockSize, posOffset, blockData.RotOffset + rotOffset, smallYOffset);
+
+                return;
+            }
+
+            var skinBlocks = default(List<BlockSkinData>);
+
+            foreach (var b in blockData.Children.OfType<BlockSkinData>())
+            {
+                skinBlocks ??= [];
+                skinBlocks.Add(b);
+            }
+
+            if (skinBlocks is not null)
+            {
+                var noSkin = skinBlocks.FirstOrDefault(x => x.SkinRegex is null) ?? skinBlocks.First();
+
+                PlaceItem(map, block, noSkin, blockSize, posOffset, blockData.RotOffset + rotOffset, smallYOffset);
 
                 return;
             }
