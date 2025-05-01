@@ -6,7 +6,7 @@ namespace _1toOneConverterOnline.Models.Settings.Conversion;
 
 public sealed class BlockToItemConversion : Conversion
 {
-    private Dictionary<string, BlockData>? blockDictionary;
+    private readonly Dictionary<string, BlockData> blockDictionary = [];
 
     public Id? Collection { get; init; }
     public Id? DefaultAuthor { get; init; }
@@ -27,8 +27,6 @@ public sealed class BlockToItemConversion : Conversion
             return;
         }
 
-        blockDictionary = [];
-
         foreach (var block in Blocks)
         {
             if (!string.IsNullOrEmpty(block.BlockName))
@@ -45,13 +43,8 @@ public sealed class BlockToItemConversion : Conversion
             }
         }
 
-        foreach (var block in map.Challenge.GetBlocks())
+        foreach (var block in map.Challenge.GetBlocks().Where(x => !x.IsClip))
         {
-            if (BlockIgnoreFlags?.Any(flag => map.BlockFlags.TryGetValue(block, out var flags) && flags.Contains(flag)) == true)
-            {
-                continue;
-            }
-
             // bool isSecondaryTerrain = this.SecondaryTerrainFlag != null && file.TestFlag(this.SecondaryTerrainFlag.Name, (int) tuple.x, (int) tuple.z);
 
             if (ConvertBlock(map, block))
@@ -59,16 +52,18 @@ public sealed class BlockToItemConversion : Conversion
                 itemCount++;
             }
         }
+
+        map.CoveredCoords ??= GetCoveredCoords(map).ToHashSet();
     }
 
     private bool ConvertBlock(Map map, CGameCtnBlock block)
     {
-        if (blockDictionary is null)
+        if (!blockDictionary.TryGetValue(block.Name, out BlockData? blockData))
         {
             return false;
         }
 
-        if (!blockDictionary.TryGetValue(block.Name, out BlockData? blockData))
+        if (map.CoveredCoords is not null && map.CoveredCoords.Contains(block.Coord with { Y = 0 })) //  + (0, blockData.YOffset, 0) // TODO wrong for flying blocks!
         {
             return false;
         }
@@ -232,4 +227,103 @@ public sealed class BlockToItemConversion : Conversion
 
         return result;
     }*/
+
+    private IEnumerable<GBX.NET.Int3> GetCoveredCoords(Map map)
+    {
+        var blockUnits = new Dictionary<CGameCtnBlock, GBX.NET.Int3[]>();
+        var zoneBlocks = new HashSet<CGameCtnBlock>();
+
+        foreach (var block in map.Challenge.GetBlocks())
+        {
+            if (!blockDictionary.TryGetValue(block.Name, out var blockData))
+            {
+                continue;
+            }
+
+            var units = RecurseFlags(block, blockData)?
+                .Where(x => x.Name == "NoGround")
+                .Select(x => new GBX.NET.Int3(x.X, x.Y, x.Z))
+                .ToArray() ?? [];
+
+            if (units.Length != 0)
+            {
+                blockUnits[block] = units;
+            }
+        }
+
+        foreach (var block in map.Challenge.GetBlocks())
+        {
+            if (!blockUnits.TryGetValue(block, out var units))
+            {
+                continue;
+            }
+
+            if (units.Length == 1)
+            {
+                yield return block.Coord with { Y = 0 }; // TODO wrong for flying blocks!
+                continue;
+            }
+
+            var rotatedUnits = new GBX.NET.Int3[units.Length];
+
+            // Determine minimum X and Z after rotation.
+            var minX = int.MaxValue;
+            var minZ = int.MaxValue;
+            for (int i = 0; i < units.Length; i++)
+            {
+                var rotated = RotateUnit(units[i], block.Direction);
+                rotatedUnits[i] = rotated;
+                if (rotated.X < minX) minX = rotated.X;
+                if (rotated.Z < minZ) minZ = rotated.Z;
+            }
+
+            // Adjust positions so the minimum X and Z become 0.
+            foreach (var rotated in rotatedUnits)
+            {
+                yield return (block.Coord + new GBX.NET.Int3(rotated.X - minX, rotated.Y, rotated.Z - minZ)) with { Y = 0 }; // TODO wrong for flying blocks!
+            }
+        }
+    }
+
+    private static GBX.NET.Int3 RotateUnit(GBX.NET.Int3 unit, Direction direction) => direction switch
+    {
+        Direction.East => new GBX.NET.Int3(-unit.Z, unit.Y, unit.X),
+        Direction.South => new GBX.NET.Int3(-unit.X, unit.Y, -unit.Z),
+        Direction.West => new GBX.NET.Int3(unit.Z, unit.Y, -unit.X),
+        _ => unit,
+    };
+
+    private static IEnumerable<Flag> RecurseFlags(CGameCtnBlock block, BlockToItem blockData)
+    {
+        foreach (var flag in blockData.Flags ?? [])
+        {
+            yield return flag;
+        }
+
+        foreach (var b in blockData.Children ?? [])
+        {
+            if (b is BlockVariantData variantData && variantData.Variant != block.Variant)
+            {
+                continue;
+            }
+
+            if (b is BlockTypeData typeData)
+            {
+                if (typeData.TypeOfBlock == BlockType.Air && block.IsGround)
+                {
+                    continue;
+                }
+
+                if (typeData.TypeOfBlock is BlockType.Ground or BlockType.GroundPrimary or BlockType.GroundSecondary && !block.IsGround)
+                {
+                    continue;
+                }
+            }
+
+            foreach (var flag in RecurseFlags(block, b))
+            {
+                yield return flag;
+            }
+        }
+    }
 }
