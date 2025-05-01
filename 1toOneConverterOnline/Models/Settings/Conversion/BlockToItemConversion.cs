@@ -53,7 +53,14 @@ public sealed class BlockToItemConversion : Conversion
             }
         }
 
-        map.CoveredCoords ??= GetCoveredCoords(map).ToHashSet();
+        if (map.CoveredCoords is null)
+        {
+            map.CoveredCoords = GetCoveredCoords(map).ToHashSet();
+        }
+        else
+        {
+            map.CoveredCoords.UnionWith(GetCoveredCoords(map));
+        }
     }
 
     private bool ConvertBlock(Map map, CGameCtnBlock block)
@@ -231,7 +238,6 @@ public sealed class BlockToItemConversion : Conversion
     private IEnumerable<GBX.NET.Int3> GetCoveredCoords(Map map)
     {
         var blockUnits = new Dictionary<CGameCtnBlock, GBX.NET.Int3[]>();
-        var zoneBlocks = new HashSet<CGameCtnBlock>();
 
         foreach (var block in map.Challenge.GetBlocks())
         {
@@ -241,7 +247,7 @@ public sealed class BlockToItemConversion : Conversion
             }
 
             var units = RecurseFlags(block, blockData)?
-                .Where(x => x.Name == "NoGround")
+                .Where(x => x.Name is "NoGround" or "NoDefaultGround")
                 .Select(x => new GBX.NET.Int3(x.X, x.Y, x.Z))
                 .ToArray() ?? [];
 

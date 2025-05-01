@@ -2639,9 +2639,9 @@
             </BlockRandomData>
           </BlockVariantData>
           <Flag Name="NoGround" X="0" Z="0" />
-          <Flag Name="NoGround" X="0" Z="-1" />
-          <Flag Name="NoGround" X="0" Z="-2" />
-          <Flag Name="NoGround" X="0" Z="-3" />
+          <Flag Name="NoGround" X="1" Z="0" />
+          <Flag Name="NoGround" X="2" Z="0" />
+          <Flag Name="NoGround" X="3" Z="0" />
         </BlockData>
         <BlockData BlockName="BayCargoContainer" BlockXSize="4" XOffset="3" RotOffset="3" SmallYOffset="-3">
           <BlockVariantData>
@@ -2657,9 +2657,9 @@
             </BlockRandomData>
           </BlockVariantData>
           <Flag Name="NoGround" X="0" Z="0" />
-          <Flag Name="NoGround" X="0" Z="-1" />
-          <Flag Name="NoGround" X="0" Z="-2" />
-          <Flag Name="NoGround" X="0" Z="-3" />
+          <Flag Name="NoGround" X="1" Z="0" />
+          <Flag Name="NoGround" X="2" Z="0" />
+          <Flag Name="NoGround" X="3" Z="0" />
         </BlockData>
         <BlockData BlockName="BayDocksHarborDeadendContainer">
           <BlockVariantData>
