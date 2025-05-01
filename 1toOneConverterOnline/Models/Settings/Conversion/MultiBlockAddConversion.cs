@@ -26,9 +26,9 @@ public sealed class MultiBlockAddConversion : Conversion
             return;
         }
 
-        for (var x = 1; x <= map.Challenge.Size.X; x += XStep.Value)
+        for (var x = 0; x < map.Challenge.Size.X; x += XStep.Value)
         {
-            for (int z = 1; z <= map.Challenge.Size.Z; z += ZStep.Value)
+            for (int z = 0; z < map.Challenge.Size.Z; z += ZStep.Value)
             {
                 map.Challenge.Blocks.Add(new CGameCtnBlock
                 {
