@@ -14,6 +14,7 @@ ARG APPNAME=1toOneConverterOnline
 RUN apt-get update && apt-get install -y nodejs npm
 RUN dotnet workload install wasm-tools
 WORKDIR /src
+COPY .git/ ./.git/
 # copy csproj and restore as distinct layers
 COPY $APPNAME/*.csproj $APPNAME/
 COPY $APPNAME.Server/*.csproj $APPNAME.Server/
