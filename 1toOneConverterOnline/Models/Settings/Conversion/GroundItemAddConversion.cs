@@ -54,17 +54,19 @@ public sealed class GroundItemAddConversion : Conversion
             {
                 for (var z = 0; z < map.Challenge.Size.Z; z++)
                 {
-                    if (!occupiedGroundCoords.Contains(new(x, 0, z)))
+                    if (occupiedGroundCoords.Contains(new(x, 0, z)))
                     {
-                        var ident = new GBX.NET.Ident(GroundItem.ItemName,
-                            Collection ?? throw new Exception($"{nameof(BlockToItemConversion)}: Collection missing."),
-                            GroundItem.ItemAuthor ?? DefaultAuthor ?? "");
-
-                        var absolutePosition = new GBX.NET.Vec3(x, map.BaseHeight, z) * map.GridSize + map.GridOffset + (0, GroundItem.SmallYOffset, 0);
-                        var pitchYawRoll = new GBX.NET.Vec3(GroundItem.RotOffset % 4 * -MathF.PI / 2, 0, 0);
-
-                        map.Challenge.PlaceAnchoredObject(ident, absolutePosition, pitchYawRoll);
+                        continue;
                     }
+
+                    var ident = new GBX.NET.Ident(GroundItem.ItemName,
+                        Collection ?? throw new Exception($"{nameof(BlockToItemConversion)}: Collection missing."),
+                        GroundItem.ItemAuthor ?? DefaultAuthor ?? "");
+
+                    var absolutePosition = new GBX.NET.Vec3(x, map.BaseHeight, z) * map.GridSize + map.GridOffset + (0, GroundItem.SmallYOffset, 0);
+                    var pitchYawRoll = new GBX.NET.Vec3(GroundItem.RotOffset % 4 * -MathF.PI / 2, 0, 0);
+
+                    map.Challenge.PlaceAnchoredObject(ident, absolutePosition, pitchYawRoll);
                 }
             }
         }

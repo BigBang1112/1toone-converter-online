@@ -16,6 +16,7 @@ namespace _1toOneConverterOnline.Models.Settings.Conversion;
 [XmlInclude(typeof(PylonAddConversion))]
 [XmlInclude(typeof(TerrainMappingConversion))]
 [XmlInclude(typeof(TitleConversion))]
+[XmlInclude(typeof(SeaRemovalConversion))]
 public abstract class Conversion
 {
     public abstract void Convert(Map map);

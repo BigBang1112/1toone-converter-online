@@ -3096,6 +3096,11 @@
       <HeightFlag Name="GroundHeight"/>
       <GroundItem ItemName="Lagoon\Z_Bay\Z_BayDock\A_BayBase\BaySeaBase.Item.gbx" SmallYOffset="-3" />
     </Conversion>
+    <Conversion xsi:type="SeaRemovalConversion">
+      <XStep Value="1" />
+      <YValue Value="5" />
+      <ZStep Value="1" />
+    </Conversion>
     <Conversion xsi:type="BlockClearConversion" />
     <Conversion xsi:type="MultiBlockAddConversion">
       <NewBlock>
