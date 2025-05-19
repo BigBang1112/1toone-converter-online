@@ -90,6 +90,12 @@ public sealed class BlockToItemConversion : Conversion
         posOffset += new GBX.NET.Int3(blockData.XOffset, blockData.YOffset, blockData.ZOffset);
         smallYOffset += blockData.SmallYOffset;
 
+        if (blockData.Clips?.Length > 0)
+        {
+            var fixedCoord = GetFixedCoord(block, posOffset, blockSize);
+            map.AddClips(blockData.Clips, fixedCoord, (Direction)(((int)block.Direction + blockData.RotOffset + rotOffset) % 4));
+        }
+
         if (blockData.ItemName is not null)
         {
             var ident = new GBX.NET.Ident(blockData.ItemName,
@@ -99,10 +105,10 @@ public sealed class BlockToItemConversion : Conversion
             var absolutePosition = (block.Coord + (0, posOffset.Y, 0)) * map.GridSize + map.GridOffset + (0, smallYOffset, 0);
             var pitchYawRoll = new GBX.NET.Vec3(((int)block.Direction + blockData.RotOffset + rotOffset) % 4 * -MathF.PI / 2, 0, 0);
 
-            var blockSizeForRotation = new Vec2(blockSize.X - 1, blockSize.Y - 1);
+            var blockSizeForRotation = new Int2(blockSize.X - 1, blockSize.Y - 1);
 
-            float xOffset;
-            float zOffset;
+            int xOffset;
+            int zOffset;
 
             switch (block.Direction)
             {
@@ -192,6 +198,39 @@ public sealed class BlockToItemConversion : Conversion
         }
     }
 
+    private static GBX.NET.Int3 GetFixedCoord(CGameCtnBlock block, GBX.NET.Int3 posOffset, Int2 blockSize)
+    {
+        var fixedCoord = block.Coord + (0, posOffset.Y, 0);
+        var blockSizeForRotation = new Int2(blockSize.X - 1, blockSize.Y - 1);
+
+        int xOffset;
+        int zOffset;
+
+        switch (block.Direction)
+        {
+            case Direction.North:
+                xOffset = posOffset.X;
+                zOffset = posOffset.Z;
+                break;
+            case Direction.East:
+                xOffset = -posOffset.Z + blockSizeForRotation.Y;
+                zOffset = posOffset.X;
+                break;
+            case Direction.South:
+                xOffset = -posOffset.X + blockSizeForRotation.X;
+                zOffset = -posOffset.Z + blockSizeForRotation.Y;
+                break;
+            case Direction.West:
+                xOffset = posOffset.Z;
+                zOffset = -posOffset.X + blockSizeForRotation.X;
+                break;
+            default:
+                throw new Exception();
+        }
+
+        return fixedCoord + (xOffset, 0, zOffset);
+    }
+
     /*private virtual ItemInfo GetItemInfo(Identifier identifier)
     {
         if (!TestBlock(identifier))
@@ -241,6 +280,11 @@ public sealed class BlockToItemConversion : Conversion
 
         foreach (var block in map.Challenge.GetBlocks())
         {
+            if (block.IsGround && block.IsClip && block.Name != "BaySeaClip")
+            {
+                blockUnits[block] = [new GBX.NET.Int3(block.Coord.X, block.Coord.Y, block.Coord.Z)];
+            }
+
             if (!blockDictionary.TryGetValue(block.Name, out var blockData))
             {
                 continue;

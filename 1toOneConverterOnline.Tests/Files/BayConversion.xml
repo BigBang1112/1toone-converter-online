@@ -414,9 +414,9 @@
               <Flag Name="NoGround" X="0" Z="-1" />
             </BlockTypeData>
           </BlockVariantData>
-          <Clip Name="BayRoadClip" X="0" Y="0" Z="1" Rot="2" />
-          <Clip Name="BayRoadClip" X="1" Y="0" Z="-2" Rot="0" />
-          <Clip Name="BayRoadClip" X="-1" Y="0" Z="-2" Rot="0" />
+          <Clip Name="BayRoadClip" X="-1" Y="0" Z="1" Rot="2" />
+          <Clip Name="BayRoadClip" X="0" Y="0" Z="-2" Rot="0" />
+          <Clip Name="BayRoadClip" X="-2" Y="0" Z="-2" Rot="0" />
         </BlockData>
         <BlockData BlockName="BayRoadGTCurve2Support" BlockXSize="2" BlockZSize="2" XOffset="1" ZOffset="1">
           <BlockVariantData>

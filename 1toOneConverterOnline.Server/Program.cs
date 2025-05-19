@@ -72,7 +72,6 @@ builder.Services.AddOpenTelemetry()
             .AddHttpClientInstrumentation()
             .AddOtlpExporter();
     });
-builder.Services.AddMetrics();
 
 var app = builder.Build();
 
