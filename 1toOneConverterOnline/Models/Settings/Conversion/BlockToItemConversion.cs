@@ -90,10 +90,16 @@ public sealed class BlockToItemConversion : Conversion
         posOffset += new GBX.NET.Int3(blockData.XOffset, blockData.YOffset, blockData.ZOffset);
         smallYOffset += blockData.SmallYOffset;
 
+        var fixedCoord = GetFixedCoord(block, posOffset, blockSize);
+
         if (blockData.Clips?.Length > 0)
         {
-            var fixedCoord = GetFixedCoord(block, posOffset, blockSize);
             map.AddClips(blockData.Clips, fixedCoord, (Direction)(((int)block.Direction + blockData.RotOffset + rotOffset) % 4));
+        }
+
+        foreach (var multipylon in blockData.MultiPylons ?? [])
+        {
+            map.AddPylons(multipylon.GetPylons(), fixedCoord, (Direction)(((int)block.Direction + blockData.RotOffset + rotOffset) % 4));
         }
 
         if (blockData.ItemName is not null)

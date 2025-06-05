@@ -13,6 +13,7 @@ public sealed class Map
 
     internal HashSet<Int3>? CoveredCoords { get; set; }
     internal Dictionary<string, HashSet<Settings.Conversion.Clip>> Clips { get; } = [];
+    internal Dictionary<Settings.Conversion.PylonType, HashSet<Settings.Conversion.Pylon>> Pylons { get; } = [];
 
     public Map(CGameCtnChallenge challenge)
     {
@@ -54,5 +55,46 @@ public sealed class Map
     public IEnumerable<Settings.Conversion.Clip> GetClips(string name)
     {
         return Clips.TryGetValue(name, out HashSet<Settings.Conversion.Clip>? value) ? value : [];
+    }
+
+    public void AddPylon(Settings.Conversion.Pylon pylon)
+    {
+        if (!Pylons.ContainsKey(pylon.Type))
+        {
+            Pylons.Add(pylon.Type, []);
+        }
+
+        Pylons[pylon.Type].Add(pylon.Normalize());
+    }
+
+    public void AddPylons(IEnumerable<Settings.Conversion.Pylon> pylonList, Int3 coord, Direction rot)
+    {
+        foreach (var pylon in pylonList)
+        {
+            AddPylon(pylon.GetRelativeToBlock(coord, rot));
+        }
+    }
+
+    public IEnumerable<Settings.Conversion.Pylon> GetPylons(Settings.Conversion.PylonType type)
+    {
+        return Pylons.TryGetValue(type, out HashSet<Settings.Conversion.Pylon>? value) ? value : [];
+    }
+
+    public Vec3 ConvertPylonCoords((byte x, byte y, byte z) coords, byte rot)
+    {
+        return rot switch
+        {
+            2 => new Vec3(
+                 coords.x * GridSize.X + GridOffset.X,
+                 coords.y * GridSize.Y + GridOffset.Y,
+                (coords.z - 0.5f) * GridSize.Z + GridOffset.Z
+            ),
+            1 => new Vec3(
+                (coords.x - 0.5f) * GridSize.X + GridOffset.X,
+                 coords.y * GridSize.Y + GridOffset.Y,
+                 coords.z * GridSize.Z + GridOffset.Z
+            ),
+            _ => throw new Exception()
+        };
     }
 }

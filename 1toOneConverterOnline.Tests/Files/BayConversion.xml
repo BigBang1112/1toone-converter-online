@@ -1349,7 +1349,7 @@
               <BlockSkinData SkinRegex="Up" ItemName="Lagoon\Z_Bay\V_BayPlatform\S_BayPlatformLoopAdvert\Z_BayPlatformLoopSigns\Z_BayPlatformLoopSignsAir\BayPlatformLoopSignsUpBlueAir.Item.gbx" />
               <BlockSkinData ItemName="Lagoon\Z_Bay\V_BayPlatform\S_BayPlatformLoopAdvert\Z_BayPlatformLoopSigns\Z_BayPlatformLoopSignsAir\Z_BayPlatformLoopSignsAir.Item.gbx" />
             </BlockTypeData>
-            <BlockTypeData>
+            <BlockTypeData Type="Gnd">
               <BlockSkinData SkinRegex="Wrong" ItemName="Lagoon\Z_Bay\V_BayPlatform\S_BayPlatformLoopAdvert\Z_BayPlatformLoopSigns\Y_BayPlatformLoopSignsGround\BayPlatformLoopSignsWrongWayGround.Item.gbx" />
               <BlockSkinData SkinRegex="Warn" ItemName="Lagoon\Z_Bay\V_BayPlatform\S_BayPlatformLoopAdvert\Z_BayPlatformLoopSigns\Y_BayPlatformLoopSignsGround\BayPlatformLoopSignsWarningGround.Item.gbx" />
               <BlockSkinData SkinRegex="(Right.*?Red)|(Red.*?Right)" ItemName="Lagoon\Z_Bay\V_BayPlatform\S_BayPlatformLoopAdvert\Z_BayPlatformLoopSigns\Y_BayPlatformLoopSignsGround\BayPlatformLoopSignsRightRedGround.Item.gbx" />

@@ -26,7 +26,7 @@ public sealed class ItemClipAddConversion : Conversion
     {
         var itemCount = 0;
 
-        var clipList = new List<(ClipData clipItemInfo, byte rot)>[map.Challenge.Size.X, map.Challenge.Size.Y, map.Challenge.Size.Z];
+        var clipList = new List<(ClipData clipItemInfo, byte rot)>[128, map.Challenge.Size.Y, 128];
 
         foreach (var clipItemInfo in ClipItemInfos ?? [])
         {

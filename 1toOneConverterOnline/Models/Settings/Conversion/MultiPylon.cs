@@ -2,7 +2,7 @@
 
 namespace _1toOneConverterOnline.Models.Settings.Conversion;
 
-public readonly struct MultiPylon
+public class MultiPylon
 {
     [XmlAttribute]
     public PylonType Type { get; init; }
@@ -23,5 +23,19 @@ public readonly struct MultiPylon
     public bool Optional { get; init; }
 
     [XmlAttribute]
-    public MultiRot Rot { get; init; }
+    public MultiRot Rot { get; init; } = MultiRot.All;
+
+    public IEnumerable<Pylon> GetPylons()
+    {
+        if ((Rot & MultiRot.Zero) != 0)
+            yield return new Pylon { Pos = Pos, Type = Type, X = X, Y = Y, Z = Z, Rot = 0 };
+        if ((Rot & MultiRot.One) != 0)
+            yield return new Pylon { Pos = Pos, Type = Type, X = X, Y = Y, Z = Z, Rot = 1 };
+        if ((Rot & MultiRot.Two) != 0)
+            yield return new Pylon { Pos = Pos, Type = Type, X = X, Y = Y, Z = Z, Rot = 2 };
+        if ((Rot & MultiRot.Three) != 0)
+            yield return new Pylon { Pos = Pos, Type = Type, X = X, Y = Y, Z = Z, Rot = 3 };
+    }
+
+    public static MultiRot GetRot(byte rot) => (MultiRot)(1 << rot);
 }
