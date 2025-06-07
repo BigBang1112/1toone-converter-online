@@ -17,6 +17,8 @@ public class Pylon : IEquatable<Pylon>
     public short Z;
     [XmlAttribute]
     public byte Rot;
+    [XmlAttribute]
+    public bool Optional;
 
     internal byte NormalizedRot
     {

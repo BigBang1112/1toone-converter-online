@@ -80,6 +80,15 @@ public sealed class Map
         return Pylons.TryGetValue(type, out HashSet<Settings.Conversion.Pylon>? value) ? value : [];
     }
 
+    public Vec3 ConvertCoords((byte x, byte y, byte z) coords)
+    {
+        return new Vec3(
+            coords.x * GridSize.X + GridOffset.X,
+            coords.y * GridSize.Y + GridOffset.Y,
+            coords.z * GridSize.Z + GridOffset.Z
+        );
+    }
+
     public Vec3 ConvertPylonCoords((byte x, byte y, byte z) coords, byte rot)
     {
         return rot switch

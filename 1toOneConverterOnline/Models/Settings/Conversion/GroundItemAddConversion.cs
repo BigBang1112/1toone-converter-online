@@ -34,6 +34,15 @@ public sealed class GroundItemAddConversion : Conversion
                     var pitchYawRoll = new GBX.NET.Vec3(GroundItem.RotOffset % 4 * -MathF.PI / 2, 0, 0);
 
                     map.Challenge.PlaceAnchoredObject(ident, absolutePosition, pitchYawRoll);
+
+                    map.AddPylon(new Pylon
+                    {
+                        Pos = PylonPosition.Both,
+                        Type = PylonType.Bottom,
+                        X = (short)x,
+                        Y = (short)map.BaseHeight,
+                        Z = (short)z,
+                    });
                 }
             }
         }
