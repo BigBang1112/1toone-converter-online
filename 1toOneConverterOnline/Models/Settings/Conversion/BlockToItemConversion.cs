@@ -197,6 +197,11 @@ public sealed class BlockToItemConversion : Conversion
                     {
                         continue;
                     }
+
+                    if (typeData.TypeOfBlock is BlockType.GroundSecondary) // temporary
+                    {
+                        continue;
+                    }
                 }
 
                 PlaceItem(map, block, b, blockSize, posOffset, blockData.RotOffset + rotOffset, smallYOffset);
