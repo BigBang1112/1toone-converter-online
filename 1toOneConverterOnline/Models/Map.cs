@@ -10,6 +10,7 @@ public sealed class Map
     public Vec3 GridSize { get; set; }
     public Vec3 GridOffset { get; set; }
     public int BaseHeight { get; set; }
+    public string Environment { get; set; } = "";
 
     internal HashSet<Int3>? CoveredCoords { get; set; }
     internal Dictionary<string, HashSet<Settings.Conversion.Clip>> Clips { get; } = [];

@@ -17,6 +17,8 @@ namespace _1toOneConverterOnline.Models.Settings.Conversion;
 [XmlInclude(typeof(TerrainMappingConversion))]
 [XmlInclude(typeof(TitleConversion))]
 [XmlInclude(typeof(SeaRemovalConversion))]
+[XmlInclude(typeof(MediaTrackerConversion))]
+[XmlInclude(typeof(MetadataConversion))]
 public abstract class Conversion
 {
     public abstract void Convert(Map map);

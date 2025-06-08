@@ -30,6 +30,7 @@ internal sealed class ConversionService : IConversionService
             throw new Exception($"{env} conversion is not available.");
         }
 
+        map.Environment = env;
         conversion.Convert(map);
     }
 }

@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.AspNetCore.Components.WebAssembly.Services;
 
 GBX.NET.Gbx.LZO = new GBX.NET.LZO.Lzo();
+GBX.NET.Gbx.CRC32 = new GBX.NET.Hashing.CRC32();
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");

@@ -2,6 +2,7 @@
 using _1toOneConverterOnline.Models.Settings.Conversion;
 using GBX.NET;
 using GBX.NET.Engines.Game;
+using GBX.NET.Hashing;
 using GBX.NET.LZO;
 using Microsoft.Extensions.Configuration;
 using System.Xml.Serialization;
@@ -44,10 +45,14 @@ public class ConversionTest
         }
 
         Gbx.LZO = new MiniLZO();
+        Gbx.CRC32 = new CRC32();
 
         var map = Gbx.ParseNode<CGameCtnChallenge>(inputFile);
 
-        var mapModel = new Map(map);
+        var mapModel = new Map(map)
+        {
+            Environment = map.Collection.ToString() ?? throw new Exception("Collection is null.")
+        };
 
         conversions[map.Collection.ToString()!].Convert(mapModel);
 
