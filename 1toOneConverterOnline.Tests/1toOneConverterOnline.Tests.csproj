@@ -12,9 +12,10 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <None Update="Files\**">
+        <Content Include="..\1toOneConverterOnline\wwwroot\*.xml">
+            <Link>Files\%(RecursiveDir)%(Filename)%(Extension)</Link>
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </None>
+        </Content>
     </ItemGroup>
 
     <ItemGroup>
@@ -34,6 +35,10 @@
 
     <ItemGroup>
         <ProjectReference Include="..\1toOneConverterOnline\1toOneConverterOnline.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Files\" />
     </ItemGroup>
 
 </Project>

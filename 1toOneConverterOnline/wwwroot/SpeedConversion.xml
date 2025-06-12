@@ -163,6 +163,7 @@
     <Conversion xsi:type="TerrainMappingConversion">
       <HeightFlag Name="GroundHeight" />
       <SecondaryTerrainFlag Name="SecondaryTerrain" />
+      <SecondaryTerrainBlock Name="SpeedRock" />
       <BaseHeight Value="4" />
       <Terrain Height="3">
         <ConvexBlocks>
@@ -530,15 +531,15 @@
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Speed\Y_SpeedRoad\Y_SpeedGT\Y_SpeedGTGround\Z_SpeedClassicGTCurveGround.Item.gbx" Type="Pri">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="-1" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
-              <Flag Name="NoGround" X="-1" Z="-1" />
+              <Flag Name="NoGround" X="1" Z="0" />
+              <Flag Name="NoGround" X="0" Z="1" />
+              <Flag Name="NoGround" X="1" Z="1" />
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Speed\Y_SpeedRoad\Y_SpeedGT\X_SpeedGTGroundRock\Z_SpeedClassicGTCurveGroundRock.Item.gbx" Type="Sec">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="-1" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
-              <Flag Name="NoGround" X="-1" Z="-1" />
+              <Flag Name="NoGround" X="1" Z="0" />
+              <Flag Name="NoGround" X="0" Z="1" />
+              <Flag Name="NoGround" X="1" Z="1" />
             </BlockTypeData>
           </BlockVariantData>
           <Clip Name="SpeedRoadClip" X="-2" Y="0" Z="-1" Rot="3" />
@@ -556,17 +557,17 @@
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Speed\Y_SpeedRoad\Y_SpeedGT\Y_SpeedGTGround\SpeedClassicGTCurve3Ground.Item.gbx" Type="Pri">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
-              <Flag Name="NoGround" X="-1" Z="-1" />
-              <Flag Name="NoGround" X="-1" Z="-2" />
-              <Flag Name="NoGround" X="-2" Z="-2" />
+              <Flag Name="NoGround" X="0" Z="1" />
+              <Flag Name="NoGround" X="1" Z="1" />
+              <Flag Name="NoGround" X="1" Z="2" />
+              <Flag Name="NoGround" X="2" Z="2" />
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Speed\Y_SpeedRoad\Y_SpeedGT\X_SpeedGTGroundRock\SpeedClassicGTCurve3GroundRock.Item.gbx" Type="Sec">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
-              <Flag Name="NoGround" X="-1" Z="-1" />
-              <Flag Name="NoGround" X="-1" Z="-2" />
-              <Flag Name="NoGround" X="-2" Z="-2" />
+              <Flag Name="NoGround" X="0" Z="1" />
+              <Flag Name="NoGround" X="1" Z="1" />
+              <Flag Name="NoGround" X="1" Z="2" />
+              <Flag Name="NoGround" X="2" Z="2" />
             </BlockTypeData>
           </BlockVariantData>
           <Clip Name="SpeedRoadClip" X="-3" Y="0" Z="-2" Rot="3" />
@@ -661,13 +662,13 @@
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Speed\Y_SpeedRoad\X_SpeedSlope\Y_SpeedSlopeGround\SpeedBiSlopeStartGround.Item.gbx" Type="Pri">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
+              <Flag Name="NoGround" X="0" Z="1" />
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="-1" Rot="All" />
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Speed\Y_SpeedRoad\X_SpeedSlope\X_SpeedSlopeGroundRock\SpeedBiSlopeStartGroundRock.Item.gbx" Type="Sec">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
+              <Flag Name="NoGround" X="0" Z="1" />
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="-1" Rot="All" />
             </BlockTypeData>
@@ -683,13 +684,13 @@
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Speed\Y_SpeedRoad\X_SpeedSlope\Y_SpeedSlopeGround\SpeedBiSlopeEndGround.Item.gbx" Type="Pri">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
+              <Flag Name="NoGround" X="0" Z="1" />
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="-1" Rot="All" />
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Speed\Y_SpeedRoad\X_SpeedSlope\X_SpeedSlopeGroundRock\SpeedBiSlopeEndGroundRock.Item.gbx" Type="Sec">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
+              <Flag Name="NoGround" X="0" Z="1" />
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="-1" Rot="All" />
             </BlockTypeData>
@@ -759,12 +760,12 @@
               <Pylon Type="Top" Pos="Both" X="0" Y="0" Z="0" Rot="2" />
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Speed\Y_SpeedRoad\V_SpeedLoop\Y_SpeedLoopGround\SpeedLoopLeftGround.Item.gbx" Type="Pri">
-              <Flag Name="NoGround" X="-1" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
+              <Flag Name="NoGround" X="1" Z="0" />
+              <Flag Name="NoGround" X="0" Z="1" />
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Speed\Y_SpeedRoad\V_SpeedLoop\X_SpeedLoopGroundRock\SpeedLoopLeftGroundRock.Item.gbx" Type="Sec">
-              <Flag Name="NoGround" X="-1" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
+              <Flag Name="NoGround" X="1" Z="0" />
+              <Flag Name="NoGround" X="0" Z="1" />
             </BlockTypeData>
           </BlockVariantData>
           <Clip Name="SpeedRoadClip" X="-1" Y="0" Z="-1" Rot="0" />
@@ -782,11 +783,11 @@
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Speed\Y_SpeedRoad\V_SpeedLoop\Y_SpeedLoopGround\SpeedLoopRightGround.Item.gbx" Type="Pri">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="-1" Z="-1" />
+              <Flag Name="NoGround" X="1" Z="1" />
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Speed\Y_SpeedRoad\V_SpeedLoop\X_SpeedLoopGroundRock\SpeedLoopRightGroundRock.Item.gbx" Type="Sec">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="-1" Z="-1" />
+              <Flag Name="NoGround" X="1" Z="1" />
             </BlockTypeData>
           </BlockVariantData>
           <Clip Name="SpeedRoadClip" X="0" Y="0" Z="-1" Rot="0" />
@@ -934,13 +935,13 @@
           <BlockVariantData>
             <BlockTypeData ItemName="Valley\Z_Speed\Y_SpeedRoad\T_SpeedFallenContainers\Y_SpeedFallenContainersGround\Z_SpeedFallenContainersGround.Item.gbx" Type="Pri">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="-1" Z="0" />
+              <Flag Name="NoGround" X="1" Z="0" />
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
               <Pylon Type="Bottom" Pos="Both" X="-1" Y="0" Z="0" Rot="All" />
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Speed\Y_SpeedRoad\T_SpeedFallenContainers\X_SpeedFallenContainersGroundRock\Z_SpeedFallenContainersGroundRock.Item.gbx" Type="Sec">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="-1" Z="0" />
+              <Flag Name="NoGround" X="1" Z="0" />
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
               <Pylon Type="Bottom" Pos="Both" X="-1" Y="0" Z="0" Rot="All" />
             </BlockTypeData>
@@ -1097,13 +1098,13 @@
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Speed\X_SpeedGarageRoad\Y_SpeedGarageSlope\Y_SpeedGarageSlopeGround\SpeedGarageBiSlopeStartGround.Item.gbx" Type="Pri">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
+              <Flag Name="NoGround" X="0" Z="1" />
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="-1" Rot="All" />
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Speed\X_SpeedGarageRoad\Y_SpeedGarageSlope\X_SpeedGarageSlopeGroundRock\SpeedGarageBiSlopeStartGroundRock.Item.gbx" Type="Sec">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
+              <Flag Name="NoGround" X="0" Z="1" />
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="-1" Rot="All" />
             </BlockTypeData>
@@ -1119,13 +1120,13 @@
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Speed\X_SpeedGarageRoad\Y_SpeedGarageSlope\Y_SpeedGarageSlopeGround\SpeedGarageBiSlopeEndGround.Item.gbx" Type="Pri">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
+              <Flag Name="NoGround" X="0" Z="1" />
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="-1" Rot="All" />
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Speed\X_SpeedGarageRoad\Y_SpeedGarageSlope\X_SpeedGarageSlopeGroundRock\SpeedGarageBiSlopeEndGroundRock.Item.gbx" Type="Sec">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
+              <Flag Name="NoGround" X="0" Z="1" />
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="-1" Rot="All" />
             </BlockTypeData>
@@ -1142,13 +1143,13 @@
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Speed\X_SpeedGarageRoad\Y_SpeedGarageSlope\Y_SpeedGarageSlopeGround\SpeedGarageHatSlopeTopGround.Item.gbx" Type="Pri">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
+              <Flag Name="NoGround" X="0" Z="1" />
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="-1" Rot="All" />
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Speed\X_SpeedGarageRoad\Y_SpeedGarageSlope\X_SpeedGarageSlopeGroundRock\SpeedGarageHatSlopeTopGroundRock.Item.gbx" Type="Sec">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
+              <Flag Name="NoGround" X="0" Z="1" />
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="-1" Rot="All" />
             </BlockTypeData>
@@ -1166,7 +1167,7 @@
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Speed\X_SpeedGarageRoad\Y_SpeedGarageSlope\Y_SpeedGarageSlopeGround\SpeedGarageHatSlopeBottomGround.Item.gbx" Type="Pri">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
+              <Flag Name="NoGround" X="0" Z="1" />
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="-1" Rot="All" />
               <Clip Name="SpeedGarageRoadClip" X="0" Y="1" Z="-2" Rot="0" />
@@ -1174,7 +1175,7 @@
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Speed\X_SpeedGarageRoad\Y_SpeedGarageSlope\X_SpeedGarageSlopeGroundRock\SpeedGarageHatSlopeBottomGroundRock.Item.gbx" Type="Sec">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
+              <Flag Name="NoGround" X="0" Z="1" />
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="-1" Rot="All" />
               <Clip Name="SpeedGarageRoadClip" X="0" Y="1" Z="-2" Rot="0" />
@@ -1190,16 +1191,16 @@
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Speed\X_SpeedGarageRoad\Y_SpeedGarageSlope\Y_SpeedGarageSlopeGround\SpeedGarageToSlopeGround.Item.gbx" Type="Pri">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
-              <Flag Name="NoGround" X="0" Z="-2" />
+              <Flag Name="NoGround" X="0" Z="1" />
+              <Flag Name="NoGround" X="0" Z="2" />
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="-1" Rot="All" />
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="-2" Rot="All" />
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Speed\X_SpeedGarageRoad\Y_SpeedGarageSlope\X_SpeedGarageSlopeGroundRock\SpeedGarageToSlopeGroundRock.Item.gbx" Type="Sec">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
-              <Flag Name="NoGround" X="0" Z="-2" />
+              <Flag Name="NoGround" X="0" Z="1" />
+              <Flag Name="NoGround" X="0" Z="2" />
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="-1" Rot="All" />
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="-2" Rot="All" />
@@ -1216,16 +1217,16 @@
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Speed\X_SpeedGarageRoad\Y_SpeedGarageSlope\Y_SpeedGarageSlopeGround\SpeedGarageToSlopeMirrorGround.Item.gbx" Type="Pri">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
-              <Flag Name="NoGround" X="0" Z="-2" />
+              <Flag Name="NoGround" X="0" Z="1" />
+              <Flag Name="NoGround" X="0" Z="2" />
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="-1" Rot="All" />
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="-2" Rot="All" />
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Speed\X_SpeedGarageRoad\Y_SpeedGarageSlope\X_SpeedGarageSlopeGroundRock\SpeedGarageToSlopeMirrorGroundRock.Item.gbx" Type="Sec">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
-              <Flag Name="NoGround" X="0" Z="-2" />
+              <Flag Name="NoGround" X="0" Z="1" />
+              <Flag Name="NoGround" X="0" Z="2" />
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="-1" Rot="All" />
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="-2" Rot="All" />
@@ -1487,15 +1488,15 @@
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Speed\X_SpeedGarageRoad\W_SpeedGarageSlopeGT\Y_SpeedGarageSlopeGTGround\SpeedGarageSlopeGT2Ground.Item.gbx" Type="Pri">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="-1" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
-              <Flag Name="NoGround" X="-1" Z="-1" />
+              <Flag Name="NoGround" X="1" Z="0" />
+              <Flag Name="NoGround" X="0" Z="1" />
+              <Flag Name="NoGround" X="1" Z="1" />
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Speed\X_SpeedGarageRoad\W_SpeedGarageSlopeGT\X_SpeedGarageSlopeGTGroundRock\SpeedGarageSlopeGT2GroundRock.Item.gbx" Type="Sec">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="-1" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
-              <Flag Name="NoGround" X="-1" Z="-1" />
+              <Flag Name="NoGround" X="1" Z="0" />
+              <Flag Name="NoGround" X="0" Z="1" />
+              <Flag Name="NoGround" X="1" Z="1" />
             </BlockTypeData>
           </BlockVariantData>
         </BlockData>
@@ -1512,23 +1513,23 @@
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Speed\X_SpeedGarageRoad\W_SpeedGarageSlopeGT\Y_SpeedGarageSlopeGTGround\SpeedGarageSlopeGT3Ground.Item.gbx" Type="Pri">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="-1" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
-              <Flag Name="NoGround" X="-1" Z="-1" />
-              <Flag Name="NoGround" X="-2" Z="-1" />
-              <Flag Name="NoGround" X="0" Z="-2" />
-              <Flag Name="NoGround" X="-1" Z="-2" />
-              <Flag Name="NoGround" X="-2" Z="-2" />
+              <Flag Name="NoGround" X="1" Z="0" />
+              <Flag Name="NoGround" X="0" Z="1" />
+              <Flag Name="NoGround" X="1" Z="1" />
+              <Flag Name="NoGround" X="2" Z="1" />
+              <Flag Name="NoGround" X="0" Z="2" />
+              <Flag Name="NoGround" X="1" Z="2" />
+              <Flag Name="NoGround" X="2" Z="2" />
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Speed\X_SpeedGarageRoad\W_SpeedGarageSlopeGT\X_SpeedGarageSlopeGTGroundRock\SpeedGarageSlopeGT3GroundRock.Item.gbx" Type="Sec">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="-1" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
-              <Flag Name="NoGround" X="-1" Z="-1" />
-              <Flag Name="NoGround" X="-2" Z="-1" />
-              <Flag Name="NoGround" X="0" Z="-2" />
-              <Flag Name="NoGround" X="-1" Z="-2" />
-              <Flag Name="NoGround" X="-2" Z="-2" />
+              <Flag Name="NoGround" X="1" Z="0" />
+              <Flag Name="NoGround" X="0" Z="1" />
+              <Flag Name="NoGround" X="1" Z="1" />
+              <Flag Name="NoGround" X="2" Z="1" />
+              <Flag Name="NoGround" X="0" Z="2" />
+              <Flag Name="NoGround" X="1" Z="2" />
+              <Flag Name="NoGround" X="2" Z="2" />
             </BlockTypeData>
           </BlockVariantData>
         </BlockData>
@@ -1549,29 +1550,29 @@
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Speed\X_SpeedGarageRoad\W_SpeedGarageSlopeGT\Y_SpeedGarageSlopeGTGround\SpeedGarageSlopeGT4Ground.Item.gbx" Type="Pri">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="-1" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
-              <Flag Name="NoGround" X="-1" Z="-1" />
-              <Flag Name="NoGround" X="0" Z="-2" />
-              <Flag Name="NoGround" X="-1" Z="-2" />
-              <Flag Name="NoGround" X="-2" Z="-2" />
-              <Flag Name="NoGround" X="-3" Z="-2" />
-              <Flag Name="NoGround" X="-1" Z="-3" />
-              <Flag Name="NoGround" X="-2" Z="-3" />
-              <Flag Name="NoGround" X="-3" Z="-3" />
+              <Flag Name="NoGround" X="1" Z="0" />
+              <Flag Name="NoGround" X="0" Z="1" />
+              <Flag Name="NoGround" X="1" Z="1" />
+              <Flag Name="NoGround" X="0" Z="2" />
+              <Flag Name="NoGround" X="1" Z="2" />
+              <Flag Name="NoGround" X="2" Z="2" />
+              <Flag Name="NoGround" X="3" Z="2" />
+              <Flag Name="NoGround" X="1" Z="3" />
+              <Flag Name="NoGround" X="2" Z="3" />
+              <Flag Name="NoGround" X="3" Z="3" />
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Speed\X_SpeedGarageRoad\W_SpeedGarageSlopeGT\X_SpeedGarageSlopeGTGroundRock\SpeedGarageSlopeGT4GroundRock.Item.gbx" Type="Sec">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="-1" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
-              <Flag Name="NoGround" X="-1" Z="-1" />
-              <Flag Name="NoGround" X="0" Z="-2" />
-              <Flag Name="NoGround" X="-1" Z="-2" />
-              <Flag Name="NoGround" X="-2" Z="-2" />
-              <Flag Name="NoGround" X="-3" Z="-2" />
-              <Flag Name="NoGround" X="-1" Z="-3" />
-              <Flag Name="NoGround" X="-2" Z="-3" />
-              <Flag Name="NoGround" X="-3" Z="-3" />
+              <Flag Name="NoGround" X="1" Z="0" />
+              <Flag Name="NoGround" X="0" Z="1" />
+              <Flag Name="NoGround" X="1" Z="1" />
+              <Flag Name="NoGround" X="0" Z="2" />
+              <Flag Name="NoGround" X="1" Z="2" />
+              <Flag Name="NoGround" X="2" Z="2" />
+              <Flag Name="NoGround" X="3" Z="2" />
+              <Flag Name="NoGround" X="1" Z="3" />
+              <Flag Name="NoGround" X="2" Z="3" />
+              <Flag Name="NoGround" X="3" Z="3" />
             </BlockTypeData>
           </BlockVariantData>
         </BlockData>
@@ -1593,35 +1594,35 @@
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Speed\X_SpeedGarageRoad\W_SpeedGarageSlopeGT\Y_SpeedGarageSlopeGTGround\SpeedGarageSlopeGT5Ground.Item.gbx" Type="Pri">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="-1" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
-              <Flag Name="NoGround" X="-1" Z="-1" />
-              <Flag Name="NoGround" X="0" Z="-2" />
-              <Flag Name="NoGround" X="-1" Z="-2" />
-              <Flag Name="NoGround" X="-2" Z="-2" />
-              <Flag Name="NoGround" X="-1" Z="-3" />
-              <Flag Name="NoGround" X="-2" Z="-3" />
-              <Flag Name="NoGround" X="-3" Z="-3" />
-              <Flag Name="NoGround" X="-4" Z="-3" />
-              <Flag Name="NoGround" X="-2" Z="-4" />
-              <Flag Name="NoGround" X="-3" Z="-4" />
-              <Flag Name="NoGround" X="-4" Z="-4" />
+              <Flag Name="NoGround" X="1" Z="0" />
+              <Flag Name="NoGround" X="0" Z="1" />
+              <Flag Name="NoGround" X="1" Z="1" />
+              <Flag Name="NoGround" X="0" Z="2" />
+              <Flag Name="NoGround" X="1" Z="2" />
+              <Flag Name="NoGround" X="2" Z="2" />
+              <Flag Name="NoGround" X="1" Z="3" />
+              <Flag Name="NoGround" X="2" Z="3" />
+              <Flag Name="NoGround" X="3" Z="3" />
+              <Flag Name="NoGround" X="4" Z="3" />
+              <Flag Name="NoGround" X="2" Z="4" />
+              <Flag Name="NoGround" X="3" Z="4" />
+              <Flag Name="NoGround" X="4" Z="4" />
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Speed\X_SpeedGarageRoad\W_SpeedGarageSlopeGT\X_SpeedGarageSlopeGTGroundRock\SpeedGarageSlopeGT5GroundRock.Item.gbx" Type="Sec">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="-1" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
-              <Flag Name="NoGround" X="-1" Z="-1" />
-              <Flag Name="NoGround" X="0" Z="-2" />
-              <Flag Name="NoGround" X="-1" Z="-2" />
-              <Flag Name="NoGround" X="-2" Z="-2" />
-              <Flag Name="NoGround" X="-1" Z="-3" />
-              <Flag Name="NoGround" X="-2" Z="-3" />
-              <Flag Name="NoGround" X="-3" Z="-3" />
-              <Flag Name="NoGround" X="-4" Z="-3" />
-              <Flag Name="NoGround" X="-2" Z="-4" />
-              <Flag Name="NoGround" X="-3" Z="-4" />
-              <Flag Name="NoGround" X="-4" Z="-4" />
+              <Flag Name="NoGround" X="1" Z="0" />
+              <Flag Name="NoGround" X="0" Z="1" />
+              <Flag Name="NoGround" X="1" Z="1" />
+              <Flag Name="NoGround" X="0" Z="2" />
+              <Flag Name="NoGround" X="1" Z="2" />
+              <Flag Name="NoGround" X="2" Z="2" />
+              <Flag Name="NoGround" X="1" Z="3" />
+              <Flag Name="NoGround" X="2" Z="3" />
+              <Flag Name="NoGround" X="3" Z="3" />
+              <Flag Name="NoGround" X="4" Z="3" />
+              <Flag Name="NoGround" X="2" Z="4" />
+              <Flag Name="NoGround" X="3" Z="4" />
+              <Flag Name="NoGround" X="4" Z="4" />
             </BlockTypeData>
           </BlockVariantData>
         </BlockData>
@@ -1635,15 +1636,15 @@
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Speed\X_SpeedGarageRoad\W_SpeedGarageSlopeGT\Y_SpeedGarageSlopeGTGround\SpeedGarageSlopeGT2bGround.Item.gbx" Type="Pri">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="-1" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
-              <Flag Name="NoGround" X="-1" Z="-1" />
+              <Flag Name="NoGround" X="1" Z="0" />
+              <Flag Name="NoGround" X="0" Z="1" />
+              <Flag Name="NoGround" X="1" Z="1" />
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Speed\X_SpeedGarageRoad\W_SpeedGarageSlopeGT\X_SpeedGarageSlopeGTGroundRock\SpeedGarageSlopeGT2bGroundRock.Item.gbx" Type="Sec">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="-1" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
-              <Flag Name="NoGround" X="-1" Z="-1" />
+              <Flag Name="NoGround" X="1" Z="0" />
+              <Flag Name="NoGround" X="0" Z="1" />
+              <Flag Name="NoGround" X="1" Z="1" />
             </BlockTypeData>
           </BlockVariantData>
         </BlockData>
@@ -1660,23 +1661,23 @@
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Speed\X_SpeedGarageRoad\W_SpeedGarageSlopeGT\Y_SpeedGarageSlopeGTGround\SpeedGarageSlopeGT3bGround.Item.gbx" Type="Pri">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="-1" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
-              <Flag Name="NoGround" X="-1" Z="-1" />
-              <Flag Name="NoGround" X="-2" Z="-1" />
-              <Flag Name="NoGround" X="0" Z="-2" />
-              <Flag Name="NoGround" X="-1" Z="-2" />
-              <Flag Name="NoGround" X="-2" Z="-2" />
+              <Flag Name="NoGround" X="1" Z="0" />
+              <Flag Name="NoGround" X="0" Z="1" />
+              <Flag Name="NoGround" X="1" Z="1" />
+              <Flag Name="NoGround" X="2" Z="1" />
+              <Flag Name="NoGround" X="0" Z="2" />
+              <Flag Name="NoGround" X="1" Z="2" />
+              <Flag Name="NoGround" X="2" Z="2" />
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Speed\X_SpeedGarageRoad\W_SpeedGarageSlopeGT\X_SpeedGarageSlopeGTGroundRock\SpeedGarageSlopeGT3bGroundRock.Item.gbx" Type="Sec">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="-1" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
-              <Flag Name="NoGround" X="-1" Z="-1" />
-              <Flag Name="NoGround" X="-2" Z="-1" />
-              <Flag Name="NoGround" X="0" Z="-2" />
-              <Flag Name="NoGround" X="-1" Z="-2" />
-              <Flag Name="NoGround" X="-2" Z="-2" />
+              <Flag Name="NoGround" X="1" Z="0" />
+              <Flag Name="NoGround" X="0" Z="1" />
+              <Flag Name="NoGround" X="1" Z="1" />
+              <Flag Name="NoGround" X="2" Z="1" />
+              <Flag Name="NoGround" X="0" Z="2" />
+              <Flag Name="NoGround" X="1" Z="2" />
+              <Flag Name="NoGround" X="2" Z="2" />
             </BlockTypeData>
           </BlockVariantData>
         </BlockData>
@@ -1697,29 +1698,29 @@
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Speed\X_SpeedGarageRoad\W_SpeedGarageSlopeGT\Y_SpeedGarageSlopeGTGround\SpeedGarageSlopeGT4bGround.Item.gbx" Type="Pri">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="-1" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
-              <Flag Name="NoGround" X="-1" Z="-1" />
-              <Flag Name="NoGround" X="0" Z="-2" />
-              <Flag Name="NoGround" X="-1" Z="-2" />
-              <Flag Name="NoGround" X="-2" Z="-2" />
-              <Flag Name="NoGround" X="-3" Z="-2" />
-              <Flag Name="NoGround" X="-1" Z="-3" />
-              <Flag Name="NoGround" X="-2" Z="-3" />
-              <Flag Name="NoGround" X="-3" Z="-3" />
+              <Flag Name="NoGround" X="1" Z="0" />
+              <Flag Name="NoGround" X="0" Z="1" />
+              <Flag Name="NoGround" X="1" Z="1" />
+              <Flag Name="NoGround" X="0" Z="2" />
+              <Flag Name="NoGround" X="1" Z="2" />
+              <Flag Name="NoGround" X="2" Z="2" />
+              <Flag Name="NoGround" X="3" Z="2" />
+              <Flag Name="NoGround" X="1" Z="3" />
+              <Flag Name="NoGround" X="2" Z="3" />
+              <Flag Name="NoGround" X="3" Z="3" />
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Speed\X_SpeedGarageRoad\W_SpeedGarageSlopeGT\X_SpeedGarageSlopeGTGroundRock\SpeedGarageSlopeGT4bGroundRock.Item.gbx" Type="Sec">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="-1" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
-              <Flag Name="NoGround" X="-1" Z="-1" />
-              <Flag Name="NoGround" X="0" Z="-2" />
-              <Flag Name="NoGround" X="-1" Z="-2" />
-              <Flag Name="NoGround" X="-2" Z="-2" />
-              <Flag Name="NoGround" X="-3" Z="-2" />
-              <Flag Name="NoGround" X="-1" Z="-3" />
-              <Flag Name="NoGround" X="-2" Z="-3" />
-              <Flag Name="NoGround" X="-3" Z="-3" />
+              <Flag Name="NoGround" X="1" Z="0" />
+              <Flag Name="NoGround" X="0" Z="1" />
+              <Flag Name="NoGround" X="1" Z="1" />
+              <Flag Name="NoGround" X="0" Z="2" />
+              <Flag Name="NoGround" X="1" Z="2" />
+              <Flag Name="NoGround" X="2" Z="2" />
+              <Flag Name="NoGround" X="3" Z="2" />
+              <Flag Name="NoGround" X="1" Z="3" />
+              <Flag Name="NoGround" X="2" Z="3" />
+              <Flag Name="NoGround" X="3" Z="3" />
             </BlockTypeData>
           </BlockVariantData>
         </BlockData>
@@ -1741,35 +1742,35 @@
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Speed\X_SpeedGarageRoad\W_SpeedGarageSlopeGT\Y_SpeedGarageSlopeGTGround\SpeedGarageSlopeGT5bGround.Item.gbx" Type="Pri">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="-1" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
-              <Flag Name="NoGround" X="-1" Z="-1" />
-              <Flag Name="NoGround" X="0" Z="-2" />
-              <Flag Name="NoGround" X="-1" Z="-2" />
-              <Flag Name="NoGround" X="-2" Z="-2" />
-              <Flag Name="NoGround" X="-1" Z="-3" />
-              <Flag Name="NoGround" X="-2" Z="-3" />
-              <Flag Name="NoGround" X="-3" Z="-3" />
-              <Flag Name="NoGround" X="-4" Z="-3" />
-              <Flag Name="NoGround" X="-2" Z="-4" />
-              <Flag Name="NoGround" X="-3" Z="-4" />
-              <Flag Name="NoGround" X="-4" Z="-4" />
+              <Flag Name="NoGround" X="1" Z="0" />
+              <Flag Name="NoGround" X="0" Z="1" />
+              <Flag Name="NoGround" X="1" Z="1" />
+              <Flag Name="NoGround" X="0" Z="2" />
+              <Flag Name="NoGround" X="1" Z="2" />
+              <Flag Name="NoGround" X="2" Z="2" />
+              <Flag Name="NoGround" X="1" Z="3" />
+              <Flag Name="NoGround" X="2" Z="3" />
+              <Flag Name="NoGround" X="3" Z="3" />
+              <Flag Name="NoGround" X="4" Z="3" />
+              <Flag Name="NoGround" X="2" Z="4" />
+              <Flag Name="NoGround" X="3" Z="4" />
+              <Flag Name="NoGround" X="4" Z="4" />
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Speed\X_SpeedGarageRoad\W_SpeedGarageSlopeGT\X_SpeedGarageSlopeGTGroundRock\SpeedGarageSlopeGT5bGroundRock.Item.gbx" Type="Sec">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="-1" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
-              <Flag Name="NoGround" X="-1" Z="-1" />
-              <Flag Name="NoGround" X="0" Z="-2" />
-              <Flag Name="NoGround" X="-1" Z="-2" />
-              <Flag Name="NoGround" X="-2" Z="-2" />
-              <Flag Name="NoGround" X="-1" Z="-3" />
-              <Flag Name="NoGround" X="-2" Z="-3" />
-              <Flag Name="NoGround" X="-3" Z="-3" />
-              <Flag Name="NoGround" X="-4" Z="-3" />
-              <Flag Name="NoGround" X="-2" Z="-4" />
-              <Flag Name="NoGround" X="-3" Z="-4" />
-              <Flag Name="NoGround" X="-4" Z="-4" />
+              <Flag Name="NoGround" X="1" Z="0" />
+              <Flag Name="NoGround" X="0" Z="1" />
+              <Flag Name="NoGround" X="1" Z="1" />
+              <Flag Name="NoGround" X="0" Z="2" />
+              <Flag Name="NoGround" X="1" Z="2" />
+              <Flag Name="NoGround" X="2" Z="2" />
+              <Flag Name="NoGround" X="1" Z="3" />
+              <Flag Name="NoGround" X="2" Z="3" />
+              <Flag Name="NoGround" X="3" Z="3" />
+              <Flag Name="NoGround" X="4" Z="3" />
+              <Flag Name="NoGround" X="2" Z="4" />
+              <Flag Name="NoGround" X="3" Z="4" />
+              <Flag Name="NoGround" X="4" Z="4" />
             </BlockTypeData>
           </BlockVariantData>
         </BlockData>
@@ -1915,23 +1916,23 @@
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Speed\W_SpeedTilt\Z_SpeedTilt\Z_SpeedTilt\Y_SpeedTiltGround\SpeedSpinLeftGround.Item.gbx" Type="Pri">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
-              <Flag Name="NoGround" X="-1" Z="0" />
-              <Flag Name="NoGround" X="-1" Z="-1" />
-              <Flag Name="NoGround" X="-2" Z="0" />
-              <Flag Name="NoGround" X="-2" Z="-1" />
-              <Flag Name="NoGround" X="-3" Z="0" />
-              <Flag Name="NoGround" X="-3" Z="-1" />
+              <Flag Name="NoGround" X="0" Z="1" />
+              <Flag Name="NoGround" X="1" Z="0" />
+              <Flag Name="NoGround" X="1" Z="1" />
+              <Flag Name="NoGround" X="2" Z="0" />
+              <Flag Name="NoGround" X="2" Z="1" />
+              <Flag Name="NoGround" X="3" Z="0" />
+              <Flag Name="NoGround" X="3" Z="1" />
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Speed\W_SpeedTilt\Z_SpeedTilt\Z_SpeedTilt\X_SpeedTiltGroundRock\SpeedSpinLeftGroundRock.Item.gbx" Type="Sec">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
-              <Flag Name="NoGround" X="-1" Z="0" />
-              <Flag Name="NoGround" X="-1" Z="-1" />
-              <Flag Name="NoGround" X="-2" Z="0" />
-              <Flag Name="NoGround" X="-2" Z="-1" />
-              <Flag Name="NoGround" X="-3" Z="0" />
-              <Flag Name="NoGround" X="-3" Z="-1" />
+              <Flag Name="NoGround" X="0" Z="1" />
+              <Flag Name="NoGround" X="1" Z="0" />
+              <Flag Name="NoGround" X="1" Z="1" />
+              <Flag Name="NoGround" X="2" Z="0" />
+              <Flag Name="NoGround" X="2" Z="1" />
+              <Flag Name="NoGround" X="3" Z="0" />
+              <Flag Name="NoGround" X="3" Z="1" />
             </BlockTypeData>
           </BlockVariantData>
           <Pylon Type="Top" Pos="Both" X="-3" Y="1" Z="0" Rot="0" Optional="true" />
@@ -1951,23 +1952,23 @@
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Speed\W_SpeedTilt\Z_SpeedTilt\Z_SpeedTilt\Y_SpeedTiltGround\SpeedSpinRightGround.Item.gbx" Type="Pri">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
-              <Flag Name="NoGround" X="-1" Z="0" />
-              <Flag Name="NoGround" X="-1" Z="-1" />
-              <Flag Name="NoGround" X="-2" Z="0" />
-              <Flag Name="NoGround" X="-2" Z="-1" />
-              <Flag Name="NoGround" X="-3" Z="0" />
-              <Flag Name="NoGround" X="-3" Z="-1" />
+              <Flag Name="NoGround" X="0" Z="1" />
+              <Flag Name="NoGround" X="1" Z="0" />
+              <Flag Name="NoGround" X="1" Z="1" />
+              <Flag Name="NoGround" X="2" Z="0" />
+              <Flag Name="NoGround" X="2" Z="1" />
+              <Flag Name="NoGround" X="3" Z="0" />
+              <Flag Name="NoGround" X="3" Z="1" />
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Speed\W_SpeedTilt\Z_SpeedTilt\Z_SpeedTilt\X_SpeedTiltGroundRock\SpeedSpinRightGroundRock.Item.gbx" Type="Sec">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
-              <Flag Name="NoGround" X="-1" Z="0" />
-              <Flag Name="NoGround" X="-1" Z="-1" />
-              <Flag Name="NoGround" X="-2" Z="0" />
-              <Flag Name="NoGround" X="-2" Z="-1" />
-              <Flag Name="NoGround" X="-3" Z="0" />
-              <Flag Name="NoGround" X="-3" Z="-1" />
+              <Flag Name="NoGround" X="0" Z="1" />
+              <Flag Name="NoGround" X="1" Z="0" />
+              <Flag Name="NoGround" X="1" Z="1" />
+              <Flag Name="NoGround" X="2" Z="0" />
+              <Flag Name="NoGround" X="2" Z="1" />
+              <Flag Name="NoGround" X="3" Z="0" />
+              <Flag Name="NoGround" X="3" Z="1" />
             </BlockTypeData>
           </BlockVariantData>
           <Pylon Type="Top" Pos="Both" X="0" Y="1" Z="0" Rot="0" Optional="true" />
@@ -2006,16 +2007,16 @@
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Speed\W_SpeedTilt\Z_SpeedTilt\Y_SpeedTiltTransition\Y_SpeedTiltTransitionGround\SpeedTiltTransitionLeftGround.Item.gbx" Type="Pri">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
-              <Flag Name="NoGround" X="0" Z="-2" />
+              <Flag Name="NoGround" X="0" Z="1" />
+              <Flag Name="NoGround" X="0" Z="2" />
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="-1" Rot="All" />
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="-2" Rot="All" />
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Speed\W_SpeedTilt\Z_SpeedTilt\Y_SpeedTiltTransition\X_SpeedTiltTransitionGroundRock\SpeedTiltTransitionLeftGroundRock.Item.gbx" Type="Sec">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
-              <Flag Name="NoGround" X="0" Z="-2" />
+              <Flag Name="NoGround" X="0" Z="1" />
+              <Flag Name="NoGround" X="0" Z="2" />
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="-1" Rot="All" />
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="-2" Rot="All" />
@@ -2031,16 +2032,16 @@
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Speed\W_SpeedTilt\Z_SpeedTilt\Y_SpeedTiltTransition\Y_SpeedTiltTransitionGround\SpeedTiltTransitionRightGround.Item.gbx" Type="Pri">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
-              <Flag Name="NoGround" X="0" Z="-2" />
+              <Flag Name="NoGround" X="0" Z="1" />
+              <Flag Name="NoGround" X="0" Z="2" />
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="-1" Rot="All" />
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="-2" Rot="All" />
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Speed\W_SpeedTilt\Z_SpeedTilt\Y_SpeedTiltTransition\X_SpeedTiltTransitionGroundRock\SpeedTiltTransitionRightGroundRock.Item.gbx" Type="Sec">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
-              <Flag Name="NoGround" X="0" Z="-2" />
+              <Flag Name="NoGround" X="0" Z="1" />
+              <Flag Name="NoGround" X="0" Z="2" />
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="-1" Rot="All" />
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="-2" Rot="All" />
@@ -2173,15 +2174,15 @@
         <BlockData BlockName="SpeedCliffRoad2" BlockZSize="2" ZOffset="1">
           <BlockVariantData ItemName="Valley\Z_Speed\V_SpeedTunnelRoad\X_SpeedCliffRoad\SpeedCliffRoad2.Item.gbx" />
           <Flag Name="NoGround" X="0" Z="0" />
-          <Flag Name="NoGround" X="0" Z="-1" />
+          <Flag Name="NoGround" X="0" Z="1" />
           <Clip Name="SpeedRoadClip" X="0" Y="0" Z="1" Rot="2" />
           <Clip Name="SpeedRoadClip" X="0" Y="3" Z="-2" Rot="0" />
         </BlockData>
         <BlockData BlockName="SpeedCliffRoad3" BlockZSize="3" ZOffset="2">
           <BlockVariantData ItemName="Valley\Z_Speed\V_SpeedTunnelRoad\X_SpeedCliffRoad\SpeedCliffRoad3.Item.gbx" />
           <Flag Name="NoGround" X="0" Z="0" />
-          <Flag Name="NoGround" X="0" Z="-1" />
-          <Flag Name="NoGround" X="0" Z="-2" />
+          <Flag Name="NoGround" X="0" Z="1" />
+          <Flag Name="NoGround" X="0" Z="2" />
           <Clip Name="SpeedRoadClip" X="0" Y="0" Z="1" Rot="2" />
           <Clip Name="SpeedRoadClip" X="0" Y="3" Z="-3" Rot="0" />
         </BlockData>
@@ -2219,42 +2220,43 @@
         <BlockData BlockName="SpeedRockToRockLacets" BlockXSize="5" BlockZSize="4" XOffset="4" ZOffset="3">
           <BlockVariantData ItemName="Valley\Z_Speed\V_SpeedTunnelRoad\X_SpeedCliffRoad\SpeedRockLacets.Item.gbx" />
           <Flag Name="NoGround" X="0" Z="0" />
-          <Flag Name="NoGround" X="-1" Z="0" />
-          <Flag Name="NoGround" X="-2" Z="0" />
-          <Flag Name="NoGround" X="-3" Z="0" />
-          <Flag Name="NoGround" X="-4" Z="0" />
-          <Flag Name="NoGround" X="0" Z="-1" />
-          <Flag Name="NoGround" X="-1" Z="-1" />
-          <Flag Name="NoGround" X="-2" Z="-1" />
-          <Flag Name="NoGround" X="-3" Z="-1" />
-          <Flag Name="NoGround" X="0" Z="-2" />
-          <Flag Name="NoGround" X="-1" Z="-2" />
-          <Flag Name="NoGround" X="-2" Z="-2" />
-          <Flag Name="NoGround" X="-3" Z="-2" />
-          <Flag Name="NoGround" X="-1" Z="-3" />
-          <Flag Name="NoGround" X="-2" Z="-3" />
-          <Flag Name="NoGround" X="-3" Z="-3" />
+          <Flag Name="NoGround" X="1" Z="0" />
+          <Flag Name="NoGround" X="2" Z="0" />
+          <Flag Name="NoGround" X="3" Z="0" />
+          <Flag Name="NoGround" X="0" Z="1" />
+          <Flag Name="NoGround" X="1" Z="1" />
+          <Flag Name="NoGround" X="2" Z="1" />
+          <Flag Name="NoGround" X="3" Z="1" />
+          <Flag Name="NoGround" X="0" Z="2" />
+          <Flag Name="NoGround" X="1" Z="2" />
+          <Flag Name="NoGround" X="2" Z="2" />
+          <Flag Name="NoGround" X="3" Z="2" />
+          <Flag Name="NoGround" X="-1" Z="3" />
+          <Flag Name="NoGround" X="0" Z="3" />
+          <Flag Name="NoGround" X="1" Z="3" />
+          <Flag Name="NoGround" X="2" Z="3" />
+          <Flag Name="NoGround" X="3" Z="3" />
           <Clip Name="SpeedRoadClip" X="-5" Y="0" Z="0" Rot="3" />
           <Clip Name="SpeedRoadClip" X="0" Y="4" Z="-3" Rot="1" />
         </BlockData>
         <BlockData BlockName="SpeedRockToRockLacetsBis" BlockXSize="5" BlockZSize="4" XOffset="4" ZOffset="3">
           <BlockVariantData ItemName="Valley\Z_Speed\V_SpeedTunnelRoad\X_SpeedCliffRoad\SpeedRockLacetsBis.Item.gbx" />
-          <Flag Name="NoGround" X="0" Z="0" />
-          <Flag Name="NoGround" X="-1" Z="0" />
-          <Flag Name="NoGround" X="-2" Z="0" />
-          <Flag Name="NoGround" X="-3" Z="0" />
-          <Flag Name="NoGround" X="-4" Z="0" />
-          <Flag Name="NoGround" X="-1" Z="-1" />
-          <Flag Name="NoGround" X="-2" Z="-1" />
-          <Flag Name="NoGround" X="-3" Z="-1" />
-          <Flag Name="NoGround" X="-4" Z="-1" />
-          <Flag Name="NoGround" X="-1" Z="-2" />
-          <Flag Name="NoGround" X="-2" Z="-2" />
-          <Flag Name="NoGround" X="-3" Z="-2" />
-          <Flag Name="NoGround" X="-4" Z="-2" />
-          <Flag Name="NoGround" X="-1" Z="-3" />
-          <Flag Name="NoGround" X="-2" Z="-3" />
-          <Flag Name="NoGround" X="-3" Z="-3" />
+          <Flag Name="NoGround" X="1" Z="0" />
+          <Flag Name="NoGround" X="2" Z="0" />
+          <Flag Name="NoGround" X="3" Z="0" />
+          <Flag Name="NoGround" X="0" Z="1" />
+          <Flag Name="NoGround" X="1" Z="1" />
+          <Flag Name="NoGround" X="2" Z="1" />
+          <Flag Name="NoGround" X="3" Z="1" />
+          <Flag Name="NoGround" X="0" Z="2" />
+          <Flag Name="NoGround" X="1" Z="2" />
+          <Flag Name="NoGround" X="2" Z="2" />
+          <Flag Name="NoGround" X="3" Z="2" />
+          <Flag Name="NoGround" X="0" Z="3" />
+          <Flag Name="NoGround" X="1" Z="3" />
+          <Flag Name="NoGround" X="2" Z="3" />
+          <Flag Name="NoGround" X="3" Z="3" />
+          <Flag Name="NoGround" X="4" Z="3" />
           <Clip Name="SpeedRoadClip" X="1" Y="0" Z="0" Rot="1" />
           <Clip Name="SpeedRoadClip" X="-4" Y="4" Z="-3" Rot="3" />
         </BlockData>
@@ -2270,299 +2272,299 @@
             <BlockRandomData ItemName="Valley\Z_Speed\U_SpeedRiverRoad\Z_SpeedRiverRoad\Z_SpeedRiverRoadStraight\SpeedRiverRoadStraightOct.Item.gbx" Variant="7"/>
           </BlockVariantData>
           <Flag Name="NoGround" X="0" Z="0" />
-          <Flag Name="NoGround" X="0" Z="-1" />
+          <Flag Name="NoGround" X="0" Z="1" />
           <Clip Name="SpeedRiverRoadClipLeft" X="1" Y="0" Z="-1" Rot="1" />
           <Clip Name="SpeedRiverRoadClipRight" X="-1" Y="0" Z="-1" Rot="3" />
         </BlockData>
         <BlockData RotOffset="2" BlockName="SpeedRiverRoadToRoadLeft2x1" BlockXSize="2" BlockZSize="2">
           <BlockVariantData ItemName="Valley\Z_Speed\U_SpeedRiverRoad\Z_SpeedRiverRoad\X_SpeedRiverRoadToRoad\SpeedRiverRoadToRoadLeft2x1.Item.gbx" />
           <Flag Name="NoGround" X="0" Z="0" />
-          <Flag Name="NoGround" X="-1" Z="0" />
-          <Flag Name="NoGround" X="0" Z="-1" />
-          <Flag Name="NoGround" X="-1" Z="-1" />
+          <Flag Name="NoGround" X="1" Z="0" />
+          <Flag Name="NoGround" X="0" Z="1" />
+          <Flag Name="NoGround" X="1" Z="1" />
           <Clip Name="SpeedRoadClip" X="-2" Y="0" Z="-1" Rot="3" />
           <Clip Name="SpeedRiverRoadClipLeft" X="1" Y="0" Z="-1" Rot="1" />
         </BlockData>
         <BlockData RotOffset="2" BlockName="SpeedRiverRoadToRoadRight2x1" BlockXSize="2" BlockZSize="2">
           <BlockVariantData ItemName="Valley\Z_Speed\U_SpeedRiverRoad\Z_SpeedRiverRoad\X_SpeedRiverRoadToRoad\SpeedRiverRoadToRoadRight2x1.Item.gbx" />
           <Flag Name="NoGround" X="0" Z="0" />
-          <Flag Name="NoGround" X="-1" Z="0" />
-          <Flag Name="NoGround" X="0" Z="-1" />
-          <Flag Name="NoGround" X="-1" Z="-1" />
+          <Flag Name="NoGround" X="1" Z="0" />
+          <Flag Name="NoGround" X="0" Z="1" />
+          <Flag Name="NoGround" X="1" Z="1" />
           <Clip Name="SpeedRoadClip" X="1" Y="0" Z="-1" Rot="1" />
           <Clip Name="SpeedRiverRoadClipRight" X="-2" Y="0" Z="-1" Rot="3" />
         </BlockData>
         <BlockData RotOffset="2" BlockName="SpeedRiverRoadToRoadLeft4x1" BlockXSize="4" BlockZSize="2">
           <BlockVariantData ItemName="Valley\Z_Speed\U_SpeedRiverRoad\Z_SpeedRiverRoad\X_SpeedRiverRoadToRoad\SpeedRiverRoadToRoadLeft4x1.Item.gbx" />
           <Flag Name="NoGround" X="0" Z="0" />
-          <Flag Name="NoGround" X="-1" Z="0" />
-          <Flag Name="NoGround" X="-2" Z="0" />
-          <Flag Name="NoGround" X="-3" Z="0" />
-          <Flag Name="NoGround" X="0" Z="-1" />
-          <Flag Name="NoGround" X="-1" Z="-1" />
-          <Flag Name="NoGround" X="-2" Z="-1" />
-          <Flag Name="NoGround" X="-3" Z="-1" />
+          <Flag Name="NoGround" X="1" Z="0" />
+          <Flag Name="NoGround" X="2" Z="0" />
+          <Flag Name="NoGround" X="3" Z="0" />
+          <Flag Name="NoGround" X="0" Z="1" />
+          <Flag Name="NoGround" X="1" Z="1" />
+          <Flag Name="NoGround" X="2" Z="1" />
+          <Flag Name="NoGround" X="3" Z="1" />
           <Clip Name="SpeedRoadClip" X="-4" Y="0" Z="-1" Rot="3" />
           <Clip Name="SpeedRiverRoadClipLeft" X="1" Y="0" Z="-1" Rot="1" />
         </BlockData>
         <BlockData RotOffset="2" BlockName="SpeedRiverRoadToRoadRight4x1" BlockXSize="4" BlockZSize="2">
           <BlockVariantData ItemName="Valley\Z_Speed\U_SpeedRiverRoad\Z_SpeedRiverRoad\X_SpeedRiverRoadToRoad\SpeedRiverRoadToRoadRight4x1.Item.gbx" />
           <Flag Name="NoGround" X="0" Z="0" />
-          <Flag Name="NoGround" X="-1" Z="0" />
-          <Flag Name="NoGround" X="-2" Z="0" />
-          <Flag Name="NoGround" X="-3" Z="0" />
-          <Flag Name="NoGround" X="0" Z="-1" />
-          <Flag Name="NoGround" X="-1" Z="-1" />
-          <Flag Name="NoGround" X="-2" Z="-1" />
-          <Flag Name="NoGround" X="-3" Z="-1" />
+          <Flag Name="NoGround" X="1" Z="0" />
+          <Flag Name="NoGround" X="2" Z="0" />
+          <Flag Name="NoGround" X="3" Z="0" />
+          <Flag Name="NoGround" X="0" Z="1" />
+          <Flag Name="NoGround" X="1" Z="1" />
+          <Flag Name="NoGround" X="2" Z="1" />
+          <Flag Name="NoGround" X="3" Z="1" />
           <Clip Name="SpeedRoadClip" X="1" Y="0" Z="-1" Rot="1" />
           <Clip Name="SpeedRiverRoadClipRight" X="-4" Y="0" Z="-1" Rot="3" />
         </BlockData>
         <BlockData RotOffset="2" BlockName="SpeedRiverRoadToRoadGTCurve4" BlockXSize="4" BlockZSize="4">
           <BlockVariantData ItemName="Valley\Z_Speed\U_SpeedRiverRoad\Z_SpeedRiverRoad\X_SpeedRiverRoadToRoad\SpeedRiverRoadToRoadGTCurve4.Item.gbx" />
           <Flag Name="NoGround" X="0" Z="0" />
-          <Flag Name="NoGround" X="-1" Z="0" />
-          <Flag Name="NoGround" X="0" Z="-1" />
-          <Flag Name="NoGround" X="-1" Z="-1" />
-          <Flag Name="NoGround" X="-2" Z="-1" />
-          <Flag Name="NoGround" X="-1" Z="-2" />
-          <Flag Name="NoGround" X="-2" Z="-2" />
-          <Flag Name="NoGround" X="-3" Z="-2" />
-          <Flag Name="NoGround" X="-2" Z="-3" />
-          <Flag Name="NoGround" X="-3" Z="-3" />
+          <Flag Name="NoGround" X="1" Z="0" />
+          <Flag Name="NoGround" X="0" Z="1" />
+          <Flag Name="NoGround" X="1" Z="1" />
+          <Flag Name="NoGround" X="2" Z="1" />
+          <Flag Name="NoGround" X="1" Z="2" />
+          <Flag Name="NoGround" X="2" Z="2" />
+          <Flag Name="NoGround" X="3" Z="2" />
+          <Flag Name="NoGround" X="2" Z="3" />
+          <Flag Name="NoGround" X="3" Z="3" />
           <Clip Name="SpeedRoadClip" X="-2" Y="0" Z="-4" Rot="0" />
           <Clip Name="SpeedRiverRoadClipLeft" X="1" Y="0" Z="-1" Rot="1" />
         </BlockData>
         <BlockData RotOffset="3" BlockName="SpeedRiverRoadToRoadGTCurve4Mirror" BlockXSize="4" BlockZSize="4" XOffset="3">
           <BlockVariantData ItemName="Valley\Z_Speed\U_SpeedRiverRoad\Z_SpeedRiverRoad\X_SpeedRiverRoadToRoad\SpeedRiverRoadToRoadGTCurve4Mirror.Item.gbx" />
           <Flag Name="NoGround" X="0" Z="0" />
-          <Flag Name="NoGround" X="-1" Z="0" />
-          <Flag Name="NoGround" X="0" Z="-1" />
-          <Flag Name="NoGround" X="-1" Z="-1" />
-          <Flag Name="NoGround" X="-2" Z="-1" />
-          <Flag Name="NoGround" X="-1" Z="-2" />
-          <Flag Name="NoGround" X="-2" Z="-2" />
-          <Flag Name="NoGround" X="-3" Z="-2" />
-          <Flag Name="NoGround" X="-2" Z="-3" />
-          <Flag Name="NoGround" X="-3" Z="-3" />
+          <Flag Name="NoGround" X="1" Z="0" />
+          <Flag Name="NoGround" X="0" Z="1" />
+          <Flag Name="NoGround" X="1" Z="1" />
+          <Flag Name="NoGround" X="2" Z="1" />
+          <Flag Name="NoGround" X="1" Z="2" />
+          <Flag Name="NoGround" X="2" Z="2" />
+          <Flag Name="NoGround" X="3" Z="2" />
+          <Flag Name="NoGround" X="2" Z="3" />
+          <Flag Name="NoGround" X="3" Z="3" />
           <Clip Name="SpeedRoadClip" X="-4" Y="0" Z="-2" Rot="3" />
           <Clip Name="SpeedRiverRoadClipRight" X="-1" Y="0" Z="1" Rot="2" />
         </BlockData>
         <BlockData RotOffset="2" BlockName="SpeedRiverRoadToRoadGTCurve4In" BlockXSize="4" BlockZSize="4">
           <BlockVariantData ItemName="Valley\Z_Speed\U_SpeedRiverRoad\Z_SpeedRiverRoad\X_SpeedRiverRoadToRoad\SpeedRiverRoadToRoadGTCurve4In.Item.gbx" />
-          <Flag Name="NoGround" X="-2" Z="0" />
-          <Flag Name="NoGround" X="-3" Z="0" />
-          <Flag Name="NoGround" X="-1" Z="-1" />
-          <Flag Name="NoGround" X="-2" Z="-1" />
-          <Flag Name="NoGround" X="-3" Z="-1" />
-          <Flag Name="NoGround" X="0" Z="-2" />
-          <Flag Name="NoGround" X="-1" Z="-2" />
-          <Flag Name="NoGround" X="-2" Z="-2" />
-          <Flag Name="NoGround" X="-3" Z="-2" />
-          <Flag Name="NoGround" X="0" Z="-3" />
-          <Flag Name="NoGround" X="-1" Z="-3" />
+          <Flag Name="NoGround" X="2" Z="0" />
+          <Flag Name="NoGround" X="3" Z="0" />
+          <Flag Name="NoGround" X="1" Z="1" />
+          <Flag Name="NoGround" X="2" Z="1" />
+          <Flag Name="NoGround" X="3" Z="1" />
+          <Flag Name="NoGround" X="0" Z="2" />
+          <Flag Name="NoGround" X="1" Z="2" />
+          <Flag Name="NoGround" X="2" Z="2" />
+          <Flag Name="NoGround" X="3" Z="2" />
+          <Flag Name="NoGround" X="0" Z="3" />
+          <Flag Name="NoGround" X="1" Z="3" />
           <Clip Name="SpeedRoadClip" X="-3" Y="0" Z="1" Rot="2" />
           <Clip Name="SpeedRiverRoadClipLeft" X="1" Y="0" Z="-3" Rot="1" />
         </BlockData>
         <BlockData RotOffset="2" BlockName="SpeedRiverRoadToRoadGTCurve4InMirror" BlockXSize="4" BlockZSize="4">
           <BlockVariantData ItemName="Valley\Z_Speed\U_SpeedRiverRoad\Z_SpeedRiverRoad\X_SpeedRiverRoadToRoad\SpeedRiverRoadToRoadGTCurve4InMirror.Item.gbx" />
           <Flag Name="NoGround" X="0" Z="0" />
-          <Flag Name="NoGround" X="-1" Z="0" />
-          <Flag Name="NoGround" X="0" Z="-1" />
-          <Flag Name="NoGround" X="-1" Z="-1" />
-          <Flag Name="NoGround" X="-2" Z="-1" />
-          <Flag Name="NoGround" X="0" Z="-2" />
-          <Flag Name="NoGround" X="-1" Z="-2" />
-          <Flag Name="NoGround" X="-2" Z="-2" />
-          <Flag Name="NoGround" X="-3" Z="-2" />
-          <Flag Name="NoGround" X="-2" Z="-3" />
-          <Flag Name="NoGround" X="-3" Z="-3" />
+          <Flag Name="NoGround" X="1" Z="0" />
+          <Flag Name="NoGround" X="0" Z="1" />
+          <Flag Name="NoGround" X="1" Z="1" />
+          <Flag Name="NoGround" X="2" Z="1" />
+          <Flag Name="NoGround" X="0" Z="2" />
+          <Flag Name="NoGround" X="1" Z="2" />
+          <Flag Name="NoGround" X="2" Z="2" />
+          <Flag Name="NoGround" X="3" Z="2" />
+          <Flag Name="NoGround" X="2" Z="3" />
+          <Flag Name="NoGround" X="3" Z="3" />
           <Clip Name="SpeedRoadClip" X="0" Y="0" Z="1" Rot="2" />
           <Clip Name="SpeedRiverRoadClipRight" X="-4" Y="0" Z="-3" Rot="3" />
         </BlockData>
         <BlockData BlockName="SpeedRiverTetrisStraightUp" BlockXSize="6" BlockZSize="4" XOffset="5" ZOffset="3">
           <BlockVariantData ItemName="Valley\Z_Speed\U_SpeedRiverRoad\Y_SpeedRiverTetris\SpeedRiverTetrisStraightUp.Item.gbx" />
           <Flag Name="NoGround" X="0" Z="0" />
-          <Flag Name="NoGround" X="-1" Z="0" />
-          <Flag Name="NoGround" X="-2" Z="0" />
-          <Flag Name="NoGround" X="-3" Z="0" />
-          <Flag Name="NoGround" X="-4" Z="0" />
-          <Flag Name="NoGround" X="-5" Z="0" />
-          <Flag Name="NoGround" X="0" Z="-1" />
-          <Flag Name="NoGround" X="-1" Z="-1" />
-          <Flag Name="NoGround" X="-2" Z="-1" />
-          <Flag Name="NoGround" X="-3" Z="-1" />
-          <Flag Name="NoGround" X="-4" Z="-1" />
-          <Flag Name="NoGround" X="-5" Z="-1" />
-          <Flag Name="NoGround" X="0" Z="-2" />
-          <Flag Name="NoGround" X="-1" Z="-2" />
-          <Flag Name="NoGround" X="-2" Z="-2" />
-          <Flag Name="NoGround" X="-3" Z="-2" />
-          <Flag Name="NoGround" X="-4" Z="-2" />
-          <Flag Name="NoGround" X="-5" Z="-2" />
-          <Flag Name="NoGround" X="0" Z="-3" />
-          <Flag Name="NoGround" X="-1" Z="-3" />
-          <Flag Name="NoGround" X="-2" Z="-3" />
-          <Flag Name="NoGround" X="-3" Z="-3" />
-          <Flag Name="NoGround" X="-4" Z="-3" />
-          <Flag Name="NoGround" X="-5" Z="-3" />
+          <Flag Name="NoGround" X="1" Z="0" />
+          <Flag Name="NoGround" X="2" Z="0" />
+          <Flag Name="NoGround" X="3" Z="0" />
+          <Flag Name="NoGround" X="4" Z="0" />
+          <Flag Name="NoGround" X="5" Z="0" />
+          <Flag Name="NoGround" X="0" Z="1" />
+          <Flag Name="NoGround" X="1" Z="1" />
+          <Flag Name="NoGround" X="2" Z="1" />
+          <Flag Name="NoGround" X="3" Z="1" />
+          <Flag Name="NoGround" X="4" Z="1" />
+          <Flag Name="NoGround" X="5" Z="1" />
+          <Flag Name="NoGround" X="0" Z="2" />
+          <Flag Name="NoGround" X="1" Z="2" />
+          <Flag Name="NoGround" X="2" Z="2" />
+          <Flag Name="NoGround" X="3" Z="2" />
+          <Flag Name="NoGround" X="4" Z="2" />
+          <Flag Name="NoGround" X="5" Z="2" />
+          <Flag Name="NoGround" X="0" Z="3" />
+          <Flag Name="NoGround" X="1" Z="3" />
+          <Flag Name="NoGround" X="2" Z="3" />
+          <Flag Name="NoGround" X="3" Z="3" />
+          <Flag Name="NoGround" X="4" Z="3" />
+          <Flag Name="NoGround" X="5" Z="3" />
           <Clip Name="SpeedRoadClip" X="1" Y="0" Z="-2" Rot="1" />
           <Clip Name="SpeedRoadClip" X="-6" Y="0" Z="-2" Rot="3" />
         </BlockData>
         <BlockData BlockName="SpeedRiverTetrisStraightUpBase1" BlockXSize="5" BlockZSize="5" XOffset="4" ZOffset="4">
           <BlockVariantData ItemName="Valley\Z_Speed\U_SpeedRiverRoad\Y_SpeedRiverTetris\SpeedRiverTetrisStraightUpBase1.Item.gbx" />
           <Flag Name="NoGround" X="0" Z="0" />
-          <Flag Name="NoGround" X="-1" Z="0" />
-          <Flag Name="NoGround" X="-2" Z="0" />
-          <Flag Name="NoGround" X="-3" Z="0" />
-          <Flag Name="NoGround" X="0" Z="-1" />
-          <Flag Name="NoGround" X="-1" Z="-1" />
-          <Flag Name="NoGround" X="-2" Z="-1" />
-          <Flag Name="NoGround" X="-3" Z="-1" />
-          <Flag Name="NoGround" X="-4" Z="-1" />
-          <Flag Name="NoGround" X="-1" Z="-2" />
-          <Flag Name="NoGround" X="-2" Z="-2" />
-          <Flag Name="NoGround" X="-3" Z="-2" />
-          <Flag Name="NoGround" X="-4" Z="-2" />
-          <Flag Name="NoGround" X="-1" Z="-3" />
-          <Flag Name="NoGround" X="-2" Z="-3" />
-          <Flag Name="NoGround" X="-3" Z="-3" />
-          <Flag Name="NoGround" X="-4" Z="-3" />
-          <Flag Name="NoGround" X="-3" Z="-4" />
-          <Flag Name="NoGround" X="-4" Z="-4" />
+          <Flag Name="NoGround" X="1" Z="0" />
+          <Flag Name="NoGround" X="0" Z="1" />
+          <Flag Name="NoGround" X="1" Z="1" />
+          <Flag Name="NoGround" X="2" Z="1" />
+          <Flag Name="NoGround" X="3" Z="1" />
+          <Flag Name="NoGround" X="0" Z="2" />
+          <Flag Name="NoGround" X="1" Z="2" />
+          <Flag Name="NoGround" X="2" Z="2" />
+          <Flag Name="NoGround" X="3" Z="2" />
+          <Flag Name="NoGround" X="0" Z="3" />
+          <Flag Name="NoGround" X="1" Z="3" />
+          <Flag Name="NoGround" X="2" Z="3" />
+          <Flag Name="NoGround" X="3" Z="3" />
+          <Flag Name="NoGround" X="4" Z="3" />
+          <Flag Name="NoGround" X="1" Z="4" />
+          <Flag Name="NoGround" X="2" Z="4" />
+          <Flag Name="NoGround" X="3" Z="4" />
+          <Flag Name="NoGround" X="4" Z="4" />
           <Clip Name="SpeedRoadClip" X="-1" Y="0" Z="1" Rot="2" />
           <Clip Name="SpeedRoadClip" X="-5" Y="0" Z="-3" Rot="3" />
         </BlockData>
         <BlockData RotOffset="2" BlockName="SpeedRiverTetrisStraightUpCorner" BlockXSize="5" BlockZSize="5">
           <BlockVariantData ItemName="Valley\Z_Speed\U_SpeedRiverRoad\Y_SpeedRiverTetris\SpeedRiverTetrisStraightUpCorner.Item.gbx" />
           <Flag Name="NoGround" X="0" Z="0" />
-          <Flag Name="NoGround" X="-1" Z="0" />
-          <Flag Name="NoGround" X="-2" Z="0" />
-          <Flag Name="NoGround" X="-3" Z="0" />
-          <Flag Name="NoGround" X="0" Z="-1" />
-          <Flag Name="NoGround" X="-1" Z="-1" />
-          <Flag Name="NoGround" X="-2" Z="-1" />
-          <Flag Name="NoGround" X="-3" Z="-1" />
-          <Flag Name="NoGround" X="-4" Z="-1" />
-          <Flag Name="NoGround" X="0" Z="-2" />
-          <Flag Name="NoGround" X="-1" Z="-2" />
-          <Flag Name="NoGround" X="-2" Z="-2" />
-          <Flag Name="NoGround" X="-3" Z="-2" />
-          <Flag Name="NoGround" X="-4" Z="-2" />
-          <Flag Name="NoGround" X="-2" Z="-3" />
-          <Flag Name="NoGround" X="-3" Z="-3" />
-          <Flag Name="NoGround" X="-4" Z="-3" />
-          <Flag Name="NoGround" X="-4" Z="-4" />
+          <Flag Name="NoGround" X="1" Z="0" />
+          <Flag Name="NoGround" X="2" Z="0" />
+          <Flag Name="NoGround" X="3" Z="0" />
+          <Flag Name="NoGround" X="0" Z="1" />
+          <Flag Name="NoGround" X="1" Z="1" />
+          <Flag Name="NoGround" X="2" Z="1" />
+          <Flag Name="NoGround" X="3" Z="1" />
+          <Flag Name="NoGround" X="4" Z="1" />
+          <Flag Name="NoGround" X="0" Z="2" />
+          <Flag Name="NoGround" X="1" Z="2" />
+          <Flag Name="NoGround" X="2" Z="2" />
+          <Flag Name="NoGround" X="3" Z="2" />
+          <Flag Name="NoGround" X="4" Z="2" />
+          <Flag Name="NoGround" X="2" Z="3" />
+          <Flag Name="NoGround" X="3" Z="3" />
+          <Flag Name="NoGround" X="4" Z="3" />
+          <Flag Name="NoGround" X="4" Z="4" />
           <Clip Name="SpeedRoadClip" X="-2" Y="0" Z="1" Rot="2" />
           <Clip Name="SpeedRoadClip" X="-5" Y="0" Z="-2" Rot="3" />
         </BlockData>
         <BlockData BlockName="SpeedRiverTetrisStraightUpDiagLeft" BlockXSize="6" BlockZSize="4" XOffset="5" ZOffset="3">
           <BlockVariantData ItemName="Valley\Z_Speed\U_SpeedRiverRoad\Y_SpeedRiverTetris\SpeedRiverTetrisStraightUpDiagLeft.Item.gbx" />
           <Flag Name="NoGround" X="0" Z="0" />
-          <Flag Name="NoGround" X="-1" Z="0" />
-          <Flag Name="NoGround" X="-2" Z="0" />
-          <Flag Name="NoGround" X="-3" Z="0" />
-          <Flag Name="NoGround" X="0" Z="-1" />
-          <Flag Name="NoGround" X="-1" Z="-1" />
-          <Flag Name="NoGround" X="-2" Z="-1" />
-          <Flag Name="NoGround" X="-3" Z="-1" />
-          <Flag Name="NoGround" X="-4" Z="-1" />
-          <Flag Name="NoGround" X="-5" Z="-1" />
-          <Flag Name="NoGround" X="0" Z="-2" />
-          <Flag Name="NoGround" X="-1" Z="-2" />
-          <Flag Name="NoGround" X="-2" Z="-2" />
-          <Flag Name="NoGround" X="-3" Z="-2" />
-          <Flag Name="NoGround" X="-4" Z="-2" />
-          <Flag Name="NoGround" X="-5" Z="-2" />
-          <Flag Name="NoGround" X="-1" Z="-3" />
-          <Flag Name="NoGround" X="-2" Z="-3" />
-          <Flag Name="NoGround" X="-3" Z="-3" />
-          <Flag Name="NoGround" X="-4" Z="-3" />
-          <Flag Name="NoGround" X="-5" Z="-3" />
+          <Flag Name="NoGround" X="1" Z="0" />
+          <Flag Name="NoGround" X="2" Z="0" />
+          <Flag Name="NoGround" X="3" Z="0" />
+          <Flag Name="NoGround" X="0" Z="1" />
+          <Flag Name="NoGround" X="1" Z="1" />
+          <Flag Name="NoGround" X="2" Z="1" />
+          <Flag Name="NoGround" X="3" Z="1" />
+          <Flag Name="NoGround" X="4" Z="1" />
+          <Flag Name="NoGround" X="5" Z="1" />
+          <Flag Name="NoGround" X="0" Z="2" />
+          <Flag Name="NoGround" X="1" Z="2" />
+          <Flag Name="NoGround" X="2" Z="2" />
+          <Flag Name="NoGround" X="3" Z="2" />
+          <Flag Name="NoGround" X="4" Z="2" />
+          <Flag Name="NoGround" X="5" Z="2" />
+          <Flag Name="NoGround" X="1" Z="3" />
+          <Flag Name="NoGround" X="2" Z="3" />
+          <Flag Name="NoGround" X="3" Z="3" />
+          <Flag Name="NoGround" X="4" Z="3" />
+          <Flag Name="NoGround" X="5" Z="3" />
           <Clip Name="SpeedRoadClip" X="1" Y="0" Z="-2" Rot="1" />
           <Clip Name="SpeedRoadClip" X="-6" Y="0" Z="-3" Rot="3" />
         </BlockData>
         <BlockData BlockName="SpeedRiverTetrisStraightUpDiagRight" BlockXSize="6" BlockZSize="4" XOffset="5" ZOffset="3">
           <BlockVariantData ItemName="Valley\Z_Speed\U_SpeedRiverRoad\Y_SpeedRiverTetris\SpeedRiverTetrisStraightUpDiagRight.Item.gbx" />
-          <Flag Name="NoGround" X="-2" Z="0" />
-          <Flag Name="NoGround" X="-3" Z="0" />
-          <Flag Name="NoGround" X="-4" Z="0" />
-          <Flag Name="NoGround" X="-5" Z="0" />
-          <Flag Name="NoGround" X="0" Z="-1" />
-          <Flag Name="NoGround" X="-1" Z="-1" />
-          <Flag Name="NoGround" X="-2" Z="-1" />
-          <Flag Name="NoGround" X="-3" Z="-1" />
-          <Flag Name="NoGround" X="-4" Z="-1" />
-          <Flag Name="NoGround" X="-5" Z="-1" />
-          <Flag Name="NoGround" X="0" Z="-2" />
-          <Flag Name="NoGround" X="-1" Z="-2" />
-          <Flag Name="NoGround" X="-2" Z="-2" />
-          <Flag Name="NoGround" X="-3" Z="-2" />
-          <Flag Name="NoGround" X="-4" Z="-2" />
-          <Flag Name="NoGround" X="-5" Z="-2" />
-          <Flag Name="NoGround" X="0" Z="-3" />
-          <Flag Name="NoGround" X="-1" Z="-3" />
-          <Flag Name="NoGround" X="-2" Z="-3" />
-          <Flag Name="NoGround" X="-3" Z="-3" />
-          <Flag Name="NoGround" X="-4" Z="-3" />
+          <Flag Name="NoGround" X="2" Z="0" />
+          <Flag Name="NoGround" X="3" Z="0" />
+          <Flag Name="NoGround" X="4" Z="0" />
+          <Flag Name="NoGround" X="5" Z="0" />
+          <Flag Name="NoGround" X="0" Z="1" />
+          <Flag Name="NoGround" X="1" Z="1" />
+          <Flag Name="NoGround" X="2" Z="1" />
+          <Flag Name="NoGround" X="3" Z="1" />
+          <Flag Name="NoGround" X="4" Z="1" />
+          <Flag Name="NoGround" X="5" Z="1" />
+          <Flag Name="NoGround" X="0" Z="2" />
+          <Flag Name="NoGround" X="1" Z="2" />
+          <Flag Name="NoGround" X="2" Z="2" />
+          <Flag Name="NoGround" X="3" Z="2" />
+          <Flag Name="NoGround" X="4" Z="2" />
+          <Flag Name="NoGround" X="5" Z="2" />
+          <Flag Name="NoGround" X="0" Z="3" />
+          <Flag Name="NoGround" X="1" Z="3" />
+          <Flag Name="NoGround" X="2" Z="3" />
+          <Flag Name="NoGround" X="3" Z="3" />
+          <Flag Name="NoGround" X="4" Z="3" />
           <Clip Name="SpeedRoadClip" X="1" Y="0" Z="-3" Rot="1" />
           <Clip Name="SpeedRoadClip" X="-6" Y="0" Z="-2" Rot="3" />
         </BlockData>
         <BlockData BlockName="SpeedRiverTetrisBridgeDiagLeft" BlockXSize="8" BlockZSize="3" XOffset="7" ZOffset="2">
           <BlockVariantData ItemName="Valley\Z_Speed\U_SpeedRiverRoad\Y_SpeedRiverTetris\SpeedRiverTetrisBridgeDiagLeft.Item.gbx" />
           <Flag Name="NoGround" X="0" Z="0" />
-          <Flag Name="NoGround" X="-1" Z="0" />
-          <Flag Name="NoGround" X="-2" Z="0" />
-          <Flag Name="NoGround" X="-3" Z="0" />
-          <Flag Name="NoGround" X="-4" Z="0" />
-          <Flag Name="NoGround" X="-5" Z="0" />
-          <Flag Name="NoGround" X="-6" Z="0" />
-          <Flag Name="NoGround" X="-7" Z="0" />
-          <Flag Name="NoGround" X="0" Z="-1" />
-          <Flag Name="NoGround" X="-1" Z="-1" />
-          <Flag Name="NoGround" X="-2" Z="-1" />
-          <Flag Name="NoGround" X="-3" Z="-1" />
-          <Flag Name="NoGround" X="-4" Z="-1" />
-          <Flag Name="NoGround" X="-5" Z="-1" />
-          <Flag Name="NoGround" X="-6" Z="-1" />
-          <Flag Name="NoGround" X="-7" Z="-1" />
-          <Flag Name="NoGround" X="0" Z="-2" />
-          <Flag Name="NoGround" X="-1" Z="-2" />
-          <Flag Name="NoGround" X="-2" Z="-2" />
-          <Flag Name="NoGround" X="-3" Z="-2" />
-          <Flag Name="NoGround" X="-4" Z="-2" />
-          <Flag Name="NoGround" X="-5" Z="-2" />
-          <Flag Name="NoGround" X="-6" Z="-2" />
-          <Flag Name="NoGround" X="-7" Z="-2" />
+          <Flag Name="NoGround" X="1" Z="0" />
+          <Flag Name="NoGround" X="2" Z="0" />
+          <Flag Name="NoGround" X="3" Z="0" />
+          <Flag Name="NoGround" X="4" Z="0" />
+          <Flag Name="NoGround" X="5" Z="0" />
+          <Flag Name="NoGround" X="6" Z="0" />
+          <Flag Name="NoGround" X="7" Z="0" />
+          <Flag Name="NoGround" X="0" Z="1" />
+          <Flag Name="NoGround" X="1" Z="1" />
+          <Flag Name="NoGround" X="2" Z="1" />
+          <Flag Name="NoGround" X="3" Z="1" />
+          <Flag Name="NoGround" X="4" Z="1" />
+          <Flag Name="NoGround" X="5" Z="1" />
+          <Flag Name="NoGround" X="6" Z="1" />
+          <Flag Name="NoGround" X="7" Z="1" />
+          <Flag Name="NoGround" X="0" Z="2" />
+          <Flag Name="NoGround" X="1" Z="2" />
+          <Flag Name="NoGround" X="2" Z="2" />
+          <Flag Name="NoGround" X="3" Z="2" />
+          <Flag Name="NoGround" X="4" Z="2" />
+          <Flag Name="NoGround" X="5" Z="2" />
+          <Flag Name="NoGround" X="6" Z="2" />
+          <Flag Name="NoGround" X="7" Z="2" />
           <Clip Name="SpeedRoadClip" X="1" Y="0" Z="-2" Rot="1" />
           <Clip Name="SpeedRoadClip" X="-8" Y="0" Z="0" Rot="3" />
         </BlockData>
         <BlockData BlockName="SpeedRiverTetrisBridgeDiagRight" BlockXSize="8" BlockZSize="3" XOffset="7" ZOffset="2">
           <BlockVariantData ItemName="Valley\Z_Speed\U_SpeedRiverRoad\Y_SpeedRiverTetris\SpeedRiverTetrisBridgeDiagRight.Item.gbx" />
           <Flag Name="NoGround" X="0" Z="0" />
-          <Flag Name="NoGround" X="-1" Z="0" />
-          <Flag Name="NoGround" X="-2" Z="0" />
-          <Flag Name="NoGround" X="-3" Z="0" />
-          <Flag Name="NoGround" X="-4" Z="0" />
-          <Flag Name="NoGround" X="-5" Z="0" />
-          <Flag Name="NoGround" X="-6" Z="0" />
-          <Flag Name="NoGround" X="-7" Z="0" />
-          <Flag Name="NoGround" X="0" Z="-1" />
-          <Flag Name="NoGround" X="-1" Z="-1" />
-          <Flag Name="NoGround" X="-2" Z="-1" />
-          <Flag Name="NoGround" X="-3" Z="-1" />
-          <Flag Name="NoGround" X="-4" Z="-1" />
-          <Flag Name="NoGround" X="-5" Z="-1" />
-          <Flag Name="NoGround" X="-6" Z="-1" />
-          <Flag Name="NoGround" X="-7" Z="-1" />
-          <Flag Name="NoGround" X="0" Z="-2" />
-          <Flag Name="NoGround" X="-1" Z="-2" />
-          <Flag Name="NoGround" X="-2" Z="-2" />
-          <Flag Name="NoGround" X="-3" Z="-2" />
-          <Flag Name="NoGround" X="-4" Z="-2" />
-          <Flag Name="NoGround" X="-5" Z="-2" />
-          <Flag Name="NoGround" X="-6" Z="-2" />
-          <Flag Name="NoGround" X="-7" Z="-2" />
+          <Flag Name="NoGround" X="1" Z="0" />
+          <Flag Name="NoGround" X="2" Z="0" />
+          <Flag Name="NoGround" X="3" Z="0" />
+          <Flag Name="NoGround" X="4" Z="0" />
+          <Flag Name="NoGround" X="5" Z="0" />
+          <Flag Name="NoGround" X="6" Z="0" />
+          <Flag Name="NoGround" X="7" Z="0" />
+          <Flag Name="NoGround" X="0" Z="1" />
+          <Flag Name="NoGround" X="1" Z="1" />
+          <Flag Name="NoGround" X="2" Z="1" />
+          <Flag Name="NoGround" X="3" Z="1" />
+          <Flag Name="NoGround" X="4" Z="1" />
+          <Flag Name="NoGround" X="5" Z="1" />
+          <Flag Name="NoGround" X="6" Z="1" />
+          <Flag Name="NoGround" X="7" Z="1" />
+          <Flag Name="NoGround" X="0" Z="2" />
+          <Flag Name="NoGround" X="1" Z="2" />
+          <Flag Name="NoGround" X="2" Z="2" />
+          <Flag Name="NoGround" X="3" Z="2" />
+          <Flag Name="NoGround" X="4" Z="2" />
+          <Flag Name="NoGround" X="5" Z="2" />
+          <Flag Name="NoGround" X="6" Z="2" />
+          <Flag Name="NoGround" X="7" Z="2" />
           <Clip Name="SpeedRoadClip" X="1" Y="0" Z="0" Rot="1" />
           <Clip Name="SpeedRoadClip" X="-8" Y="0" Z="-2" Rot="3" />
         </BlockData>
@@ -2599,12 +2601,14 @@
         <BlockData BlockName="SpeedRockToRockToBridgeArch3" BlockZSize="3">
           <BlockVariantData ItemName="Valley\Z_Speed\T_SpeedBridge\Z_SpeedBridgePillar\Y_SpeedBridgePillarRock\SpeedRockToBridgeArch3.Item.gbx" />
           <Flag Name="NoGround" X="0" Z="0" />
+          <Flag Name="NoGround" X="0" Y="3" Z="2" />
           <Clip Name="SpeedRoadClip" X="0" Y="4" Z="-1" Rot="0" />
           <Clip Name="SpeedBridgeClip" X="0" Y="4" Z="3" Rot="2" />
         </BlockData>
         <BlockData BlockName="SpeedRockToRockToBridgeArch5" BlockZSize="5">
           <BlockVariantData ItemName="Valley\Z_Speed\T_SpeedBridge\Z_SpeedBridgePillar\Y_SpeedBridgePillarRock\SpeedRockToBridgeArch5.Item.gbx" />
           <Flag Name="NoGround" X="0" Z="0" />
+          <Flag Name="NoGround" X="0" Y="3" Z="4" />
           <Clip Name="SpeedRoadClip" X="0" Y="4" Z="-1" Rot="0" />
           <Clip Name="SpeedBridgeClip" X="0" Y="4" Z="5" Rot="2" />
         </BlockData>
@@ -2687,7 +2691,7 @@
             <BlockTypeData ItemName="Valley\Z_Speed\S_SpeedSaguaros\Z_SpeedSaguaros\Z_SpeedSaguarosGround\SpeedRocks2Ground.Item.gbx" Type="Pri" />
             <BlockTypeData ItemName="Valley\Z_Speed\S_SpeedSaguaros\Z_SpeedSaguaros\Y_SpeedSaguarosGroundRock\SpeedRocks2GroundRock.Item.gbx" Type="Sec" />
             <Flag Name="NoGround" X="0" Z="0" />
-            <Flag Name="NoGround" X="0" Z="-1" />
+            <Flag Name="NoGround" X="1" Z="0" />
             <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
             <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="-1" Rot="All" />
           </BlockVariantData>
@@ -2697,31 +2701,31 @@
             <BlockTypeData ItemName="Valley\Z_Speed\S_SpeedSaguaros\Z_SpeedSaguaros\Z_SpeedSaguarosGround\SpeedRocksArchGround.Item.gbx" Type="Pri" />
             <BlockTypeData ItemName="Valley\Z_Speed\S_SpeedSaguaros\Z_SpeedSaguaros\Y_SpeedSaguarosGroundRock\SpeedRocksArchGroundRock.Item.gbx" Type="Sec" />
             <Flag Name="NoGround" X="0" Z="0" />
-            <Flag Name="NoGround" X="0" Z="-2" />
+            <Flag Name="NoGround" X="2" Z="0" />
           </BlockVariantData>
         </BlockData>
         <BlockData RotOffset="1" BlockName="SpeedClassicMountain" BlockXSize="7" BlockZSize="4" ZOffset="3">
           <BlockVariantData>
             <BlockTypeData ItemName="Valley\Z_Speed\S_SpeedSaguaros\Z_SpeedSaguaros\Z_SpeedSaguarosGround\SpeedClassicMountainGround.Item.gbx" Type="Pri" />
             <BlockTypeData ItemName="Valley\Z_Speed\S_SpeedSaguaros\Z_SpeedSaguaros\Y_SpeedSaguarosGroundRock\SpeedClassicMountainGroundRock.Item.gbx" Type="Sec" />
-            <Flag Name="NoGround" X="0" Z="0" />
-            <Flag Name="NoGround" X="-1" Z="0" />
-            <Flag Name="NoGround" X="-2" Z="0" />
-            <Flag Name="NoGround" X="-3" Z="0" />
-            <Flag Name="NoGround" X="0" Z="-1" />
-            <Flag Name="NoGround" X="-1" Z="-1" />
-            <Flag Name="NoGround" X="-2" Z="-1" />
-            <Flag Name="NoGround" X="-3" Z="-1" />
-            <Flag Name="NoGround" X="0" Z="-2" />
-            <Flag Name="NoGround" X="-1" Z="-2" />
-            <Flag Name="NoGround" X="0" Z="-3" />
-            <Flag Name="NoGround" X="-1" Z="-3" />
-            <Flag Name="NoGround" X="0" Z="-4" />
-            <Flag Name="NoGround" X="-1" Z="-4" />
-            <Flag Name="NoGround" X="0" Z="-5" />
-            <Flag Name="NoGround" X="-1" Z="-5" />
-            <Flag Name="NoGround" X="0" Z="-6" />
-            <Flag Name="NoGround" X="-1" Z="-6" />
+            <Flag Name="NoGround" Z="0" X="0" />
+            <Flag Name="NoGround" Z="1" X="0" />
+            <Flag Name="NoGround" Z="2" X="0" />
+            <Flag Name="NoGround" Z="3" X="0" />
+            <Flag Name="NoGround" Z="0" X="1" />
+            <Flag Name="NoGround" Z="1" X="1" />
+            <Flag Name="NoGround" Z="2" X="1" />
+            <Flag Name="NoGround" Z="3" X="1" />
+            <Flag Name="NoGround" Z="2" X="2" />
+            <Flag Name="NoGround" Z="3" X="2" />
+            <Flag Name="NoGround" Z="2" X="3" />
+            <Flag Name="NoGround" Z="3" X="3" />
+            <Flag Name="NoGround" Z="2" X="4" />
+            <Flag Name="NoGround" Z="3" X="4" />
+            <Flag Name="NoGround" Z="2" X="5" />
+            <Flag Name="NoGround" Z="3" X="5" />
+            <Flag Name="NoGround" Z="2" X="6" />
+            <Flag Name="NoGround" Z="3" X="6" />
           </BlockVariantData>
         </BlockData>
         <BlockData BlockName="SpeedClassicPeak" BlockXSize="3" BlockZSize="3" XOffset="2" ZOffset="2">
@@ -2729,14 +2733,14 @@
             <BlockTypeData ItemName="Valley\Z_Speed\S_SpeedSaguaros\Z_SpeedSaguaros\Z_SpeedSaguarosGround\SpeedClassicPeakGround.Item.gbx" Type="Pri" />
             <BlockTypeData ItemName="Valley\Z_Speed\S_SpeedSaguaros\Z_SpeedSaguaros\Y_SpeedSaguarosGroundRock\SpeedClassicPeakGroundRock.Item.gbx" Type="Sec" />
             <Flag Name="NoGround" X="0" Z="0" />
-            <Flag Name="NoGround" X="-1" Z="0" />
-            <Flag Name="NoGround" X="-2" Z="0" />
-            <Flag Name="NoGround" X="0" Z="-1" />
-            <Flag Name="NoGround" X="-1" Z="-1" />
-            <Flag Name="NoGround" X="-2" Z="-1" />
-            <Flag Name="NoGround" X="0" Z="-2" />
-            <Flag Name="NoGround" X="-1" Z="-2" />
-            <Flag Name="NoGround" X="-2" Z="-2" />
+            <Flag Name="NoGround" X="1" Z="0" />
+            <Flag Name="NoGround" X="2" Z="0" />
+            <Flag Name="NoGround" X="0" Z="1" />
+            <Flag Name="NoGround" X="1" Z="1" />
+            <Flag Name="NoGround" X="2" Z="1" />
+            <Flag Name="NoGround" X="0" Z="2" />
+            <Flag Name="NoGround" X="1" Z="2" />
+            <Flag Name="NoGround" X="2" Z="2" />
           </BlockVariantData>
         </BlockData>
         <BlockData BlockName="SpeedClassicContainers">
@@ -2776,7 +2780,7 @@
             <BlockTypeData ItemName="Valley\Z_Speed\S_SpeedSaguaros\Y_SpeedClassicContainers\Z_SpeedClassicContainers\Z_SpeedClassicContainersGround\SpeedClassicDerrickGround.Item.gbx" Type="Pri" />
             <BlockTypeData ItemName="Valley\Z_Speed\S_SpeedSaguaros\Y_SpeedClassicContainers\Z_SpeedClassicContainers\Y_SpeedClassicContainersGroundRock\SpeedClassicDerrickGroundRock.Item.gbx" Type="Sec" />
             <Flag Name="NoGround" X="0" Z="0" />
-            <Flag Name="NoGround" X="0" Z="-1" />
+            <Flag Name="NoGround" X="0" Z="1" />
           </BlockVariantData>
         </BlockData>
         <BlockData BlockName="SpeedPipelineRoad">
@@ -3386,5 +3390,9 @@
       <YValue Value="5" />
       <ZStep Value="2" />
     </Conversion>
+    <Conversion xsi:type="MediaTrackerConversion">
+      <OffsetY Value="-3" />
+    </Conversion>
+    <Conversion xsi:type="MetadataConversion" />
   </Conversions>
 </ComplexConversion>

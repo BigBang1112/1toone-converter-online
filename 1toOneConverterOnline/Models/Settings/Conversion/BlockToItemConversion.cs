@@ -1,5 +1,6 @@
 ﻿using GBX.NET;
 using GBX.NET.Engines.Game;
+using System.Text.RegularExpressions;
 using System.Xml.Serialization;
 
 namespace _1toOneConverterOnline.Models.Settings.Conversion;
@@ -172,12 +173,24 @@ public sealed class BlockToItemConversion : Conversion
 
             if (skinBlocks is not null)
             {
-                var noSkin = skinBlocks.FirstOrDefault(x => x.SkinRegex is null) ?? skinBlocks.First();
+                var noSkin = skinBlocks.FirstOrDefault(x =>
+                {
+                    if (x.SkinRegex is null)
+                    {
+                        return false;
+                    }
+
+                    var regex = new Regex(x.SkinRegex, RegexOptions.IgnoreCase);
+
+                    return regex.IsMatch(block.Skin?.PackDesc?.FilePath ?? "");
+                }) ?? skinBlocks.FirstOrDefault(x => x.SkinRegex is null) ?? skinBlocks.First();
 
                 PlaceItem(map, block, noSkin, blockSize, posOffset, blockData.RotOffset + rotOffset, smallYOffset);
 
                 return;
             }
+
+            var isSecondaryTerrain = map.TerrainModifiers.Contains(block.Coord with { Y = 0 });
 
             foreach (var b in blockData.Children)
             {
@@ -198,7 +211,12 @@ public sealed class BlockToItemConversion : Conversion
                         continue;
                     }
 
-                    if (typeData.TypeOfBlock is BlockType.GroundSecondary) // temporary
+                    if (typeData.TypeOfBlock is BlockType.GroundPrimary && isSecondaryTerrain)
+                    {
+                        continue;
+                    }
+
+                    if (typeData.TypeOfBlock is BlockType.GroundSecondary && !isSecondaryTerrain)
                     {
                         continue;
                     }
@@ -301,7 +319,7 @@ public sealed class BlockToItemConversion : Conversion
                 continue;
             }
 
-            var units = RecurseFlags(block, blockData)?
+            var units = RecurseFlags(map, block, blockData)?
                 .Where(x => x.Name is "NoGround" or "NoDefaultGround")
                 .Select(x => new GBX.NET.Int3(x.X, x.Y, x.Z))
                 .ToArray() ?? [];
@@ -341,6 +359,11 @@ public sealed class BlockToItemConversion : Conversion
             // Adjust positions so the minimum X and Z become 0.
             foreach (var rotated in rotatedUnits)
             {
+                if (rotated.Y > 0)
+                {
+                    continue;
+                }
+
                 yield return (block.Coord + new GBX.NET.Int3(rotated.X - minX, rotated.Y, rotated.Z - minZ)) with { Y = 0 }; // TODO wrong for flying blocks!
             }
         }
@@ -354,12 +377,14 @@ public sealed class BlockToItemConversion : Conversion
         _ => unit,
     };
 
-    private static IEnumerable<Flag> RecurseFlags(CGameCtnBlock block, BlockToItem blockData)
+    private static IEnumerable<Flag> RecurseFlags(Map map, CGameCtnBlock block, BlockToItem blockData)
     {
         foreach (var flag in blockData.Flags ?? [])
         {
             yield return flag;
         }
+
+        var isSecondaryTerrain = map.TerrainModifiers.Contains(block.Coord with { Y = 0 });
 
         foreach (var b in blockData.Children ?? [])
         {
@@ -379,9 +404,19 @@ public sealed class BlockToItemConversion : Conversion
                 {
                     continue;
                 }
+
+                if (typeData.TypeOfBlock is BlockType.GroundPrimary && isSecondaryTerrain)
+                {
+                    continue;
+                }
+
+                if (typeData.TypeOfBlock is BlockType.GroundSecondary && !isSecondaryTerrain)
+                {
+                    continue;
+                }
             }
 
-            foreach (var flag in RecurseFlags(block, b))
+            foreach (var flag in RecurseFlags(map, block, b))
             {
                 yield return flag;
             }

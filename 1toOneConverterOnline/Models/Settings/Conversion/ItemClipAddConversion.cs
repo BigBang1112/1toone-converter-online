@@ -1,4 +1,5 @@
-﻿using System.Xml.Serialization;
+﻿using GBX.NET;
+using System.Xml.Serialization;
 
 namespace _1toOneConverterOnline.Models.Settings.Conversion;
 
@@ -43,10 +44,11 @@ public sealed class ItemClipAddConversion : Conversion
 
         foreach (var block in map.Challenge.GetBlocks())
         {
-            var clipBlock = ClipBlocks?.FirstOrDefault(x => x.Content == block.Name);
+            var clipBlock = ClipBlocks?.FirstOrDefault(x => x.Content == block.Name)
+                ?? SecondaryTerrainClipBlocks?.FirstOrDefault(x => x.Content == block.Name);
 
             //Test if block is clip and collect the needed metadata
-            bool isSecondaryTerrain;
+            var isSecondaryTerrain = map.TerrainModifiers.Contains(block.Coord with { Y = 0 });
 
             /*if (block.Name.Equals(ClipBlocks))
                 isSecondaryTerrain = false;
@@ -110,6 +112,16 @@ public sealed class ItemClipAddConversion : Conversion
                             {
                                 continue;
                             }
+
+                            if (typeData.TypeOfBlock is BlockType.GroundPrimary && isSecondaryTerrain)
+                            {
+                                continue;
+                            }
+
+                            if (typeData.TypeOfBlock is BlockType.GroundSecondary && !isSecondaryTerrain)
+                            {
+                                continue;
+                            }
                         }
 
                         if (b.ItemName is null)
@@ -124,6 +136,33 @@ public sealed class ItemClipAddConversion : Conversion
                         var posOffset = new GBX.NET.Int3(b.XOffset, b.YOffset, b.ZOffset);
                         var absolutePosition = (block.Coord + (0, posOffset.Y, 0)) * map.GridSize + map.GridOffset + (0, b.SmallYOffset, 0);
                         var pitchYawRoll = new GBX.NET.Vec3((rot + b.RotOffset /*+ rotOffset*/) % 4 * -MathF.PI / 2, 0, 0);
+
+                        int xOffset;
+                        int zOffset;
+
+                        switch ((Direction)rot)
+                        {
+                            case Direction.North:
+                                xOffset = posOffset.X;
+                                zOffset = posOffset.Z;
+                                break;
+                            case Direction.East:
+                                xOffset = -posOffset.Z;
+                                zOffset = posOffset.X;
+                                break;
+                            case Direction.South:
+                                xOffset = -posOffset.X;
+                                zOffset = -posOffset.Z;
+                                break;
+                            case Direction.West:
+                                xOffset = posOffset.Z;
+                                zOffset = -posOffset.X;
+                                break;
+                            default:
+                                throw new Exception();
+                        }
+
+                        absolutePosition += (xOffset, 0, zOffset) * map.GridSize;
 
                         //clip is unconnected, items must be placed
                         map.Challenge.PlaceAnchoredObject(ident, absolutePosition, pitchYawRoll);
@@ -160,6 +199,16 @@ public sealed class ItemClipAddConversion : Conversion
                             }
 
                             if (typeData.TypeOfBlock is BlockType.Ground or BlockType.GroundPrimary or BlockType.GroundSecondary && !block.IsGround)
+                            {
+                                continue;
+                            }
+
+                            if (typeData.TypeOfBlock is BlockType.GroundPrimary && isSecondaryTerrain)
+                            {
+                                continue;
+                            }
+
+                            if (typeData.TypeOfBlock is BlockType.GroundSecondary && !isSecondaryTerrain)
                             {
                                 continue;
                             }

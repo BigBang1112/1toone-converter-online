@@ -15,6 +15,7 @@ public sealed class Map
     internal HashSet<Int3>? CoveredCoords { get; set; }
     internal Dictionary<string, HashSet<Settings.Conversion.Clip>> Clips { get; } = [];
     internal Dictionary<Settings.Conversion.PylonType, HashSet<Settings.Conversion.Pylon>> Pylons { get; } = [];
+    internal HashSet<Int3> TerrainModifiers { get; set; } = [];
 
     public Map(CGameCtnChallenge challenge)
     {

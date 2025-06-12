@@ -377,9 +377,9 @@
             <BlockTypeData ItemName="Lagoon\Z_Bay\Y_BayRoad\X_BayRoadGT\Z_BayRoadGTAir\Z_BayRoadGTCurve2Air.Item.gbx" Type="Air" />
             <BlockTypeData ItemName="Lagoon\Z_Bay\Y_BayRoad\X_BayRoadGT\Y_BayRoadGTGround\Z_BayRoadGTCurve2Ground.Item.gbx" Type="Gnd">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="-1" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
-              <Flag Name="NoGround" X="-1" Z="-1" />
+              <Flag Name="NoGround" X="1" Z="0" />
+              <Flag Name="NoGround" X="0" Z="1" />
+              <Flag Name="NoGround" X="1" Z="1" />
             </BlockTypeData>
           </BlockVariantData>
           <Clip Name="BayRoadClip" X="-2" Y="0" Z="-1" Rot="3" />
@@ -390,13 +390,13 @@
             <BlockTypeData ItemName="Lagoon\Z_Bay\Y_BayRoad\X_BayRoadGT\Z_BayRoadGTAir\BayRoadGTCurve3Air.Item.gbx" Type="Air" />
             <BlockTypeData ItemName="Lagoon\Z_Bay\Y_BayRoad\X_BayRoadGT\Y_BayRoadGTGround\BayRoadGTCurve3Ground.Item.gbx" Type="Gnd">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="-1" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
-              <Flag Name="NoGround" X="-1" Z="-1" />
-              <Flag Name="NoGround" X="-2" Z="-1" />
-              <Flag Name="NoGround" X="0" Z="-2" />
-              <Flag Name="NoGround" X="-1" Z="-2" />
-              <Flag Name="NoGround" X="-2" Z="-2" />
+              <Flag Name="NoGround" X="1" Z="0" />
+              <Flag Name="NoGround" X="0" Z="1" />
+              <Flag Name="NoGround" X="1" Z="1" />
+              <Flag Name="NoGround" X="2" Z="1" />
+              <Flag Name="NoGround" X="0" Z="2" />
+              <Flag Name="NoGround" X="1" Z="2" />
+              <Flag Name="NoGround" X="2" Z="2" />
             </BlockTypeData>
           </BlockVariantData>
           <Clip Name="BayRoadClip" X="0" Y="0" Z="1" Rot="2" />
@@ -406,12 +406,12 @@
           <BlockVariantData>
             <BlockTypeData ItemName="Lagoon\Z_Bay\Y_BayRoad\X_BayRoadGT\Z_BayRoadGTAir\BayRoadYShapedAir.Item.gbx" Type="Air" />
             <BlockTypeData ItemName="Lagoon\Z_Bay\Y_BayRoad\X_BayRoadGT\Y_BayRoadGTGround\BayRoadYShapedGround.Item.gbx" Type="Gnd">
-              <Flag Name="NoGround" X="-2" Z="0" />
-              <Flag Name="NoGround" X="-1" Z="0" />
+              <Flag Name="NoGround" X="2" Z="0" />
+              <Flag Name="NoGround" X="1" Z="0" />
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="-2" Z="-1" />
-              <Flag Name="NoGround" X="-1" Z="-1" />
-              <Flag Name="NoGround" X="0" Z="-1" />
+              <Flag Name="NoGround" X="2" Z="1" />
+              <Flag Name="NoGround" X="1" Z="1" />
+              <Flag Name="NoGround" X="0" Z="1" />
             </BlockTypeData>
           </BlockVariantData>
           <Clip Name="BayRoadClip" X="0" Y="0" Z="1" Rot="2" />
@@ -423,9 +423,9 @@
             <BlockTypeData ItemName="Lagoon\Z_Bay\Y_BayRoad\X_BayRoadGT\X_BayRoadGTSupportAir\Z_BayRoadGTCurve2SupportAir\Z_BayRoadGTCurve2SupportAir.Item.gbx" Type="Air" YOffset="1" />
             <BlockTypeData ItemName="Lagoon\Z_Bay\Y_BayRoad\X_BayRoadGT\Y_BayRoadGTGround\Z_BayRoadGTCurve2Ground.Item.gbx" Type="Gnd">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="-1" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
-              <Flag Name="NoGround" X="-1" Z="-1" />
+              <Flag Name="NoGround" X="1" Z="0" />
+              <Flag Name="NoGround" X="0" Z="1" />
+              <Flag Name="NoGround" X="1" Z="1" />
             </BlockTypeData>
           </BlockVariantData>
           <Clip Name="BayRoadClip" X="-2" Y="0" Z="-1" Rot="3" />
@@ -436,13 +436,13 @@
             <BlockTypeData ItemName="Lagoon\Z_Bay\Y_BayRoad\X_BayRoadGT\X_BayRoadGTSupportAir\BayRoadGTCurve3SupportAir\Z_BayRoadGTCurve3SupportAir.Item.gbx" Type="Air" YOffset="1" />
             <BlockTypeData ItemName="Lagoon\Z_Bay\Y_BayRoad\X_BayRoadGT\Y_BayRoadGTGround\BayRoadGTCurve3Ground.Item.gbx" Type="Gnd">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="-1" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
-              <Flag Name="NoGround" X="-1" Z="-1" />
-              <Flag Name="NoGround" X="-2" Z="-1" />
-              <Flag Name="NoGround" X="0" Z="-2" />
-              <Flag Name="NoGround" X="-1" Z="-2" />
-              <Flag Name="NoGround" X="-2" Z="-2" />
+              <Flag Name="NoGround" X="1" Z="0" />
+              <Flag Name="NoGround" X="0" Z="1" />
+              <Flag Name="NoGround" X="1" Z="1" />
+              <Flag Name="NoGround" X="2" Z="1" />
+              <Flag Name="NoGround" X="0" Z="2" />
+              <Flag Name="NoGround" X="1" Z="2" />
+              <Flag Name="NoGround" X="2" Z="2" />
             </BlockTypeData>
           </BlockVariantData>
           <Clip Name="BayRoadClip" X="0" Y="0" Z="1" Rot="2" />
@@ -453,9 +453,9 @@
             <BlockTypeData ItemName="Lagoon\Z_Bay\Y_BayRoad\X_BayRoadGT\X_BayRoadGTSupportAir\Z_BayRoadGTCurve2SupportAir\BayRoadPillarGTCurve2Air.Item.gbx" Type="Air" />
             <BlockTypeData ItemName="Lagoon\Z_Bay\Y_BayRoad\X_BayRoadGT\X_BayRoadGTSupportAir\Z_BayRoadGTCurve2SupportAir\BayRoadPillarGTCurve2Ground.Item.gbx" Type="Gnd">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="-1" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
-              <Flag Name="NoGround" X="-1" Z="-1" />
+              <Flag Name="NoGround" X="1" Z="0" />
+              <Flag Name="NoGround" X="0" Z="1" />
+              <Flag Name="NoGround" X="1" Z="1" />
             </BlockTypeData>
           </BlockVariantData>
         </BlockData>
@@ -464,12 +464,12 @@
             <BlockTypeData ItemName="Lagoon\Z_Bay\Y_BayRoad\X_BayRoadGT\X_BayRoadGTSupportAir\BayRoadGTCurve3SupportAir\BayRoadPillarGTCurve3Air.Item.gbx" Type="Air" />
             <BlockTypeData ItemName="Lagoon\Z_Bay\Y_BayRoad\X_BayRoadGT\X_BayRoadGTSupportAir\BayRoadGTCurve3SupportAir\BayRoadPillarGTCurve3Ground.Item.gbx" Type="Gnd">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="-1" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
-              <Flag Name="NoGround" X="-1" Z="-1" />
-              <Flag Name="NoGround" X="-2" Z="-1" />
-              <Flag Name="NoGround" X="-1" Z="-2" />
-              <Flag Name="NoGround" X="-2" Z="-2" />
+              <Flag Name="NoGround" X="1" Z="0" />
+              <Flag Name="NoGround" X="0" Z="1" />
+              <Flag Name="NoGround" X="1" Z="1" />
+              <Flag Name="NoGround" X="2" Z="1" />
+              <Flag Name="NoGround" X="1" Z="2" />
+              <Flag Name="NoGround" X="2" Z="2" />
             </BlockTypeData>
           </BlockVariantData>
         </BlockData>
@@ -708,9 +708,9 @@
             </BlockTypeData>
             <BlockTypeData ItemName="Lagoon\Z_Bay\X_BayBridgeRoad\Z_BayBridgeRoad\Z_BayBridgeRoadSupportGround\BayBridgeSuspGround.Item.gbx" Type="Gnd" SmallYOffset="-3">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
-              <Flag Name="NoGround" X="0" Z="-3" />
-              <Flag Name="NoGround" X="0" Z="-4" />
+              <Flag Name="NoGround" X="0" Z="1" />
+              <Flag Name="NoGround" X="0" Z="3" />
+              <Flag Name="NoGround" X="0" Z="4" />
               <Clip Name="BayBridgeRoadClip" X="0" Y="0" Z="1" Rot="2" />
               <Clip Name="BayBridgeRoadClip" X="0" Y="0" Z="-2" Rot="0" />
               <Clip Name="BayBridgeRoadClip" X="0" Y="0" Z="-2" Rot="2" />
@@ -723,7 +723,7 @@
             <BlockTypeData ItemName="Lagoon\Z_Bay\X_BayBridgeRoad\Z_BayBridgeRoad\Y_BayBridgeRoadSupportAir\BayBridgeSuspAir\BayBridgeSuspPillarAir.Item.gbx" Type="Air"/>
             <BlockTypeData ItemName="Lagoon\Z_Bay\X_BayBridgeRoad\Z_BayBridgeRoad\Y_BayBridgeRoadSupportAir\BayBridgeSuspAir\BayBridgeSuspPillarGround.Item.gbx" Type="Gnd" SmallYOffset="-3">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-2" />
+              <Flag Name="NoGround" X="0" Z="2" />
             </BlockTypeData>
           </BlockVariantData>
         </BlockData>
@@ -1069,7 +1069,7 @@
             <BlockTypeData ItemName="Lagoon\Z_Bay\V_BayPlatform\X_BayPlatformSlope\Y_BayPlatformSlopeAir\BayPlatformBiSlope2Start2Air.Item.gbx" Type="Air" />
             <BlockTypeData ItemName="Lagoon\Z_Bay\V_BayPlatform\X_BayPlatformSlope\X_BayPlatformSlopeGround\BayPlatformBiSlope2Start2Ground.Item.gbx" Type="Gnd">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
+              <Flag Name="NoGround" X="0" Z="1" />
             </BlockTypeData>
           </BlockVariantData>
         </BlockData>
@@ -1094,9 +1094,9 @@
             <BlockTypeData ItemName="Lagoon\Z_Bay\V_BayPlatform\X_BayPlatformSlope\Y_BayPlatformSlopeAir\BayPlatformSlope2GTCurve2Air.Item.gbx" Type="Air" />
             <BlockTypeData ItemName="Lagoon\Z_Bay\V_BayPlatform\X_BayPlatformSlope\X_BayPlatformSlopeGround\BayPlatformSlope2GTCurve2Ground.Item.gbx" Type="Gnd">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
-              <Flag Name="NoGround" X="-1" Z="0" />
-              <Flag Name="NoGround" X="-1" Z="-1" />
+              <Flag Name="NoGround" X="0" Z="1" />
+              <Flag Name="NoGround" X="1" Z="0" />
+              <Flag Name="NoGround" X="1" Z="1" />
             </BlockTypeData>
           </BlockVariantData>
         </BlockData>
@@ -1105,7 +1105,7 @@
             <BlockTypeData ItemName="Lagoon\Z_Bay\V_BayPlatform\W_BayPlatformSlope2Transition\Z_BayPlatformSlope2TransitionAir\Z_BayPlatformSlope2TransitionAir.Item.gbx" Type="Air" />
             <BlockTypeData ItemName="Lagoon\Z_Bay\V_BayPlatform\W_BayPlatformSlope2Transition\Y_BayPlatformSlope2TransitionGround\Z_BayPlatformSlope2TransitionGround.Item.gbx" Type="Gnd">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
+              <Flag Name="NoGround" X="0" Z="1" />
             </BlockTypeData>
           </BlockVariantData>
         </BlockData>
@@ -1114,7 +1114,7 @@
             <BlockTypeData ItemName="Lagoon\Z_Bay\V_BayPlatform\W_BayPlatformSlope2Transition\Z_BayPlatformSlope2TransitionAir\BayPlatformSlope2TransitionMirrorAir.Item.gbx" Type="Air" />
             <BlockTypeData ItemName="Lagoon\Z_Bay\V_BayPlatform\W_BayPlatformSlope2Transition\Y_BayPlatformSlope2TransitionGround\BayPlatformSlope2TransitionMirrorGround.Item.gbx" Type="Gnd">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
+              <Flag Name="NoGround" X="0" Z="1" />
             </BlockTypeData>
           </BlockVariantData>
         </BlockData>
@@ -1123,9 +1123,9 @@
             <BlockTypeData ItemName="Lagoon\Z_Bay\V_BayPlatform\W_BayPlatformSlope2Transition\Z_BayPlatformSlope2TransitionAir\BayPlatformSlope2TransitionGTCurve2Air.Item.gbx" Type="Air" />
             <BlockTypeData ItemName="Lagoon\Z_Bay\V_BayPlatform\W_BayPlatformSlope2Transition\Y_BayPlatformSlope2TransitionGround\BayPlatformSlope2TransitionGTCurve2Ground.Item.gbx" Type="Gnd">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
-              <Flag Name="NoGround" X="-1" Z="0" />
-              <Flag Name="NoGround" X="-1" Z="-1" />
+              <Flag Name="NoGround" X="0" Z="1" />
+              <Flag Name="NoGround" X="1" Z="0" />
+              <Flag Name="NoGround" X="1" Z="1" />
             </BlockTypeData>
           </BlockVariantData>
         </BlockData>
@@ -1134,9 +1134,9 @@
             <BlockTypeData ItemName="Lagoon\Z_Bay\V_BayPlatform\W_BayPlatformSlope2Transition\Z_BayPlatformSlope2TransitionAir\BayPlatformSlope2TransitionGTCurve2MirrorAir.Item.gbx" Type="Air" />
             <BlockTypeData ItemName="Lagoon\Z_Bay\V_BayPlatform\W_BayPlatformSlope2Transition\Y_BayPlatformSlope2TransitionGround\BayPlatformSlope2TransitionGTCurve2MirrorGround.Item.gbx" Type="Gnd">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
-              <Flag Name="NoGround" X="-1" Z="0" />
-              <Flag Name="NoGround" X="-1" Z="-1" />
+              <Flag Name="NoGround" X="0" Z="1" />
+              <Flag Name="NoGround" X="1" Z="0" />
+              <Flag Name="NoGround" X="1" Z="1" />
             </BlockTypeData>
           </BlockVariantData>
         </BlockData>
@@ -1145,7 +1145,7 @@
             <BlockTypeData ItemName="Lagoon\Z_Bay\V_BayPlatform\W_BayPlatformSlope2Transition\Z_BayPlatformSlope2TransitionAir\BayPlatformSlope2TransitionBiSlopeStartAir.Item.gbx" Type="Air" />
             <BlockTypeData ItemName="Lagoon\Z_Bay\V_BayPlatform\W_BayPlatformSlope2Transition\Y_BayPlatformSlope2TransitionGround\BayPlatformSlope2TransitionBiSlopeStartGround.Item.gbx" Type="Gnd">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
+              <Flag Name="NoGround" X="0" Z="1" />
             </BlockTypeData>
           </BlockVariantData>
         </BlockData>
@@ -1154,7 +1154,7 @@
             <BlockTypeData ItemName="Lagoon\Z_Bay\V_BayPlatform\W_BayPlatformSlope2Transition\Z_BayPlatformSlope2TransitionAir\BayPlatformSlope2TransitionBiSlopeStartMirrorAir.Item.gbx" Type="Air" />
             <BlockTypeData ItemName="Lagoon\Z_Bay\V_BayPlatform\W_BayPlatformSlope2Transition\Y_BayPlatformSlope2TransitionGround\BayPlatformSlope2TransitionBiSlopeStartMirrorGround.Item.gbx" Type="Gnd">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
+              <Flag Name="NoGround" X="0" Z="1" />
             </BlockTypeData>
           </BlockVariantData>
         </BlockData>
@@ -1163,9 +1163,9 @@
             <BlockTypeData ItemName="Lagoon\Z_Bay\V_BayPlatform\W_BayPlatformSlope2Transition\Z_BayPlatformSlope2TransitionAir\BayPlatformSlope2TransitionBiSlopeStartGTCurve2Air.Item.gbx" Type="Air" />
             <BlockTypeData ItemName="Lagoon\Z_Bay\V_BayPlatform\W_BayPlatformSlope2Transition\Y_BayPlatformSlope2TransitionGround\BayPlatformSlope2TransitionBiSlopeStartGTCurve2Ground.Item.gbx" Type="Gnd">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
-              <Flag Name="NoGround" X="-1" Z="0" />
-              <Flag Name="NoGround" X="-1" Z="-1" />
+              <Flag Name="NoGround" X="0" Z="1" />
+              <Flag Name="NoGround" X="1" Z="0" />
+              <Flag Name="NoGround" X="1" Z="1" />
             </BlockTypeData>
           </BlockVariantData>
         </BlockData>
@@ -1174,9 +1174,9 @@
             <BlockTypeData ItemName="Lagoon\Z_Bay\V_BayPlatform\W_BayPlatformSlope2Transition\Z_BayPlatformSlope2TransitionAir\BayPlatformSlope2TransitionBiSlopeStartGTCurve2MirrorAir.Item.gbx" Type="Air" />
             <BlockTypeData ItemName="Lagoon\Z_Bay\V_BayPlatform\W_BayPlatformSlope2Transition\Y_BayPlatformSlope2TransitionGround\BayPlatformSlope2TransitionBiSlopeStartGTCurve2MirrorGround.Item.gbx" Type="Gnd">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
-              <Flag Name="NoGround" X="-1" Z="0" />
-              <Flag Name="NoGround" X="-1" Z="-1" />
+              <Flag Name="NoGround" X="0" Z="1" />
+              <Flag Name="NoGround" X="1" Z="0" />
+              <Flag Name="NoGround" X="1" Z="1" />
             </BlockTypeData>
           </BlockVariantData>
         </BlockData>
@@ -1203,7 +1203,7 @@
             <BlockTypeData ItemName="Lagoon\Z_Bay\V_BayPlatform\V_BayPlatformLoop\Z_BayPlatformLoopAir\BayPlatformLoopStart2Air.Item.gbx" Type="Air" ZOffset="1"/>
             <BlockTypeData ItemName="Lagoon\Z_Bay\V_BayPlatform\V_BayPlatformLoop\Y_BayPlatformLoopGround\BayPlatformLoopStart2Ground.Item.gbx" Type="Gnd">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
+              <Flag Name="NoGround" X="0" Z="1" />
             </BlockTypeData>
           </BlockVariantData>
         </BlockData>
@@ -1212,7 +1212,7 @@
             <BlockTypeData ItemName="Lagoon\Z_Bay\V_BayPlatform\V_BayPlatformLoop\Z_BayPlatformLoopAir\BayPlatformLoopStart4Air.Item.gbx" Type="Air" />
             <BlockTypeData ItemName="Lagoon\Z_Bay\V_BayPlatform\V_BayPlatformLoop\Y_BayPlatformLoopGround\BayPlatformLoopStart4Ground.Item.gbx" Type="Gnd">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
+              <Flag Name="NoGround" X="0" Z="1" />
             </BlockTypeData>
           </BlockVariantData>
         </BlockData>
@@ -1246,8 +1246,8 @@
             <BlockTypeData ItemName="Lagoon\Z_Bay\V_BayPlatform\U_BayPlatformLoopGTCurve2\Z_BayPlatformLoopGTCurve2Air\BayPlatformLoopStartGTCurve2Air.Item.gbx" Type="Air" />
             <BlockTypeData ItemName="Lagoon\Z_Bay\V_BayPlatform\U_BayPlatformLoopGTCurve2\Y_BayPlatformLoopGTCurve2Ground\BayPlatformLoopStartGTCurve2Ground.Item.gbx" Type="Gnd">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
-              <Flag Name="NoGround" X="-1" Z="0" />
+              <Flag Name="NoGround" X="0" Z="1" />
+              <Flag Name="NoGround" X="1" Z="0" />
             </BlockTypeData>
           </BlockVariantData>
         </BlockData>
@@ -1256,8 +1256,8 @@
             <BlockTypeData ItemName="Lagoon\Z_Bay\V_BayPlatform\U_BayPlatformLoopGTCurve2\Z_BayPlatformLoopGTCurve2Air\BayPlatformLoopStart2GTCurve2Air.Item.gbx" Type="Air" />
             <BlockTypeData ItemName="Lagoon\Z_Bay\V_BayPlatform\U_BayPlatformLoopGTCurve2\Y_BayPlatformLoopGTCurve2Ground\BayPlatformLoopStart2GTCurve2Ground.Item.gbx" Type="Gnd">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
-              <Flag Name="NoGround" X="-1" Z="0" />
+              <Flag Name="NoGround" X="0" Z="1" />
+              <Flag Name="NoGround" X="1" Z="0" />
             </BlockTypeData>
           </BlockVariantData>
         </BlockData>
@@ -1266,8 +1266,8 @@
             <BlockTypeData ItemName="Lagoon\Z_Bay\V_BayPlatform\U_BayPlatformLoopGTCurve2\Z_BayPlatformLoopGTCurve2Air\BayPlatformLoopStart4GTCurve2Air.Item.gbx" Type="Air" />
             <BlockTypeData ItemName="Lagoon\Z_Bay\V_BayPlatform\U_BayPlatformLoopGTCurve2\Y_BayPlatformLoopGTCurve2Ground\BayPlatformLoopStart4GTCurve2Ground.Item.gbx" Type="Gnd">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="0" Z="-1" />
-              <Flag Name="NoGround" X="-1" Z="0" />
+              <Flag Name="NoGround" X="0" Z="1" />
+              <Flag Name="NoGround" X="1" Z="0" />
             </BlockTypeData>
           </BlockVariantData>
         </BlockData>
@@ -1349,7 +1349,7 @@
               <BlockSkinData SkinRegex="Up" ItemName="Lagoon\Z_Bay\V_BayPlatform\S_BayPlatformLoopAdvert\Z_BayPlatformLoopSigns\Z_BayPlatformLoopSignsAir\BayPlatformLoopSignsUpBlueAir.Item.gbx" />
               <BlockSkinData ItemName="Lagoon\Z_Bay\V_BayPlatform\S_BayPlatformLoopAdvert\Z_BayPlatformLoopSigns\Z_BayPlatformLoopSignsAir\Z_BayPlatformLoopSignsAir.Item.gbx" />
             </BlockTypeData>
-            <BlockTypeData>
+            <BlockTypeData Type="Gnd">
               <BlockSkinData SkinRegex="Wrong" ItemName="Lagoon\Z_Bay\V_BayPlatform\S_BayPlatformLoopAdvert\Z_BayPlatformLoopSigns\Y_BayPlatformLoopSignsGround\BayPlatformLoopSignsWrongWayGround.Item.gbx" />
               <BlockSkinData SkinRegex="Warn" ItemName="Lagoon\Z_Bay\V_BayPlatform\S_BayPlatformLoopAdvert\Z_BayPlatformLoopSigns\Y_BayPlatformLoopSignsGround\BayPlatformLoopSignsWarningGround.Item.gbx" />
               <BlockSkinData SkinRegex="(Right.*?Red)|(Red.*?Right)" ItemName="Lagoon\Z_Bay\V_BayPlatform\S_BayPlatformLoopAdvert\Z_BayPlatformLoopSigns\Y_BayPlatformLoopSignsGround\BayPlatformLoopSignsRightRedGround.Item.gbx" />
@@ -1408,7 +1408,7 @@
           <BlockVariantData>
             <BlockTypeData ItemName="Lagoon\Z_Bay\U_BayTunnelRoad\Z_BayTunnelEntry\BayTunnelExitBiSlope2End.Item.gbx" />
             <Flag Name="NoGround" X="0" Z="0" />
-            <Flag Name="NoGround" X="0" Z="-1" />
+            <Flag Name="NoGround" X="0" Z="1" />
             <Clip Name="BayRoadClip" X="0" Y="0" Z="1" Rot="2" />
             <Clip Name="BayTunnelClip" X="0" Y="-2" Z="-2" Rot="0" />
           </BlockVariantData>
@@ -2405,7 +2405,7 @@
               <BlockSkinData SkinRegex="Up" ItemName="Lagoon\Z_Bay\S_BayBuilding\Z_BayBuilding\U_BayAdvertBuilding1Pillar\Z_BayAdvertBuilding1TShapedSPillar\Y_BayAdvertBuilding1TShapedSPillarGround\BayAdvertBuilding1UpTShapedSPillarGround.Item.gbx" />
               <BlockSkinData ItemName="Lagoon\Z_Bay\S_BayBuilding\Z_BayBuilding\U_BayAdvertBuilding1Pillar\Z_BayAdvertBuilding1TShapedSPillar\Y_BayAdvertBuilding1TShapedSPillarGround\Z_BayAdvertBuilding1TShapedSPillarGround.Item.gbx" />
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="-1" Z="-0" />
+              <Flag Name="NoGround" X="1" Z="0" />
             </BlockTypeData>
           </BlockVariantData>
           <BlockVariantData Variant="2">
@@ -2427,7 +2427,7 @@
               <BlockSkinData SkinRegex="Up" ItemName="Lagoon\Z_Bay\S_BayBuilding\Z_BayBuilding\U_BayAdvertBuilding1Pillar\Y_BayAdvertBuilding1TShapedEPillar\Y_BayAdvertBuilding1TShapedEPillarGround\BayAdvertBuilding1UpTShapedEPillarGround.Item.gbx" />
               <BlockSkinData ItemName="Lagoon\Z_Bay\S_BayBuilding\Z_BayBuilding\U_BayAdvertBuilding1Pillar\Y_BayAdvertBuilding1TShapedEPillar\Y_BayAdvertBuilding1TShapedEPillarGround\Z_BayAdvertBuilding1TShapedEPillarGround.Item.gbx" />
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="-1" Z="-0" />
+              <Flag Name="NoGround" X="1" Z="0" />
             </BlockTypeData>
           </BlockVariantData>
           <BlockVariantData Variant="3">
@@ -2449,7 +2449,7 @@
               <BlockSkinData SkinRegex="Up" ItemName="Lagoon\Z_Bay\S_BayBuilding\Z_BayBuilding\U_BayAdvertBuilding1Pillar\Z_BayAdvertBuilding1TShapedSPillar\Y_BayAdvertBuilding1TShapedSPillarGround\BayAdvertBuilding1UpTShapedSPillarGround.Item.gbx" />
               <BlockSkinData ItemName="Lagoon\Z_Bay\S_BayBuilding\Z_BayBuilding\U_BayAdvertBuilding1Pillar\Z_BayAdvertBuilding1TShapedSPillar\Y_BayAdvertBuilding1TShapedSPillarGround\Z_BayAdvertBuilding1TShapedSPillarGround.Item.gbx" />
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="-1" Z="-0" />
+              <Flag Name="NoGround" X="1" Z="0" />
             </BlockTypeData>
           </BlockVariantData>
           <BlockVariantData Variant="4">
@@ -2471,7 +2471,7 @@
               <BlockSkinData SkinRegex="Up" ItemName="Lagoon\Z_Bay\S_BayBuilding\Z_BayBuilding\U_BayAdvertBuilding1Pillar\X_BayAdvertBuilding1TShapedWPillar\Y_BayAdvertBuilding1TShapedWPillarGround\BayAdvertBuilding1UpTShapedWPillarGround.Item.gbx" />
               <BlockSkinData ItemName="Lagoon\Z_Bay\S_BayBuilding\Z_BayBuilding\U_BayAdvertBuilding1Pillar\X_BayAdvertBuilding1TShapedWPillar\Y_BayAdvertBuilding1TShapedWPillarGround\Z_BayAdvertBuilding1TShapedWPillarGround.Item.gbx" />
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="-1" Z="-0" />
+              <Flag Name="NoGround" X="1" Z="0" />
             </BlockTypeData>
           </BlockVariantData>
         </BlockData>
