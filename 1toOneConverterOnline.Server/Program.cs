@@ -1,12 +1,13 @@
-using Microsoft.AspNetCore.Authentication.Cookies;
+using _1toOneConverterOnline.Server;
+using AspNet.Security.OAuth.Discord;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.CookiePolicy;
+using Microsoft.AspNetCore.HttpOverrides;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Trace;
 using Serilog;
 using Serilog.Sinks.SystemConsole.Themes;
-using _1toOneConverterOnline.Server;
-using Microsoft.AspNetCore.CookiePolicy;
-using AspNet.Security.OAuth.Discord;
 using System.Security.Claims;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -75,7 +76,10 @@ builder.Services.AddOpenTelemetry()
 
 var app = builder.Build();
 
-app.UseForwardedHeaders();
+app.UseForwardedHeaders(new ForwardedHeadersOptions
+{
+    ForwardedHeaders = ForwardedHeaders.XForwardedProto
+});
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
