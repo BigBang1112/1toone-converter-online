@@ -105,7 +105,7 @@
     }
 
     [JSInvokable]
-    public async Task OnUploadAsync(string name, int size, DateTimeOffset lastModifiedDate, byte[] data)
+    public async Task OnUploadAsync(string name, int size, DateTimeOffset? lastModifiedDate, byte[] data)
     {
         var mapItem = new MapItem(name, size, lastModifiedDate);
 

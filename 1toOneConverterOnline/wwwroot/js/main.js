@@ -2,7 +2,7 @@ let dotNetObjRef;
 let tmp = 0;
 
 const dragenter = (e) => {
-    tmp++;
+    tmp = 1;
     e.currentTarget.classList.add('dragover', 'overflow');
 };
 

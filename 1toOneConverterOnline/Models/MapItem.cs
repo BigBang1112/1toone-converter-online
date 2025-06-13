@@ -9,7 +9,7 @@ public sealed class MapItem
 
     public string FileName { get; }
     public int FileSize { get; }
-    public DateTimeOffset LastModified { get; }
+    public DateTimeOffset? LastModified { get; }
 
     public CGameCtnChallenge? Map { get; set; }
     public MapBasicInfo? BasicInfo { get; set; }
@@ -32,7 +32,7 @@ public sealed class MapItem
         }
     }
 
-    public MapItem(string fileName, int fileSize, DateTimeOffset lastModified)
+    public MapItem(string fileName, int fileSize, DateTimeOffset? lastModified)
     {
         FileName = fileName;
         FileSize = fileSize;
