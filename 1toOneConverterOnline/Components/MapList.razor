@@ -105,9 +105,9 @@
     }
 
     [JSInvokable]
-    public async Task OnUploadAsync(string name, int size, DateTimeOffset lastModifiedDate, byte[] data)
+    public async Task OnUploadAsync(string name, int size, long lastModified, byte[] data)
     {
-        var mapItem = new MapItem(name, size, lastModifiedDate);
+        var mapItem = new MapItem(name, size, DateTimeOffset.FromUnixTimeMilliseconds(lastModified));
 
         Maps.Insert(0, mapItem);
 
