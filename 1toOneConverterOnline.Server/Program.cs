@@ -108,9 +108,6 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.UseBlazorFrameworkFiles();
-app.UseStaticFiles();
-
 var allowedDiscordUserIds = builder.Configuration.GetSection("AllowedDiscordUserIds").Get<List<string>>() ?? [];
 
 app.Use(async (context, next) =>
@@ -140,6 +137,9 @@ app.Use(async (context, next) =>
 
     await next();
 });
+
+app.UseStaticFiles();
+app.UseBlazorFrameworkFiles();
 
 app.MapFallbackToFile("index.html");
 
