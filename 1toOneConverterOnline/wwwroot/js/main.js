@@ -48,7 +48,7 @@ const getFiles = async (fileList) => {
             continue;
         }
 
-        await dotNetObjRef.invokeMethodAsync('OnUploadAsync', item.name, item.size, item.lastModifiedDate, fileData);
+        await dotNetObjRef.invokeMethodAsync('OnUploadAsync', item.name, item.size, item.lastModified, fileData);
     }
 };
 
