@@ -109,7 +109,7 @@
         <BlockData BlockName="BayRoad">
           <BlockVariantData Variant="3">
             <BlockTypeData ItemName="Lagoon\Z_Bay\Y_BayRoad\Z_BayRoad\Z_BayRoadAir\Z_BayRoadStraightAir.Item.gbx" Type="Air" />
-            <BlockTypeData ItemName="Lagoon\Z_Bay\Y_BayRoad\Z_BayRoad\Y_BayRoadGround\Z_BayRoadStraightGround.Item.gbx">
+            <BlockTypeData ItemName="Lagoon\Z_Bay\Y_BayRoad\Z_BayRoad\Y_BayRoadGround\Z_BayRoadStraightGround.Item.gbx" Type="Gnd">
               <Flag Name="NoGround" X="0" Z="0" />
             </BlockTypeData>
             <Clip Name="BayRoadClip" X="0" Y="0" Z="-1" Rot="0" />
