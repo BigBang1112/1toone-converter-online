@@ -126,15 +126,18 @@ app.Use(async (context, next) =>
     var logger = context.RequestServices.GetRequiredService<ILogger<Program>>();
 
     var userId = context.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+    var globalName = context.User.FindFirst(DiscordAdditionalClaims.GlobalName)?.Value;
+    var username = context.User.FindFirst(ClaimTypes.Name)?.Value ?? "Unknown";
+
     if (userId is null || !allowedDiscordUserIds.Contains(userId))
     {
-        var globalName = context.User.FindFirst(DiscordAdditionalClaims.GlobalName)?.Value;
-        var username = context.User.FindFirst(ClaimTypes.Name)?.Value ?? "Unknown";
-
         logger.LogWarning("Access denied for user: {GlobalName} ({Username})", globalName ?? username, username);
         context.Response.StatusCode = StatusCodes.Status403Forbidden;
         await context.Response.WriteAsync("Access denied.");
-        return;
+    }
+    else
+    {
+        logger.LogInformation("User {GlobalName} ({Username}) authenticated successfully.", globalName ?? username, username);
     }
 
     await next();
