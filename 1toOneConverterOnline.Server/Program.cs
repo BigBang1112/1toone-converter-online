@@ -111,8 +111,6 @@ app.UseAuthorization();
 app.UseBlazorFrameworkFiles();
 app.UseStaticFiles();
 
-app.UseRouting();
-
 var allowedDiscordUserIds = builder.Configuration.GetSection("AllowedDiscordUserIds").Get<List<string>>() ?? [];
 
 app.Use(async (context, next) =>
