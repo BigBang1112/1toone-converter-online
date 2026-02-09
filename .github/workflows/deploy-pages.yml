@@ -34,7 +34,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: 9.0.x
+          dotnet-version: 10.0.x
 
       - name: Install wasm-tools
         run: dotnet workload install wasm-tools
@@ -43,7 +43,7 @@ jobs:
         run: dotnet publish 1toOneConverterOnline -c Release --nologo -o publish /p:ContinuousIntegrationBuild=true
         
       - name: Test
-        run: dotnet test 1toOneConverterOnline.sln --no-build --verbosity normal
+        run: dotnet test 1toOneConverterOnline.slnx --no-build --verbosity normal
         
       - name: Change base in index.html to repository name
         run: sed -i 's/<base href="\/" \/>/<base href="\/1toone-converter-online\/" \/>/g' publish/wwwroot/index.html

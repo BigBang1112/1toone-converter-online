@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/Položky řešení/">
+    <File Path=".editorconfig" />
+  </Folder>
+  <Project Path="1toOneConverterOnline.Server/1toOneConverterOnline.Server.csproj" />
+  <Project Path="1toOneConverterOnline.Tests/1toOneConverterOnline.Tests.csproj" />
+  <Project Path="1toOneConverterOnline/1toOneConverterOnline.csproj" />
+  <Project Path="docker-compose.dcproj">
+    <Build />
+  </Project>
+</Solution>

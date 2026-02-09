@@ -17,13 +17,13 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 9.0.x
+        dotnet-version: 10.0.x
         
     - name: Restore dependencies
-      run: dotnet restore 1toOneConverterOnline.sln
+      run: dotnet restore 1toOneConverterOnline.slnx
       
     - name: Build
-      run: dotnet build 1toOneConverterOnline.sln --no-restore /p:ContinuousIntegrationBuild=true
+      run: dotnet build 1toOneConverterOnline.slnx --no-restore /p:ContinuousIntegrationBuild=true
       
     - name: Test
-      run: dotnet test 1toOneConverterOnline.sln --no-build --verbosity normal
+      run: dotnet test 1toOneConverterOnline.slnx --no-build --verbosity normal
