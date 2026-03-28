@@ -94,18 +94,18 @@ public sealed class EnviConversion : Conversion
             }
         }
 
-        TweakClipTriggers(gridOffset, map.Challenge.ClipGroupInGame);
-        TweakClipTriggers(gridOffset, map.Challenge.ClipGroupEndRace);
+        TweakClipTriggers(map, gridOffset, map.Challenge.ClipGroupInGame);
+        TweakClipTriggers(map, gridOffset, map.Challenge.ClipGroupEndRace);
     }
 
-    private static void TweakClipTriggers(Int3 gridOffset, CGameCtnMediaClipGroup? clipGroup)
+    private static void TweakClipTriggers(Map map, Int3 gridOffset, CGameCtnMediaClipGroup? clipGroup)
     {
         if (clipGroup is null)
         {
             return;
         }
 
-        foreach (var (_, trigger) in clipGroup.Clips)
+        foreach (var (clip, trigger) in clipGroup.Clips)
         {
             if (trigger.Coords is null or { Count: 0 })
             {
@@ -118,7 +118,32 @@ public sealed class EnviConversion : Conversion
                 trigger.Coords[i] = coord + gridOffset;
             }
 
-            // offset all clip ghosts once gbx.net can modify samples
+            TweakClip(map, gridOffset, clip);
+        }
+    }
+
+    private static void TweakClip(Map map, Int3 gridOffset, CGameCtnMediaClip? clip)
+    {
+        if (clip is null)
+        {
+            return;
+        }
+
+        foreach (var block in clip.Tracks.SelectMany(x => x.Blocks))
+        {
+            switch (block)
+            {
+                case CGameCtnMediaBlockCameraCustom cameraCustom:
+                    foreach (var key in cameraCustom.Keys ?? [])
+                    {
+                        key.Position += gridOffset * map.GridSize;
+                    }
+                    break;
+                case CGameCtnMediaBlockGhost { GhostModel: not null } ghostBlock:
+
+                    // offset all clip ghosts once gbx.net can modify samples
+                    break;
+            }
         }
     }
 }

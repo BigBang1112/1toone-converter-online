@@ -66,12 +66,6 @@ public sealed class MediaTrackerConversion : Conversion
         {
             switch (block)
             {
-                case CGameCtnMediaBlockCameraCustom cameraCustom:
-                    foreach (var key in cameraCustom.Keys ?? [])
-                    {
-                        key.Position = key.Position with { Y = key.Position.Y + map.GridOffset.Y };
-                    }
-                    break;
                 case CGameCtnMediaBlockGhost { GhostModel: not null } ghostBlock:
                     var vehicle = ghostBlock.GhostModel.PlayerModel;
 
