@@ -3123,5 +3123,9 @@
       <YValue Value="5" />
       <ZStep Value="1" />
     </Conversion>
+    <Conversion xsi:type="MediaTrackerConversion">
+      <OffsetY Value="1" />
+    </Conversion>
+    <Conversion xsi:type="MetadataConversion" />
   </Conversions>
 </ComplexConversion>
