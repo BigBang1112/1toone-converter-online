@@ -93,5 +93,32 @@ public sealed class EnviConversion : Conversion
                 map.PlaceMinimalItem(item);
             }
         }
+
+        TweakClipTriggers(gridOffset, map.Challenge.ClipGroupInGame);
+        TweakClipTriggers(gridOffset, map.Challenge.ClipGroupEndRace);
+    }
+
+    private static void TweakClipTriggers(Int3 gridOffset, CGameCtnMediaClipGroup? clipGroup)
+    {
+        if (clipGroup is null)
+        {
+            return;
+        }
+
+        foreach (var (_, trigger) in clipGroup.Clips)
+        {
+            if (trigger.Coords is null or { Count: 0 })
+            {
+                continue;
+            }
+
+            for (var i = 0; i < trigger.Coords.Count; i++)
+            {
+                var coord = trigger.Coords[i];
+                trigger.Coords[i] = coord + gridOffset;
+            }
+
+            // offset all clip ghosts once gbx.net can modify samples
+        }
     }
 }
