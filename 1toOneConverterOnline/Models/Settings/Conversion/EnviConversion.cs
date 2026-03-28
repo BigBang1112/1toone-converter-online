@@ -94,6 +94,8 @@ public sealed class EnviConversion : Conversion
             }
         }
 
+        map.Challenge.ThumbnailPosition += gridOffset * map.GridSize;
+
         TweakClipTriggers(map, gridOffset, map.Challenge.ClipGroupInGame);
         TweakClipTriggers(map, gridOffset, map.Challenge.ClipGroupEndRace);
     }
