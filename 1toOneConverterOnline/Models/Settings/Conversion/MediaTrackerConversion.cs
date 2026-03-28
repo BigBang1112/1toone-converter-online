@@ -10,6 +10,9 @@ public sealed class MediaTrackerConversion : Conversion
 
     public override void Convert(Map map)
     {
+        map.Challenge.Chunks.Remove<CGameCtnChallenge.Chunk03043021>();
+        map.Challenge.Chunks.Create<CGameCtnChallenge.Chunk03043049>();
+
         TweakClip(map, map.Challenge.ClipIntro);
         TweakClipTriggers(map, map.Challenge.ClipGroupInGame);
         TweakClipTriggers(map, map.Challenge.ClipGroupEndRace);
