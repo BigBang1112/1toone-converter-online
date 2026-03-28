@@ -728,6 +728,7 @@
           <BlockVariantData>
             <BlockTypeData ItemName="Lagoon\Z_Bay\X_BayBridgeRoad\Z_BayBridgeRoad\Y_BayBridgeRoadSupportAir\BayBridgeSuspAir\BayBridgeSuspPillarAir.Item.gbx" Type="Air"/>
             <BlockTypeData ItemName="Lagoon\Z_Bay\X_BayBridgeRoad\Z_BayBridgeRoad\Y_BayBridgeRoadSupportAir\BayBridgeSuspAir\BayBridgeSuspPillarGround.Item.gbx" Type="Gnd" SmallYOffset="-3">
+              <Flag Name="NoGround" X="0" Y="1" />
               <Flag Name="NoGround" X="0" Y="1" Z="4" />
               <Flag Name="NoGround" X="0" Z="1" />
               <Flag Name="NoGround" X="0" Z="3" />
