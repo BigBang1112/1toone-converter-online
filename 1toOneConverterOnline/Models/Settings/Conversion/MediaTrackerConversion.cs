@@ -66,6 +66,22 @@ public sealed class MediaTrackerConversion : Conversion
         {
             switch (block)
             {
+                case CGameCtnMediaBlockCameraGame cameraGameBlock:
+                    // TODO once GameCamOld is nullable, check if it isnt null, and map that into chunk 0x003
+                    if (cameraGameBlock.Chunks.Get<CGameCtnMediaBlockCameraGame.Chunk03084000>() is not null
+                     || cameraGameBlock.Chunks.Get<CGameCtnMediaBlockCameraGame.Chunk03084001>() is not null)
+                    {
+                        cameraGameBlock.Chunks.Remove<CGameCtnMediaBlockCameraGame.Chunk03084000>();
+                        cameraGameBlock.Chunks.Remove<CGameCtnMediaBlockCameraGame.Chunk03084001>();
+                        cameraGameBlock.CreateChunk<CGameCtnMediaBlockCameraGame.Chunk03084003>();
+
+                        cameraGameBlock.GameCamId = cameraGameBlock.GameCamOld switch
+                        {
+                            CGameCtnMediaBlockCameraGame.EGameCamOld.Internal => "Internal",
+                            _ => "<Default>"
+                        };
+                    }
+                    break;
                 case CGameCtnMediaBlockGhost { GhostModel: not null } ghostBlock:
                     var vehicle = ghostBlock.GhostModel.PlayerModel;
 
