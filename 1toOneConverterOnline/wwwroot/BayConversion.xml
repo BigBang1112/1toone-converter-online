@@ -3125,6 +3125,7 @@
     </Conversion>
     <Conversion xsi:type="MediaTrackerConversion">
       <OffsetY Value="1" />
+      <SmallOffsetY Value="4" />
     </Conversion>
     <Conversion xsi:type="MetadataConversion" />
   </Conversions>
