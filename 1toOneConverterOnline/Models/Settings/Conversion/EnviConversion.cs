@@ -96,6 +96,7 @@ public sealed class EnviConversion : Conversion
 
         map.Challenge.ThumbnailPosition += gridOffset * map.GridSize;
 
+        TweakClip(map, gridOffset, map.Challenge.ClipIntro);
         TweakClipTriggers(map, gridOffset, map.Challenge.ClipGroupInGame);
         TweakClipTriggers(map, gridOffset, map.Challenge.ClipGroupEndRace);
     }
@@ -135,8 +136,14 @@ public sealed class EnviConversion : Conversion
         {
             switch (block)
             {
-                case CGameCtnMediaBlockCameraCustom cameraCustom:
-                    foreach (var key in cameraCustom.Keys ?? [])
+                case CGameCtnMediaBlockCameraCustom cameraCustomBlock:
+                    foreach (var key in cameraCustomBlock.Keys ?? [])
+                    {
+                        key.Position += gridOffset * map.GridSize;
+                    }
+                    break;
+                case CGameCtnMediaBlockCameraPath cameraPathBlock:
+                    foreach (var key in cameraPathBlock.Keys ?? [])
                     {
                         key.Position += gridOffset * map.GridSize;
                     }

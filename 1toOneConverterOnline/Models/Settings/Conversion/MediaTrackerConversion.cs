@@ -8,6 +8,9 @@ public sealed class MediaTrackerConversion : Conversion
     [XmlElement]
     public ElementValue<int> OffsetY { get; init; }
 
+    [XmlElement]
+    public ElementValue<int> SmallOffsetY { get; init; }
+
     public override void Convert(Map map)
     {
         map.Challenge.Chunks.Remove<CGameCtnChallenge.Chunk03043021>();
@@ -55,7 +58,7 @@ public sealed class MediaTrackerConversion : Conversion
         }
     }
 
-    private static void TweakClip(Map map, CGameCtnMediaClip? clip)
+    private void TweakClip(Map map, CGameCtnMediaClip? clip)
     {
         if (clip is null)
         {
@@ -96,6 +99,18 @@ public sealed class MediaTrackerConversion : Conversion
                         Collection = map.Challenge.Collection ?? new GBX.NET.Id(),
                         Author = "florenzius",
                     };
+                    break;
+                case CGameCtnMediaBlockCameraCustom cameraCustomBlock:
+                    foreach (var key in cameraCustomBlock.Keys ?? [])
+                    {
+                        key.Position = key.Position with { Y = key.Position.Y + (OffsetY.Value - map.BaseHeight) * map.GridSize.Y + SmallOffsetY.Value };
+                    }
+                    break;
+                case CGameCtnMediaBlockCameraPath cameraPathBlock:
+                    foreach (var key in cameraPathBlock.Keys ?? [])
+                    {
+                        key.Position = key.Position with { Y = key.Position.Y + (OffsetY.Value - map.BaseHeight) * map.GridSize.Y + SmallOffsetY.Value };
+                    }
                     break;
             }
         }
