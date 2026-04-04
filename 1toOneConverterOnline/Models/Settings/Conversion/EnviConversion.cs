@@ -1,4 +1,5 @@
 ﻿using GBX.NET.Engines.Game;
+using System.Numerics;
 using System.Xml.Serialization;
 
 namespace _1toOneConverterOnline.Models.Settings.Conversion;
@@ -95,6 +96,14 @@ public sealed class EnviConversion : Conversion
         }
 
         map.Challenge.ThumbnailPosition += gridOffset * map.GridSize;
+        /*if (map.Challenge.ThumbnailRotationMatrix.HasValue)
+        {
+            Matrix4x4.Decompose(map.Challenge.ThumbnailRotationMatrix.Value, out _, out Quaternion rotationQ, out _);
+            map.Challenge.ThumbnailPitchYawRoll = QuaternionToEuler(rotationQ);
+            map.Challenge.RemoveChunk<CGameCtnChallenge.Chunk03043027>();
+            map.Challenge.RemoveChunk<CGameCtnChallenge.Chunk03043028>();
+            map.Challenge.CreateChunk<CGameCtnChallenge.Chunk03043036>();
+        }*/
 
         TweakClip(map, gridOffset, map.Challenge.ClipIntro);
         TweakClipTriggers(map, gridOffset, map.Challenge.ClipGroupInGame);
@@ -150,9 +159,38 @@ public sealed class EnviConversion : Conversion
                     break;
                 case CGameCtnMediaBlockGhost { GhostModel: not null } ghostBlock:
 
-                    // offset all clip ghosts once gbx.net can modify samples
+                    foreach (var sample in ghostBlock.GhostModel.SampleData.Samples)
+                    {
+                        sample.Position += gridOffset * map.GridSize;
+                    }
+
                     break;
             }
         }
+    }
+
+    private static void GetLocFreeVal(Matrix4x4 matrix, out Vector3 position, out Vector3 rotation)
+    {
+        position = new Vector3(matrix.M41, matrix.M42, matrix.M43);
+
+        float m31 = Math.Clamp(matrix.M31, -1f, 1f);
+
+        float pitch = (float)Math.Asin(m31);
+        float cosPitch = (float)Math.Cos(pitch);
+
+        float roll, yaw;
+
+        if (Math.Abs(cosPitch) <= 0.005f)
+        {
+            roll = 0f;
+            yaw = (float)Math.Atan2(matrix.M12, matrix.M22);
+        }
+        else
+        {
+            roll = (float)Math.Atan2(-matrix.M32, matrix.M33);
+            yaw = (float)Math.Atan2(-matrix.M21, matrix.M11);
+        }
+
+        rotation = new Vector3(roll, pitch, yaw);
     }
 }

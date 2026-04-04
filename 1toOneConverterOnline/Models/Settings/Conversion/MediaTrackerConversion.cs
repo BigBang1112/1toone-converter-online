@@ -65,14 +65,14 @@ public sealed class MediaTrackerConversion : Conversion
             return;
         }
 
+        var unitOffsetY = (OffsetY.Value - map.BaseHeight) * map.GridSize.Y + SmallOffsetY.Value;
+
         foreach (var block in clip.Tracks.SelectMany(x => x.Blocks))
         {
             switch (block)
             {
                 case CGameCtnMediaBlockCameraGame cameraGameBlock:
-                    // TODO once GameCamOld is nullable, check if it isnt null, and map that into chunk 0x003
-                    if (cameraGameBlock.Chunks.Get<CGameCtnMediaBlockCameraGame.Chunk03084000>() is not null
-                     || cameraGameBlock.Chunks.Get<CGameCtnMediaBlockCameraGame.Chunk03084001>() is not null)
+                    if (cameraGameBlock.GameCamOld.HasValue)
                     {
                         cameraGameBlock.Chunks.Remove<CGameCtnMediaBlockCameraGame.Chunk03084000>();
                         cameraGameBlock.Chunks.Remove<CGameCtnMediaBlockCameraGame.Chunk03084001>();
@@ -99,17 +99,22 @@ public sealed class MediaTrackerConversion : Conversion
                         Collection = map.Challenge.Collection ?? new GBX.NET.Id(),
                         Author = "florenzius",
                     };
+
+                    foreach (var sample in ghostBlock.GhostModel.SampleData.Samples)
+                    {
+                        sample.Position = sample.Position with { Y = sample.Position.Y + unitOffsetY };
+                    }
                     break;
                 case CGameCtnMediaBlockCameraCustom cameraCustomBlock:
                     foreach (var key in cameraCustomBlock.Keys ?? [])
                     {
-                        key.Position = key.Position with { Y = key.Position.Y + (OffsetY.Value - map.BaseHeight) * map.GridSize.Y + SmallOffsetY.Value };
+                        key.Position = key.Position with { Y = key.Position.Y + unitOffsetY };
                     }
                     break;
                 case CGameCtnMediaBlockCameraPath cameraPathBlock:
                     foreach (var key in cameraPathBlock.Keys ?? [])
                     {
-                        key.Position = key.Position with { Y = key.Position.Y + (OffsetY.Value - map.BaseHeight) * map.GridSize.Y + SmallOffsetY.Value };
+                        key.Position = key.Position with { Y = key.Position.Y + unitOffsetY };
                     }
                     break;
             }
