@@ -109,6 +109,11 @@ public sealed class MediaTrackerConversion : Conversion
                     foreach (var key in cameraCustomBlock.Keys ?? [])
                     {
                         key.Position = key.Position with { Y = key.Position.Y + unitOffsetY };
+
+                        if (key.Interpolation == CGameCtnMediaBlockCameraCustom.Interpolation.Hermite)
+                        {
+                            key.Interpolation = CGameCtnMediaBlockCameraCustom.Interpolation.Linear;
+                        }
                     }
                     break;
                 case CGameCtnMediaBlockCameraPath cameraPathBlock:
