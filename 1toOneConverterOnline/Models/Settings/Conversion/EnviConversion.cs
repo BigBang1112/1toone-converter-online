@@ -148,13 +148,19 @@ public sealed class EnviConversion : Conversion
                 case CGameCtnMediaBlockCameraCustom cameraCustomBlock:
                     foreach (var key in cameraCustomBlock.Keys ?? [])
                     {
-                        key.Position += gridOffset * map.GridSize;
+                        if (key.Anchor == -1)
+                        {
+                            key.Position += gridOffset * map.GridSize;
+                        }
                     }
                     break;
                 case CGameCtnMediaBlockCameraPath cameraPathBlock:
                     foreach (var key in cameraPathBlock.Keys ?? [])
                     {
-                        key.Position += gridOffset * map.GridSize;
+                        if (key.Anchor == -1)
+                        {
+                            key.Position += gridOffset * map.GridSize;
+                        }
                     }
                     break;
                 case CGameCtnMediaBlockGhost { GhostModel: not null } ghostBlock:

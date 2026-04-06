@@ -108,7 +108,10 @@ public sealed class MediaTrackerConversion : Conversion
                 case CGameCtnMediaBlockCameraCustom cameraCustomBlock:
                     foreach (var key in cameraCustomBlock.Keys ?? [])
                     {
-                        key.Position = key.Position with { Y = key.Position.Y + unitOffsetY };
+                        if (key.Anchor == -1)
+                        {
+                            key.Position = key.Position with { Y = key.Position.Y + unitOffsetY };
+                        }
 
                         if (key.Interpolation == CGameCtnMediaBlockCameraCustom.Interpolation.Hermite)
                         {
@@ -119,7 +122,10 @@ public sealed class MediaTrackerConversion : Conversion
                 case CGameCtnMediaBlockCameraPath cameraPathBlock:
                     foreach (var key in cameraPathBlock.Keys ?? [])
                     {
-                        key.Position = key.Position with { Y = key.Position.Y + unitOffsetY };
+                        if (key.Anchor == -1)
+                        {
+                            key.Position = key.Position with { Y = key.Position.Y + unitOffsetY };
+                        }
                     }
                     break;
             }
