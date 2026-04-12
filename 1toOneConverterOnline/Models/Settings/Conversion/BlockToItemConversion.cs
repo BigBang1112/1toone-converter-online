@@ -156,7 +156,9 @@ public sealed class BlockToItemConversion : Conversion
 
             if (randomBlocks is not null)
             {
-                var b = randomBlocks[Random.Shared.Next(randomBlocks.Count)];
+                var b = randomBlocks.Count > block.SubVariant
+                    ? randomBlocks[block.SubVariant]
+                    : randomBlocks[Random.Shared.Next(randomBlocks.Count)];
 
                 PlaceItem(map, block, b, blockSize, posOffset, blockData.RotOffset + rotOffset, smallYOffset);
 
