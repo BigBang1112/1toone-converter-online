@@ -2671,9 +2671,9 @@
         </BlockData>
         <BlockData BlockName="BayDocksHarborDeadendContainer">
           <BlockVariantData>
-            <BlockRandomData ItemName="Lagoon\Z_Bay\S_BayBuilding\Y_BayCargo\Y_BayDocksHarbor\Z_BayDocksHarborDeadendContainer\BayDocksHarborDeadendContainerA.Item.gbx" SmallYOffset="-3" Variant="0" />
+            <BlockRandomData ItemName="Lagoon\Z_Bay\S_BayBuilding\Y_BayCargo\Y_BayDocksHarbor\Z_BayDocksHarborDeadendContainer\BayDocksHarborDeadendContainerA.Item.gbx" SmallYOffset="-3" Variant="2" />
             <BlockRandomData ItemName="Lagoon\Z_Bay\S_BayBuilding\Y_BayCargo\Y_BayDocksHarbor\Z_BayDocksHarborDeadendContainer\BayDocksHarborDeadendContainerB.Item.gbx" SmallYOffset="-3" Variant="1" />
-            <BlockRandomData ItemName="Lagoon\Z_Bay\S_BayBuilding\Y_BayCargo\Y_BayDocksHarbor\Z_BayDocksHarborDeadendContainer\BayDocksHarborDeadendContainerC.Item.gbx" SmallYOffset="-3" Variant="2" />
+            <BlockRandomData ItemName="Lagoon\Z_Bay\S_BayBuilding\Y_BayCargo\Y_BayDocksHarbor\Z_BayDocksHarborDeadendContainer\BayDocksHarborDeadendContainerC.Item.gbx" SmallYOffset="-3" Variant="0" />
           </BlockVariantData>
           <Flag Name="NoGround" X="0" Z="0" />
         </BlockData>

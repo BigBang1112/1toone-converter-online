@@ -148,7 +148,7 @@ public sealed class BlockToItemConversion : Conversion
         {
             var randomBlocks = default(List<BlockRandomData>);
 
-            foreach (var b in blockData.Children.OfType<BlockRandomData>())
+            foreach (var b in blockData.Children.OfType<BlockRandomData>().OrderBy(x => x.Variant))
             {
                 randomBlocks ??= [];
                 randomBlocks.Add(b);
