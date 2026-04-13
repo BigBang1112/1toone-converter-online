@@ -1,4 +1,5 @@
-﻿using GBX.NET.Engines.Game;
+﻿using GBX.NET;
+using GBX.NET.Engines.Game;
 using System.Numerics;
 using System.Xml.Serialization;
 
@@ -70,6 +71,7 @@ public sealed class EnviConversion : Conversion
         map.Challenge.Decoration = newDeco.Deco;
         map.Challenge.MapInfo = map.Challenge.MapInfo with { Collection = newDeco.Deco.Collection };
         map.Challenge.Size = MapSize;
+        map.Challenge.ModPackDesc = PackDesc.Empty;
 
         foreach (var block in map.Challenge.GetBlocks())
         {
