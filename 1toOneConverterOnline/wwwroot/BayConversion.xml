@@ -468,10 +468,8 @@
             <BlockTypeData ItemName="Lagoon\Z_Bay\Y_BayRoad\X_BayRoadGT\X_BayRoadGTSupportAir\BayRoadGTCurve3SupportAir\BayRoadPillarGTCurve3Ground.Item.gbx" Type="Gnd">
               <Flag Name="NoGround" X="0" Z="0" />
               <Flag Name="NoGround" X="1" Z="0" />
-              <Flag Name="NoGround" X="0" Z="1" />
               <Flag Name="NoGround" X="1" Z="1" />
               <Flag Name="NoGround" X="2" Z="1" />
-              <Flag Name="NoGround" X="1" Z="2" />
               <Flag Name="NoGround" X="2" Z="2" />
             </BlockTypeData>
           </BlockVariantData>
