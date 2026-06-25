@@ -30,6 +30,11 @@ internal sealed class ConversionService : IConversionService
             throw new Exception($"{env} conversion is not available.");
         }
 
+        if (map.Challenge.CreatedWithSimpleEditor)
+        {
+            throw new Exception("The map was created with the simple editor, which is not supported.");
+        }
+
         map.Environment = env;
         conversion.Convert(map);
     }

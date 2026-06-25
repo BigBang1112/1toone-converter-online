@@ -144,6 +144,14 @@
             return;
         }
 
+        if (map.CreatedWithSimpleEditor)
+        {
+            mapItem.Description = "The map was created with the simple editor, which is not supported.";
+
+            StateHasChanged();
+            return;
+        }
+
         await OnMapItemClick.InvokeAsync(mapItem);
 
         mapItem.Description = "Converting...";
