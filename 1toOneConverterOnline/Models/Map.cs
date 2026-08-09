@@ -66,7 +66,14 @@ public sealed class Map
             Pylons.Add(pylon.Type, []);
         }
 
-        Pylons[pylon.Type].Add(pylon.Normalize());
+        if (pylon.Type == Settings.Conversion.PylonType.Forced)
+        {
+            Pylons[pylon.Type].Add(pylon);
+        }
+        else
+        {
+            Pylons[pylon.Type].Add(pylon.Normalize());
+        }
     }
 
     public void AddPylons(IEnumerable<Settings.Conversion.Pylon> pylonList, Int3 coord, Direction rot)
@@ -102,6 +109,24 @@ public sealed class Map
             ),
             1 => new Vec3(
                 (coords.x - 0.5f) * GridSize.X + GridOffset.X,
+                 coords.y * GridSize.Y + GridOffset.Y,
+                 coords.z * GridSize.Z + GridOffset.Z
+            ),
+            _ => throw new Exception()
+        };
+    }
+
+    public Vec3 ConvertForcedPylonCoords((byte x, byte y, byte z) coords, byte rot)
+    {
+        return rot switch
+        {
+            1 or 3 => new Vec3(
+                 coords.x * GridSize.X + GridOffset.X,
+                 coords.y * GridSize.Y + GridOffset.Y,
+                (coords.z - 1) * GridSize.Z + GridOffset.Z
+            ),
+            0 or 2 => new Vec3(
+                (coords.x - 1) * GridSize.X + GridOffset.X,
                  coords.y * GridSize.Y + GridOffset.Y,
                  coords.z * GridSize.Z + GridOffset.Z
             ),

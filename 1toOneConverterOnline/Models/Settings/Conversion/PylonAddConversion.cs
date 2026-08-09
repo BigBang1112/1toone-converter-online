@@ -15,7 +15,13 @@ public sealed class PylonAddConversion : Conversion
     {
         int itemCount = 0;
 
-        var pylonMap = new SortedSet<Pylon>[65, 65, 2];
+        var pylonMap = new SortedSet<Pylon>[65, 65, 4];
+
+        foreach (var pylon in map.GetPylons(PylonType.Forced))
+        {
+            var pylonField = pylonMap[pylon.X, pylon.Z, pylon.Rot] ??= new SortedSet<Pylon>(Pylon.GetComparer());
+            pylonField.Add(pylon);
+        }
 
         foreach (var pylon in map.GetPylons(PylonType.Top))
         {
@@ -39,10 +45,21 @@ public sealed class PylonAddConversion : Conversion
         {
             if (pylonField != null)
             {
+                bool hasPlacedForced = false;
                 byte? topLeft = null, topRight = null;
 
                 foreach (var pylonInfo in pylonField)
                 {
+                    if (pylonInfo.Type == PylonType.Forced)
+                    {
+                        if (!hasPlacedForced)
+                        {
+                            itemCount += PlaceForced(map, pylonInfo);
+                            hasPlacedForced = true;
+                        }
+                        continue;
+                    }
+
                     switch (pylonInfo.Type, pylonInfo.Pos)
                     {
                         case (PylonType.Prevent, PylonPosition.Both):
@@ -79,6 +96,15 @@ public sealed class PylonAddConversion : Conversion
             nextPylon:;
             }
         }
+    }
+
+    private int PlaceForced(Map map, Pylon pylon)
+    {
+        var pos = ((byte)pylon.X, (byte)pylon.Z);
+        byte y = (byte)pylon.Y;
+        var groundHeight = (byte)map.BaseHeight;
+
+        return PlaceForcedPylons(map, pos, (y, groundHeight), pylon.Rot, PylonPosition.Both);
     }
 
     public int PlaceBoth(Map file, Pylon bottom, byte? topLeft, byte? topRight)
@@ -154,6 +180,21 @@ public sealed class PylonAddConversion : Conversion
                 new GBX.NET.Ident(itemName, Collection, DefaultAuthor),
                 map.ConvertPylonCoords((pos.x, i, pos.z), rot),
                 ConvertRot(rot, pylonPos));
+            item.BlockUnitCoord = new GBX.NET.Byte3(pos.x, i, pos.z);
+        }
+
+        return y.top - y.bottom;
+    }
+
+    private int PlaceForcedPylons(Map map, (byte x, byte z) pos, (byte top, byte bottom) y, byte rot, PylonPosition pylonPos)
+    {
+        for (byte i = y.bottom; i < y.top; i++)
+        {
+            //Place Forced Pylon
+            var item = map.Challenge.PlaceAnchoredObject(
+                new GBX.NET.Ident(ForcedPylon, Collection, DefaultAuthor),
+                map.ConvertCoords((pos.x, i, pos.z)),
+                ConvertRot(rot));
             item.BlockUnitCoord = new GBX.NET.Byte3(pos.x, i, pos.z);
         }
 
