@@ -16,6 +16,9 @@ public sealed class MediaTrackerConversion : Conversion
         map.Challenge.Chunks.Remove<CGameCtnChallenge.Chunk03043021>();
         map.Challenge.Chunks.Create<CGameCtnChallenge.Chunk03043049>();
 
+        var scaleY = SmallOffsetY.Value == 0 ? 1 : (int)(map.GridSize.Y / SmallOffsetY.Value);
+        map.Challenge.ClipTriggerSize = (3, scaleY, 3);
+
         TweakClip(map, map.Challenge.ClipIntro);
         TweakClipTriggers(map, map.Challenge.ClipGroupInGame);
         TweakClipTriggers(map, map.Challenge.ClipGroupEndRace);
@@ -28,7 +31,8 @@ public sealed class MediaTrackerConversion : Conversion
             return;
         }
 
-        var yScale = (int)(map.GridSize.Y / 8);
+        var scale = map.Challenge.ClipTriggerSize * (1, (int)(map.GridSize.Y / 8), 1);
+        var triggerYOffset = SmallOffsetY.Value == 0 ? 0 : (int)(map.GridSize.Y / SmallOffsetY.Value) - 1;
 
         foreach (var (clip, trigger) in clipGroup.Clips)
         {
@@ -37,18 +41,33 @@ public sealed class MediaTrackerConversion : Conversion
                 continue;
             }
 
+            var extraCoordsPerBase = (scale.X * scale.Y * scale.Z) - 1;
+            var newCoords = new List<GBX.NET.Int3>(trigger.Coords.Count * extraCoordsPerBase);
+
             for (var i = 0; i < trigger.Coords.Count; i++)
             {
                 var coord = trigger.Coords[i];
-                trigger.Coords[i] = new GBX.NET.Int3(coord.X, coord.Y * yScale + OffsetY.Value, coord.Z);
-            }
 
-            var newCoords = new List<GBX.NET.Int3>();
-            foreach (var coord in trigger.Coords)
-            {
-                for (var i = 1; i < yScale; i++)
+                var baseX = coord.X * scale.X;
+                var baseY = coord.Y * scale.Y + OffsetY.Value + triggerYOffset * scale.Y;
+                var baseZ = coord.Z * scale.Z;
+
+                trigger.Coords[i] = new GBX.NET.Int3(baseX, baseY, baseZ);
+
+                for (var x = 0; x < scale.X; x++)
                 {
-                    newCoords.Add(coord with { Y = coord.Y + i });
+                    for (var y = 0; y < scale.Y; y++)
+                    {
+                        for (var z = 0; z < scale.Z; z++)
+                        {
+                            if (x == 0 && y == 0 && z == 0)
+                            {
+                                continue;
+                            }
+
+                            newCoords.Add(new GBX.NET.Int3(baseX + x, baseY + y, baseZ + z));
+                        }
+                    }
                 }
             }
 
