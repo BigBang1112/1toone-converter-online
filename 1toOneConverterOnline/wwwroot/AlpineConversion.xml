@@ -576,7 +576,7 @@
             <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="-1" Rot="All" />
           </BlockVariantData>
           <Clip Name="AlpineRoadClip" X="0" Y="2" Z="-2" Rot="0" />
-          <Clip Name="AlpineIceRoadClip" X="-1" Y="0" Z="0" Rot="3" />
+          <Clip Name="AlpineIceRoadClip" X="-1" Y="1" Z="0" Rot="3" />
           <Pylon Type="Top" Pos="Both" X="0" Y="2" Z="-2" Rot="0" Optional="true" />
           <Pylon Type="Top" Pos="Both" X="0" Y="1" Z="0" Rot="2" Optional="true" />
         </BlockData>
@@ -597,7 +597,7 @@
             <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="-1" Rot="All" />
           </BlockVariantData>
           <Clip Name="AlpineRoadClip" X="0" Y="2" Z="-2" Rot="0" />
-          <Clip Name="AlpineIceRoadClip" X="1" Y="0" Z="0" Rot="1" />
+          <Clip Name="AlpineIceRoadClip" X="1" Y="1" Z="0" Rot="1" />
           <Pylon Type="Top" Pos="Both" X="0" Y="2" Z="-2" Rot="0" Optional="true" />
           <Pylon Type="Top" Pos="Both" X="0" Y="1" Z="0" Rot="2" Optional="true" />
         </BlockData>
@@ -1190,8 +1190,8 @@
             <Flag Name="NoGround" X="0" Z="0" />
             <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
           </BlockVariantData>
-          <Clip Name="AlpineIceRoadClip" X="-1" Y="0" Z="0" Rot="3" />
-          <Clip Name="AlpineIceRoadClip" X="1" Y="0" Z="0" Rot="1" />
+          <Clip Name="AlpineIceRoadClip" X="-1" Y="1" Z="0" Rot="3" />
+          <Clip Name="AlpineIceRoadClip" X="1" Y="1" Z="0" Rot="1" />
         </BlockData>
         <BlockData RotOffset="1" BlockName="AlpineRoadWoodTiltTwistIn">
           <BlockVariantData ItemName="Valley\Z_Alpine\X_AlpineRoadWoodTilt\Z_AlpineRoadWoodTilt\Z_AlpineRoadWoodTiltAir\AlpineRoadWoodTiltTwistInAir.Item.gbx" />
@@ -1208,8 +1208,8 @@
             <Flag Name="NoGround" X="0" Z="0" />
             <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
           </BlockVariantData>
-          <Clip Name="AlpineRoadClip" X="-1" Y="0" Z="0" Rot="3" />
-          <Clip Name="AlpineIceRoadClip" X="1" Y="0" Z="0" Rot="1" />
+          <Clip Name="AlpineRoadClip" X="-1" Y="1" Z="0" Rot="3" />
+          <Clip Name="AlpineIceRoadClip" X="1" Y="1" Z="0" Rot="1" />
         </BlockData>
         <BlockData RotOffset="1" BlockName="AlpineRoadWoodTiltTwistOut">
           <BlockVariantData ItemName="Valley\Z_Alpine\X_AlpineRoadWoodTilt\Z_AlpineRoadWoodTilt\Z_AlpineRoadWoodTiltAir\AlpineRoadWoodTiltTwistOutAir.Item.gbx" />
@@ -1226,8 +1226,8 @@
             <Flag Name="NoGround" X="0" Z="0" />
             <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
           </BlockVariantData>
-          <Clip Name="AlpineRoadClip" X="1" Y="0" Z="0" Rot="1" />
-          <Clip Name="AlpineIceRoadClip" X="-1" Y="0" Z="0" Rot="3" />
+          <Clip Name="AlpineRoadClip" X="-1" Y="1" Z="0" Rot="3" />
+          <Clip Name="AlpineIceRoadClip" X="1" Y="1" Z="0" Rot="1" />
         </BlockData>
         <BlockData BlockName="AlpineRoadWoodTiltTurboRight">
           <BlockVariantData ItemName="Valley\Z_Alpine\X_AlpineRoadWoodTilt\Z_AlpineRoadWoodTilt\Z_AlpineRoadWoodTiltAir\AlpineRoadWoodTiltTurboRightAir.Item.gbx" />
@@ -1243,8 +1243,8 @@
             <Flag Name="NoGround" X="0" Z="0" />
             <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
           </BlockVariantData>
-          <Clip Name="AlpineIceRoadClip" X="0" Y="0" Z="-1" Rot="0" />
-          <Clip Name="AlpineIceRoadClip" X="0" Y="0" Z="1" Rot="2" />
+          <Clip Name="AlpineIceRoadClip" X="0" Y="1" Z="-1" Rot="0" />
+          <Clip Name="AlpineIceRoadClip" X="0" Y="1" Z="1" Rot="2" />
         </BlockData>
         <BlockData BlockName="AlpineRoadWoodTiltTurboLeft">
           <BlockVariantData ItemName="Valley\Z_Alpine\X_AlpineRoadWoodTilt\Z_AlpineRoadWoodTilt\Z_AlpineRoadWoodTiltAir\AlpineRoadWoodTiltTurboLeftAir.Item.gbx" />
@@ -1260,8 +1260,8 @@
             <Flag Name="NoGround" X="0" Z="0" />
             <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
           </BlockVariantData>
-          <Clip Name="AlpineIceRoadClip" X="0" Y="0" Z="1" Rot="2" />
-          <Clip Name="AlpineIceRoadClip" X="0" Y="0" Z="-1" Rot="0" />
+          <Clip Name="AlpineIceRoadClip" X="0" Y="1" Z="1" Rot="2" />
+          <Clip Name="AlpineIceRoadClip" X="0" Y="1" Z="-1" Rot="0" />
         </BlockData>
         <BlockData RotOffset="1" BlockName="AlpineRoadWoodTiltRightCheckpoint">
           <BlockVariantData ItemName="Valley\Z_Alpine\X_AlpineRoadWoodTilt\Z_AlpineRoadWoodTilt\Z_AlpineRoadWoodTiltAir\AlpineRoadWoodTiltLeftCheckpointAir.Item.gbx" />
@@ -1277,8 +1277,8 @@
             <Flag Name="NoGround" X="0" Z="0" />
             <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
           </BlockVariantData>
-          <Clip Name="AlpineIceRoadClip" X="-1" Y="0" Z="0" Rot="3" />
-          <Clip Name="AlpineIceRoadClip" X="1" Y="0" Z="0" Rot="1" />
+          <Clip Name="AlpineIceRoadClip" X="-1" Y="1" Z="0" Rot="3" />
+          <Clip Name="AlpineIceRoadClip" X="1" Y="1" Z="0" Rot="1" />
         </BlockData>
         <BlockData RotOffset="3" BlockName="AlpineRoadWoodTiltLeftCheckpoint">
           <BlockVariantData ItemName="Valley\Z_Alpine\X_AlpineRoadWoodTilt\Z_AlpineRoadWoodTilt\Z_AlpineRoadWoodTiltAir\AlpineRoadWoodTiltRightCheckpointAir.Item.gbx" />
@@ -1294,8 +1294,8 @@
             <Flag Name="NoGround" X="0" Z="0" />
             <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
           </BlockVariantData>
-          <Clip Name="AlpineIceRoadClip" X="1" Y="0" Z="0" Rot="1" />
-          <Clip Name="AlpineIceRoadClip" X="-1" Y="0" Z="0" Rot="3" />
+          <Clip Name="AlpineIceRoadClip" X="1" Y="1" Z="0" Rot="1" />
+          <Clip Name="AlpineIceRoadClip" X="-1" Y="1" Z="0" Rot="3" />
         </BlockData>
         <BlockData RotOffset="1" BlockName="AlpineRoadWoodTiltCornerInside">
           <BlockVariantData ItemName="Valley\Z_Alpine\X_AlpineRoadWoodTilt\Y_AlpineRoadWoodTiltCorner\Z_AlpineRoadWoodTiltCornerAir\Z_AlpineRoadWoodTiltCornerInsideAir.Item.gbx" />
@@ -1311,8 +1311,8 @@
             <Flag Name="NoGround" X="0" Z="0" />
             <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
           </BlockVariantData>
-          <Clip Name="AlpineIceRoadClip" X="-1" Y="0" Z="0" Rot="3" />
-          <Clip Name="AlpineIceRoadClip" X="0" Y="0" Z="1" Rot="2" />
+          <Clip Name="AlpineIceRoadClip" X="-1" Y="1" Z="0" Rot="3" />
+          <Clip Name="AlpineIceRoadClip" X="0" Y="1" Z="1" Rot="2" />
         </BlockData>
         <BlockData RotOffset="1" ZOffset="1" BlockName="AlpineRoadWoodTiltGTCurve1" BlockXSize="2" BlockZSize="2">
           <BlockVariantData ItemName="Valley\Z_Alpine\X_AlpineRoadWoodTilt\Y_AlpineRoadWoodTiltCorner\Z_AlpineRoadWoodTiltCornerAir\AlpineRoadWoodTiltGTCurve1Air.Item.gbx" />
@@ -1340,8 +1340,8 @@
             <Pylon Type="Prevent" Pos="Both" X="-1" Y="0" Z="-1" Rot="3" />
             <Pylon Type="Prevent" Pos="Both" X="-1" Y="0" Z="-1" Rot="0" />
           </BlockVariantData>
-          <Clip Name="AlpineIceRoadClip" X="-2" Y="0" Z="-1" Rot="3" />
-          <Clip Name="AlpineIceRoadClip" X="0" Y="0" Z="1" Rot="2" />
+          <Clip Name="AlpineIceRoadClip" X="-2" Y="1" Z="-1" Rot="3" />
+          <Clip Name="AlpineIceRoadClip" X="0" Y="1" Z="1" Rot="2" />
         </BlockData>
         <BlockData RotOffset="2" BlockName="AlpineRoadWoodTiltCornerOutside">
           <BlockVariantData ItemName="Valley\Z_Alpine\X_AlpineRoadWoodTilt\Y_AlpineRoadWoodTiltCorner\Z_AlpineRoadWoodTiltCornerAir\AlpineRoadWoodTiltCornerOutsideAir.Item.gbx" />
@@ -1357,8 +1357,8 @@
             <Flag Name="NoGround" X="0" Z="0" />
             <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
           </BlockVariantData>
-          <Clip Name="AlpineIceRoadClip" X="0" Y="0" Z="1" Rot="2" />
-          <Clip Name="AlpineIceRoadClip" X="-1" Y="0" Z="0" Rot="3" />
+          <Clip Name="AlpineIceRoadClip" X="0" Y="1" Z="1" Rot="2" />
+          <Clip Name="AlpineIceRoadClip" X="-1" Y="1" Z="0" Rot="3" />
         </BlockData>
         <BlockData RotOffset="1" ZOffset="1" BlockName="AlpineRoadWoodTiltSpin" BlockZSize="3">
           <BlockVariantData ItemName="Valley\Z_Alpine\X_AlpineRoadWoodTilt\Y_AlpineRoadWoodTiltCorner\Z_AlpineRoadWoodTiltCornerAir\AlpineRoadWoodTiltUnSpinAir.Item.gbx" />
@@ -1388,10 +1388,10 @@
             <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="1" Rot="All" />
             <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="-1" Rot="All" />
           </BlockVariantData>
-          <Clip Name="AlpineIceRoadClip" X="-2" Y="0" Z="0" Rot="3" />
-          <Clip Name="AlpineIceRoadClip" X="0" Y="0" Z="0" Rot="1" />
-          <Clip Name="AlpineIceRoadClip" X="0" Y="0" Z="0" Rot="3" />
-          <Clip Name="AlpineIceRoadClip" X="2" Y="0" Z="0" Rot="1" />
+          <Clip Name="AlpineIceRoadClip" X="-2" Y="1" Z="0" Rot="3" />
+          <Clip Name="AlpineIceRoadClip" X="0" Y="1" Z="0" Rot="1" />
+          <Clip Name="AlpineIceRoadClip" X="0" Y="1" Z="0" Rot="3" />
+          <Clip Name="AlpineIceRoadClip" X="2" Y="1" Z="0" Rot="1" />
           <Pylon Type="Top" Pos="Right" X="-1" Y="1" Z="0" Rot="1" />
           <Pylon Type="Top" Pos="Both" X="-1" Y="1" Z="0" Rot="2" />
           <Pylon Type="Top" Pos="Right" X="-1" Y="2" Z="0" Rot="2" />
@@ -1433,10 +1433,10 @@
             <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="1" Rot="All" />
             <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="-1" Rot="All" />
           </BlockVariantData>
-          <Clip Name="AlpineIceRoadClip" X="0" Y="0" Z="0" Rot="1" />
-          <Clip Name="AlpineIceRoadClip" X="0" Y="0" Z="0" Rot="3" />
-          <Clip Name="AlpineIceRoadClip" X="-2" Y="0" Z="0" Rot="3" />
-          <Clip Name="AlpineIceRoadClip" X="2" Y="0" Z="0" Rot="1" />
+          <Clip Name="AlpineIceRoadClip" X="0" Y="1" Z="0" Rot="1" />
+          <Clip Name="AlpineIceRoadClip" X="0" Y="1" Z="0" Rot="3" />
+          <Clip Name="AlpineIceRoadClip" X="-2" Y="1" Z="0" Rot="3" />
+          <Clip Name="AlpineIceRoadClip" X="2" Y="1" Z="0" Rot="1" />
           <Pylon Type="Top" Pos="Left" X="-1" Y="1" Z="0" Rot="1" />
           <Pylon Type="Top" Pos="Both" X="-1" Y="1" Z="0" Rot="0" />
           <Pylon Type="Top" Pos="Left" X="-1" Y="2" Z="0" Rot="0" />
