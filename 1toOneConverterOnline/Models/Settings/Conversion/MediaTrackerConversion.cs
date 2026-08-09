@@ -16,7 +16,8 @@ public sealed class MediaTrackerConversion : Conversion
         map.Challenge.Chunks.Remove<CGameCtnChallenge.Chunk03043021>();
         map.Challenge.Chunks.Create<CGameCtnChallenge.Chunk03043049>();
 
-        var scaleY = SmallOffsetY.Value == 0 ? 1 : (int)(map.GridSize.Y / SmallOffsetY.Value);
+        // Y-offset/upscaled clip triggers don't detect collision with player
+        var scaleY = 1; // SmallOffsetY.Value == 0 ? 1 : (int)(map.GridSize.Y / SmallOffsetY.Value);
         map.Challenge.ClipTriggerSize = (3, scaleY, 3);
 
         TweakClip(map, map.Challenge.ClipIntro);
@@ -32,7 +33,9 @@ public sealed class MediaTrackerConversion : Conversion
         }
 
         var scale = map.Challenge.ClipTriggerSize * (1, (int)(map.GridSize.Y / 8), 1);
-        var triggerYOffset = SmallOffsetY.Value == 0 ? 0 : (int)(map.GridSize.Y / SmallOffsetY.Value) - 1;
+
+        // Y-offset/upscaled clip triggers don't detect collision with player
+        var triggerYOffset = 0; // SmallOffsetY.Value == 0 ? 0 : (int)(map.GridSize.Y / SmallOffsetY.Value) - 1;
 
         foreach (var (clip, trigger) in clipGroup.Clips)
         {
