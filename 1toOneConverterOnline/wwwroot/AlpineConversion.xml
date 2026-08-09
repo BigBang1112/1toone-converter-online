@@ -2182,19 +2182,19 @@
           <BlockVariantData>
             <BlockTypeData ItemName="Valley\Z_Alpine\U_AlpineGreatWallRoad\Y_AlpineGreatWallSlope\AlpineGreatWallBiSlopeGTCurve3Left\Y_AlpineGreatWallBiSlopeGTCurve3LeftPillarAir.Item.gbx" Type="Air" />
             <BlockTypeData ItemName="Valley\Z_Alpine\U_AlpineGreatWallRoad\Y_AlpineGreatWallSlope\AlpineGreatWallBiSlopeGTCurve3Left\X_AlpineGreatWallBiSlopeGTCurve3LeftPillarGround.Item.gbx" Type="Pri">
-              <Flag Name="NoGround" X="0" Z="0" />
               <Flag Name="NoGround" X="1" Z="0" />
               <Flag Name="NoGround" X="0" Z="1" />
+              <Flag Name="NoGround" X="0" Z="2" />
               <Flag Name="NoGround" X="1" Z="1" />
               <Flag Name="NoGround" X="2" Z="1" />
-              <Flag Name="NoGround" X="0" Z="2" />
+              <Flag Name="NoGround" X="2" Z="0" />
               <Flag Name="NoGround" X="1" Z="2" />
               <Flag Name="NoGround" X="2" Z="2" />
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Alpine\U_AlpineGreatWallRoad\Y_AlpineGreatWallSlope\AlpineGreatWallBiSlopeGTCurve3Left\W_AlpineGreatWallBiSlopeGTCurve3LeftPillarGroundHill.Item.gbx" Type="Sec">
-              <Flag Name="NoGround" X="0" Z="0" />
               <Flag Name="NoGround" X="1" Z="0" />
               <Flag Name="NoGround" X="0" Z="1" />
+              <Flag Name="NoGround" X="0" Z="2" />
               <Flag Name="NoGround" X="1" Z="1" />
               <Flag Name="NoGround" X="2" Z="1" />
               <Flag Name="NoGround" X="0" Z="2" />
@@ -2357,12 +2357,12 @@
           <BlockVariantData>
             <BlockTypeData ItemName="Valley\Z_Alpine\U_AlpineGreatWallRoad\W_AlpineGreatWallTetris\Z_AlpineGreatWallTetrisGround\AlpineGreatWallTetrisSlopeBase4RightGround.Item.gbx" Type="Pri" />
             <BlockTypeData ItemName="Valley\Z_Alpine\U_AlpineGreatWallRoad\W_AlpineGreatWallTetris\Y_AlpineGreatWallTetrisGroundHill\AlpineGreatWallTetrisSlopeBase4RightGroundHill.Item.gbx" Type="Sec" />
-            <Flag Name="NoGround" X="0" Z="0" />
+            <Flag Name="NoGround" X="1" Z="0" />
             <Flag Name="NoGround" X="0" Z="1" />
             <Flag Name="NoGround" X="1" Z="1" />
             <Flag Name="NoGround" X="0" Z="2" />
             <Flag Name="NoGround" X="1" Z="2" />
-            <Flag Name="NoGround" X="1" Z="3" />
+            <Flag Name="NoGround" X="0" Z="3" />
           </BlockVariantData>
           <Clip Name="AlpineGreatWallPillarClip" X="1" Y="2" Z="-4" Rot="0" />
           <Clip Name="AlpineGreatWallPillarClip" X="0" Y="0" Z="1" Rot="2" />
@@ -2387,21 +2387,22 @@
           <Clip Name="AlpineGreatWallClip" X="-1" Y="3" Z="-4" Rot="0" />
           <Clip Name="AlpineGreatWallClip" X="0" Y="1" Z="1" Rot="2" />
         </BlockData>
-        <BlockData ZOffset="5" BlockXSize="3" BlockZSize="6">
+        <BlockData XOffset="-1" ZOffset="5" BlockXSize="2" BlockZSize="6">
           <AltName BlockName="AlpineGreatWallTetrisSnowToToundraSlopeBase6Right" SecondaryTerrain="false" />
           <AltName BlockName="AlpineGreatWallTetrisToundraToToundraSlopeBase6Right" SecondaryTerrain="true" />
           <BlockVariantData>
             <BlockTypeData ItemName="Valley\Z_Alpine\U_AlpineGreatWallRoad\W_AlpineGreatWallTetris\Z_AlpineGreatWallTetrisGround\AlpineGreatWallTetrisSlopeBase6RightGround.Item.gbx" Type="Pri" />
             <BlockTypeData ItemName="Valley\Z_Alpine\U_AlpineGreatWallRoad\W_AlpineGreatWallTetris\Y_AlpineGreatWallTetrisGroundHill\AlpineGreatWallTetrisSlopeBase6RightGroundHill.Item.gbx" Type="Sec" />
-            <Flag Name="NoGround" X="0" Z="0" />
+            <Flag Name="NoGround" X="1" Z="0" />
             <Flag Name="NoGround" X="0" Z="1" />
+            <Flag Name="NoGround" X="1" Z="1" />
             <Flag Name="NoGround" X="0" Z="2" />
             <Flag Name="NoGround" X="1" Z="2" />
             <Flag Name="NoGround" X="0" Z="3" />
             <Flag Name="NoGround" X="1" Z="3" />
             <Flag Name="NoGround" X="0" Z="4" />
-            <Flag Name="NoGround" X="1" Z="4" />
-            <Flag Name="NoGround" X="1" Z="5" />
+            <Flag Name="NoGround" X="0" Z="5" />
+            <Flag Name="NoGround" X="2" Y="3" Z="5" />
           </BlockVariantData>
           <Clip Name="AlpineGreatWallPillarClip" X="1" Y="3" Z="-6" Rot="0" />
           <Clip Name="AlpineGreatWallPillarClip" X="0" Y="0" Z="1" Rot="2" />
@@ -2420,7 +2421,7 @@
             <Flag Name="NoGround" X="1" Z="2" />
             <Flag Name="NoGround" X="0" Z="3" />
             <Flag Name="NoGround" X="1" Z="3" />
-            <Flag Name="NoGround" X="0" Z="4" />
+            <Flag Name="NoGround" X="1" Z="1" />
             <Flag Name="NoGround" X="1" Z="4" />
             <Flag Name="NoGround" X="1" Z="5" />
           </BlockVariantData>
@@ -2537,12 +2538,12 @@
         </BlockData>
         <BlockData ZOffset="1" BlockName="AlpineCliffRoadRight" BlockXSize="3" BlockZSize="3">
           <BlockVariantData ItemName="Valley\Z_Alpine\S_AlpineCliffRoad\Z_AlpineCliffRoad\Z_AlpineCliffRoadRight.Item.gbx" />
-          <Flag Name="NoGround" X="0" Z="0" />
           <Flag Name="NoGround" X="1" Z="0" />
           <Flag Name="NoGround" X="2" Z="0" />
           <Flag Name="NoGround" X="0" Z="1" />
           <Flag Name="NoGround" X="1" Z="1" />
-          <Flag Name="NoGround" X="1" Z="1" />
+          <Flag Name="NoGround" X="1" Z="2" />
+          <Flag Name="NoGround" X="0" Z="2" />
           <Flag Name="NoGround" X="2" Z="1" />
           <Clip Name="AlpineRoadClip" X="3" Y="3" Z="-1" Rot="1" />
           <Clip Name="AlpineRoadClip" X="-1" Y="0" Z="1" Rot="3" />
@@ -2551,11 +2552,12 @@
           <BlockVariantData ItemName="Valley\Z_Alpine\S_AlpineCliffRoad\Z_AlpineCliffRoad\AlpineCliffRoadLeft.Item.gbx" />
           <Flag Name="NoGround" X="0" Z="0" />
           <Flag Name="NoGround" X="1" Z="0" />
-          <Flag Name="NoGround" X="2" Z="0" />
           <Flag Name="NoGround" X="1" Z="1" />
           <Flag Name="NoGround" X="2" Z="1" />
           <Flag Name="NoGround" X="0" Z="1" />
           <Flag Name="NoGround" X="1" Z="1" />
+          <Flag Name="NoGround" X="2" Z="2" />
+          <Flag Name="NoGround" X="1" Z="2" />
           <Clip Name="AlpineRoadClip" X="-1" Y="0" Z="-1" Rot="3" />
           <Clip Name="AlpineRoadClip" X="3" Y="3" Z="1" Rot="1" />
         </BlockData>
@@ -2664,6 +2666,7 @@
             <BlockTypeData ItemName="Valley\Z_Alpine\R_AlpineTrees\Z_AlpineTrees\Z_AlpineTreesGround\AlpineRocks3Ground.Item.gbx" Type="Pri" />
             <BlockTypeData ItemName="Valley\Z_Alpine\R_AlpineTrees\Z_AlpineTrees\Y_AlpineTreesGroundHill\AlpineRocks3GroundHill.Item.gbx" Type="Sec" />
             <Flag Name="NoGround" X="0" Z="0" />
+            <Flag Name="NoGround" X="1" Z="0" Y="1" />
             <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
           </BlockVariantData>
         </BlockData>
@@ -2687,21 +2690,21 @@
         </BlockData>
         <BlockData XOffset="1" ZOffset="2" BlockName="AlpineLakeSlope" BlockXSize="3" BlockZSize="5">
           <BlockVariantData ItemName="Valley\Z_Alpine\R_AlpineTrees\Y_AlpineLakeSlope\Z_AlpineLakeSlope\Z_AlpineLakeSlope.Item.gbx" />
-          <Flag Name="NoGround" X="1" Z="2" />
-          <Flag Name="NoGround" X="0" Z="2" />
-          <Flag Name="NoGround" X="1" Z="2" />
-          <Flag Name="NoGround" X="1" Z="1" />
-          <Flag Name="NoGround" X="0" Z="1" />
-          <Flag Name="NoGround" X="1" Z="1" />
-          <Flag Name="NoGround" X="1" Z="0" />
           <Flag Name="NoGround" X="0" Z="0" />
+          <Flag Name="NoGround" X="0" Z="1" />
+          <Flag Name="NoGround" X="0" Z="2" />
+          <Flag Name="NoGround" X="0" Z="3" />
+          <Flag Name="NoGround" X="0" Z="4" />
           <Flag Name="NoGround" X="1" Z="0" />
           <Flag Name="NoGround" X="1" Z="1" />
-          <Flag Name="NoGround" X="0" Z="1" />
-          <Flag Name="NoGround" X="1" Z="1" />
           <Flag Name="NoGround" X="1" Z="2" />
-          <Flag Name="NoGround" X="0" Z="2" />
-          <Flag Name="NoGround" X="1" Z="2" />
+          <Flag Name="NoGround" X="1" Z="3" />
+          <Flag Name="NoGround" X="1" Z="4" />
+          <Flag Name="NoGround" X="2" Z="0" />
+          <Flag Name="NoGround" X="2" Z="1" />
+          <Flag Name="NoGround" X="2" Z="2" />
+          <Flag Name="NoGround" X="2" Z="3" />
+          <Flag Name="NoGround" X="2" Z="4" />
         </BlockData>
         <BlockData RotOffset="2" BlockName="AlpineSnowCheckpoint">
           <BlockVariantData>
@@ -2729,7 +2732,8 @@
             </BlockTypeData>
             <BlockTypeData ItemName="Valley\Z_Alpine\R_AlpineTrees\Y_AlpineLakeSlope\Z_AlpineLakeSlope\AlpineLakeBridgeGround.Item.gbx" Type="Gnd">
               <Flag Name="NoGround" X="0" Z="0" />
-              <Flag Name="NoGround" X="0" Z="1" />
+              <Flag Name="NoGround" X="1" Z="0" />
+              <Flag Name="NoGround" X="2" Z="0" />
             </BlockTypeData>
           </BlockVariantData>
           <Clip Name="AlpineRoadClip" X="0" Y="0" Z="-2" Rot="0" />
