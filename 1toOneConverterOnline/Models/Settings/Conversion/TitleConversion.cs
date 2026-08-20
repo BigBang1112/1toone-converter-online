@@ -20,6 +20,7 @@ public sealed class TitleConversion : Conversion
         }
 
         m.TitleId = TitleUid.Content;
+        m.MapStyle = "Converted";
 
         var isValidated = m.Kind != CGameCtnChallenge.MapKind.InProgress ? 1 : 0;
 
