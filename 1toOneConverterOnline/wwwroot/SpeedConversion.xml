@@ -1126,6 +1126,19 @@
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
             </BlockTypeData>
           </BlockVariantData>
+          <BlockVariantData Variant="3">
+            <BlockTypeData ItemName="Valley\Z_Speed\X_SpeedGarageRoad\Y_SpeedGarageSlope\Z_SpeedGarageSlopeAir\Z_SpeedGarageSlopeAir.Item.gbx" Type="Air">
+              <Pylon Type="Top" Pos="Both" X="0" Y="0" Z="1" Rot="2" Optional="true" />
+            </BlockTypeData>
+            <BlockTypeData ItemName="Valley\Z_Speed\X_SpeedGarageRoad\Y_SpeedGarageSlope\Y_SpeedGarageSlopeGround\Z_SpeedGarageSlopeGround.Item.gbx" Type="Pri">
+              <Flag Name="NoGround" X="0" Z="0" />
+              <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
+            </BlockTypeData>
+            <BlockTypeData ItemName="Valley\Z_Speed\X_SpeedGarageRoad\Y_SpeedGarageSlope\X_SpeedGarageSlopeGroundRock\Z_SpeedGarageSlopeGroundRock.Item.gbx" Type="Sec">
+              <Flag Name="NoGround" X="0" Z="0" />
+              <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
+            </BlockTypeData>
+          </BlockVariantData>
           <Clip Name="SpeedGarageRoadClip" X="0" Y="1" Z="-1" Rot="0" />
           <Clip Name="SpeedGarageRoadClip" X="0" Y="0" Z="1" Rot="2" />
           <Pylon Type="Top" Pos="Both" X="0" Y="1" Z="-1" Rot="0" Optional="true"/>
@@ -1367,6 +1380,45 @@
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
             </BlockTypeData>
           </BlockVariantData>
+          <BlockVariantData Variant="1">
+            <BlockTypeData ItemName="Valley\Z_Speed\X_SpeedGarageRoad\X_SpeedGarageHoleRoad\Z_SpeedGarageHoleRoad\Z_SpeedGarageHoleRoadAir\SpeedGarageHoleSlopeAir.Item.gbx" Type="Air">
+              <Pylon Type="Top" Pos="Both" X="0" Y="0" Z="1" Rot="2" Optional="true" />
+            </BlockTypeData>
+            <BlockTypeData ItemName="Valley\Z_Speed\X_SpeedGarageRoad\X_SpeedGarageHoleRoad\Z_SpeedGarageHoleRoad\Y_SpeedGarageHoleRoadGround\SpeedGarageHoleSlopeGround.Item.gbx" Type="Pri">
+              <Flag Name="NoGround" X="0" Z="0" />
+              <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
+            </BlockTypeData>
+            <BlockTypeData ItemName="Valley\Z_Speed\X_SpeedGarageRoad\X_SpeedGarageHoleRoad\Z_SpeedGarageHoleRoad\Y_SpeedGarageHoleRoadGround\SpeedGarageHoleSlopeGroundRock.Item.gbx" Type="Sec">
+              <Flag Name="NoGround" X="0" Z="0" />
+              <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
+            </BlockTypeData>
+          </BlockVariantData>
+          <BlockVariantData Variant="2">
+            <BlockTypeData ItemName="Valley\Z_Speed\X_SpeedGarageRoad\X_SpeedGarageHoleRoad\Z_SpeedGarageHoleRoad\Z_SpeedGarageHoleRoadAir\SpeedGarageHoleSlopeAir.Item.gbx" Type="Air">
+              <Pylon Type="Top" Pos="Both" X="0" Y="0" Z="1" Rot="2" Optional="true" />
+            </BlockTypeData>
+            <BlockTypeData ItemName="Valley\Z_Speed\X_SpeedGarageRoad\X_SpeedGarageHoleRoad\Z_SpeedGarageHoleRoad\Y_SpeedGarageHoleRoadGround\SpeedGarageHoleSlopeGround.Item.gbx" Type="Pri">
+              <Flag Name="NoGround" X="0" Z="0" />
+              <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
+            </BlockTypeData>
+            <BlockTypeData ItemName="Valley\Z_Speed\X_SpeedGarageRoad\X_SpeedGarageHoleRoad\Z_SpeedGarageHoleRoad\Y_SpeedGarageHoleRoadGround\SpeedGarageHoleSlopeGroundRock.Item.gbx" Type="Sec">
+              <Flag Name="NoGround" X="0" Z="0" />
+              <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
+            </BlockTypeData>
+          </BlockVariantData>
+          <BlockVariantData Variant="3">
+            <BlockTypeData ItemName="Valley\Z_Speed\X_SpeedGarageRoad\X_SpeedGarageHoleRoad\Z_SpeedGarageHoleRoad\Z_SpeedGarageHoleRoadAir\SpeedGarageHoleSlopeAir.Item.gbx" Type="Air">
+              <Pylon Type="Top" Pos="Both" X="0" Y="0" Z="1" Rot="2" Optional="true" />
+            </BlockTypeData>
+            <BlockTypeData ItemName="Valley\Z_Speed\X_SpeedGarageRoad\X_SpeedGarageHoleRoad\Z_SpeedGarageHoleRoad\Y_SpeedGarageHoleRoadGround\SpeedGarageHoleSlopeGround.Item.gbx" Type="Pri">
+              <Flag Name="NoGround" X="0" Z="0" />
+              <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
+            </BlockTypeData>
+            <BlockTypeData ItemName="Valley\Z_Speed\X_SpeedGarageRoad\X_SpeedGarageHoleRoad\Z_SpeedGarageHoleRoad\Y_SpeedGarageHoleRoadGround\SpeedGarageHoleSlopeGroundRock.Item.gbx" Type="Sec">
+              <Flag Name="NoGround" X="0" Z="0" />
+              <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
+            </BlockTypeData>
+          </BlockVariantData>
           <Clip Name="SpeedGarageRoadClip" X="0" Y="1" Z="-1" Rot="0" />
           <Clip Name="SpeedGarageRoadClip" X="0" Y="0" Z="1" Rot="2" />
           <Pylon Type="Top" Pos="Both" X="0" Y="1" Z="-1" Rot="0" Optional="true" />
@@ -1468,6 +1520,45 @@
         <BlockData RotOffset="2" BlockName="SpeedGaragePillarSlope">
           <AltName BlockName="SpeedGarageSlopePillar" />
           <BlockVariantData>
+            <BlockTypeData ItemName="Valley\Z_Speed\X_SpeedGarageRoad\X_SpeedGarageHoleRoad\Y_SpeedGaragePillarRoad\Z_SpeedGaragePillarRoadAir\SpeedGaragePillarSlopeAir.Item.gbx" Type="Air">
+              <Pylon Type="Top" Pos="Both" X="0" Y="0" Z="1" Rot="2" Optional="true" />
+            </BlockTypeData>
+            <BlockTypeData ItemName="Valley\Z_Speed\X_SpeedGarageRoad\X_SpeedGarageHoleRoad\Y_SpeedGaragePillarRoad\Y_SpeedGaragePillarRoadGround\SpeedGaragePillarSlopeGround.Item.gbx" Type="Pri">
+              <Flag Name="NoGround" X="0" Z="0" />
+              <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
+            </BlockTypeData>
+            <BlockTypeData ItemName="Valley\Z_Speed\X_SpeedGarageRoad\X_SpeedGarageHoleRoad\Y_SpeedGaragePillarRoad\Y_SpeedGaragePillarRoadGround\SpeedGaragePillarSlopeGroundRock.Item.gbx" Type="Sec">
+              <Flag Name="NoGround" X="0" Z="0" />
+              <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
+            </BlockTypeData>
+          </BlockVariantData>
+          <BlockVariantData Variant="1">
+            <BlockTypeData ItemName="Valley\Z_Speed\X_SpeedGarageRoad\X_SpeedGarageHoleRoad\Y_SpeedGaragePillarRoad\Z_SpeedGaragePillarRoadAir\SpeedGaragePillarSlopeAir.Item.gbx" Type="Air">
+              <Pylon Type="Top" Pos="Both" X="0" Y="0" Z="1" Rot="2" Optional="true" />
+            </BlockTypeData>
+            <BlockTypeData ItemName="Valley\Z_Speed\X_SpeedGarageRoad\X_SpeedGarageHoleRoad\Y_SpeedGaragePillarRoad\Y_SpeedGaragePillarRoadGround\SpeedGaragePillarSlopeGround.Item.gbx" Type="Pri">
+              <Flag Name="NoGround" X="0" Z="0" />
+              <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
+            </BlockTypeData>
+            <BlockTypeData ItemName="Valley\Z_Speed\X_SpeedGarageRoad\X_SpeedGarageHoleRoad\Y_SpeedGaragePillarRoad\Y_SpeedGaragePillarRoadGround\SpeedGaragePillarSlopeGroundRock.Item.gbx" Type="Sec">
+              <Flag Name="NoGround" X="0" Z="0" />
+              <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
+            </BlockTypeData>
+          </BlockVariantData>
+          <BlockVariantData Variant="2">
+            <BlockTypeData ItemName="Valley\Z_Speed\X_SpeedGarageRoad\X_SpeedGarageHoleRoad\Y_SpeedGaragePillarRoad\Z_SpeedGaragePillarRoadAir\SpeedGaragePillarSlopeAir.Item.gbx" Type="Air">
+              <Pylon Type="Top" Pos="Both" X="0" Y="0" Z="1" Rot="2" Optional="true" />
+            </BlockTypeData>
+            <BlockTypeData ItemName="Valley\Z_Speed\X_SpeedGarageRoad\X_SpeedGarageHoleRoad\Y_SpeedGaragePillarRoad\Y_SpeedGaragePillarRoadGround\SpeedGaragePillarSlopeGround.Item.gbx" Type="Pri">
+              <Flag Name="NoGround" X="0" Z="0" />
+              <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
+            </BlockTypeData>
+            <BlockTypeData ItemName="Valley\Z_Speed\X_SpeedGarageRoad\X_SpeedGarageHoleRoad\Y_SpeedGaragePillarRoad\Y_SpeedGaragePillarRoadGround\SpeedGaragePillarSlopeGroundRock.Item.gbx" Type="Sec">
+              <Flag Name="NoGround" X="0" Z="0" />
+              <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
+            </BlockTypeData>
+          </BlockVariantData>
+          <BlockVariantData Variant="3">
             <BlockTypeData ItemName="Valley\Z_Speed\X_SpeedGarageRoad\X_SpeedGarageHoleRoad\Y_SpeedGaragePillarRoad\Z_SpeedGaragePillarRoadAir\SpeedGaragePillarSlopeAir.Item.gbx" Type="Air">
               <Pylon Type="Top" Pos="Both" X="0" Y="0" Z="1" Rot="2" Optional="true" />
             </BlockTypeData>
