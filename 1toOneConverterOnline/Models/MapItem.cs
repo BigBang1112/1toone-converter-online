@@ -16,6 +16,7 @@ public sealed class MapItem
     public string? Description { get; set; }
     public bool Selected { get; set; }
     public bool Successful { get; set; }
+    public CameraInterpolation CameraInterpolation { get; set; } = CameraInterpolation.Linear;
 
     public string? Name => Map?.MapName is null ? null : TextFormatter.Deformat(Map.MapName);
 

@@ -11,6 +11,13 @@
         <header>
             <div>@Maps.Count(x => x.Successful)/@Maps.Count maps converted</div>
         </header>
+        <fieldset class="interpolation-selector" aria-label="Camera interpolation">
+            <legend>Camera interpolation</legend>
+            <input type="radio" id="interpolation-linear" name="interpolation" value="Linear" checked="@(cameraInterpolation == CameraInterpolation.Linear)" @onchange="() => cameraInterpolation = CameraInterpolation.Linear" />
+            <label for="interpolation-linear" title="Camera interpolation mode. Linear is suitable for most maps.">Linear</label>
+            <input type="radio" id="interpolation-hermite" name="interpolation" value="Hermite" checked="@(cameraInterpolation == CameraInterpolation.Hermite)" @onchange="() => cameraInterpolation = CameraInterpolation.Hermite" />
+            <label for="interpolation-hermite" title="Camera interpolation mode. Hermite works better for certain maps.">Hermite</label>
+        </fieldset>
         <footer>
             <div class="btn" @onclick="ClearAsync">Clear</div>
             <!-- <div class="btn">Settings</div> -->
@@ -62,6 +69,7 @@
 
 @code {
     private DotNetObjectReference<MapList>? objRef;
+    private CameraInterpolation cameraInterpolation = CameraInterpolation.Linear;
 
     public List<MapItem> Maps { get; } = new();
 
@@ -108,6 +116,7 @@
     public async Task OnUploadAsync(string name, int size, long lastModified, byte[] data)
     {
         var mapItem = new MapItem(name, size, DateTimeOffset.FromUnixTimeMilliseconds(lastModified));
+        mapItem.CameraInterpolation = cameraInterpolation;
 
         Maps.Insert(0, mapItem);
 
@@ -160,7 +169,10 @@
         await Task.Delay(10);
 
         // Passes the same map reference, so variable `map` is the final result.
-        Conversion.Convert(new Map(mapItem.Map));
+        Conversion.Convert(new Map(mapItem.Map)
+        {
+            CameraInterpolation = mapItem.CameraInterpolation,
+        });
 
         mapItem.Description = "Finished!";
         mapItem.Successful = true;

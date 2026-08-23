@@ -41,6 +41,10 @@ nav > div {
 }
 nav > div img {
   height: 1.5rem;
+  margin: 0 0.5rem;
+}
+nav > div a {
+  margin: 0 0.5rem;
 }
 main {
   max-width: 1000px;
@@ -123,6 +127,52 @@ ul {
 }
 .list .controls div.btn:hover {
   background-color: #232b39;
+}
+.interpolation-selector {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  width: fit-content;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-shadow: 0 2px 5px #131820;
+}
+.interpolation-selector legend {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+.interpolation-selector input {
+  position: absolute;
+  opacity: 0;
+}
+.interpolation-selector label {
+  padding: 0.45rem 1rem;
+  background-color: #1d242f;
+  color: #7186a8;
+  cursor: pointer;
+  transition: 0.15s background-color ease-in-out, 0.15s color ease-in-out;
+}
+.interpolation-selector label:first-of-type {
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+.interpolation-selector label:last-of-type {
+  border-radius: 0 0.25rem 0.25rem 0;
+}
+.interpolation-selector input:not(:checked) + label:hover {
+  background-color: #232b39;
+}
+.interpolation-selector input:checked + label {
+  background-color: #da1b55;
+  color: #f2f4f7;
+}
+.interpolation-selector input:focus-visible + label {
+  outline: 2px solid #f2f4f7;
+  outline-offset: -2px;
 }
 .list li {
   height: 4rem;
@@ -274,6 +324,11 @@ button.big:disabled {
 input {
   display: none;
 }
+@media only screen and (max-width: 400px) {
+  nav > div a {
+    display: none;
+  }
+}
 @media only screen and (max-width: 830px) {
   main {
     max-width: 440px;
@@ -289,10 +344,30 @@ input {
     margin: 0;
   }
   .list .controls {
-    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .list .controls > header,
+  .list .controls > footer {
+    flex: 1 1 calc(50% - 0.25rem);
+  }
+  .list .controls > footer {
+    justify-content: flex-end;
+  }
+  .list .controls > footer .btn {
+    flex: 1;
+    text-align: center;
+  }
+  .list .controls .interpolation-selector {
+    flex-basis: 100%;
+    width: 100%;
+  }
+  .list .controls .interpolation-selector label {
+    flex: 1;
+    text-align: center;
   }
   .list .controls > footer div {
-    margin-top: 0.5rem;
-    width: 50%;
+    margin: 0;
+    width: auto;
   }
 }

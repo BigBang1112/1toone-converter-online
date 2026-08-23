@@ -7,6 +7,7 @@ public sealed class Map
 {
     public CGameCtnChallenge Challenge { get; init; }
 
+    public CameraInterpolation CameraInterpolation { get; init; } = CameraInterpolation.Linear;
     public Vec3 GridSize { get; set; }
     public Vec3 GridOffset { get; set; }
     public int BaseHeight { get; set; }
@@ -133,4 +134,10 @@ public sealed class Map
             _ => throw new Exception()
         };
     }
+}
+
+public enum CameraInterpolation
+{
+    Linear,
+    Hermite,
 }
