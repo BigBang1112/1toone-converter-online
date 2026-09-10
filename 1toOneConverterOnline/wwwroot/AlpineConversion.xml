@@ -1422,8 +1422,9 @@
           <BlockVariantData>
             <BlockTypeData ItemName="Valley\Z_Alpine\X_AlpineRoadWoodTilt\Y_AlpineRoadWoodTiltCorner\Y_AlpineRoadWoodTiltCornerGround\AlpineRoadWoodTiltUnSpinGround.Item.gbx" YOffset="1" Type="Pri" />
             <BlockTypeData ItemName="Valley\Z_Alpine\X_AlpineRoadWoodTilt\Y_AlpineRoadWoodTiltCorner\X_AlpineRoadWoodTiltCornerGroundHill\AlpineRoadWoodTiltUnSpinGroundHill.Item.gbx" YOffset="1" Type="Sec" />
-            <Flag Name="NoGround" X="1" Z="0" />
-            <Flag Name="NoGround" X="1" Z="0" />
+            <Flag Name="NoGround" X="0" Z="2" />
+            <Flag Name="NoGround" X="0" Y="1" Z="1" />
+            <Flag Name="NoGround" X="0" Z="0" />
             <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="1" Rot="All" />
             <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="-1" Rot="All" />
           </BlockVariantData>
@@ -1467,8 +1468,9 @@
           <BlockVariantData>
             <BlockTypeData ItemName="Valley\Z_Alpine\X_AlpineRoadWoodTilt\Y_AlpineRoadWoodTiltCorner\Y_AlpineRoadWoodTiltCornerGround\AlpineRoadWoodTiltSpinGround.Item.gbx" YOffset="1" Type="Pri" />
             <BlockTypeData ItemName="Valley\Z_Alpine\X_AlpineRoadWoodTilt\Y_AlpineRoadWoodTiltCorner\X_AlpineRoadWoodTiltCornerGroundHill\AlpineRoadWoodTiltSpinGroundHill.Item.gbx" YOffset="1" Type="Sec" />
-            <Flag Name="NoGround" X="1" Z="0" />
-            <Flag Name="NoGround" X="1" Z="0" />
+            <Flag Name="NoGround" X="0" Z="2" />
+            <Flag Name="NoGround" X="0" Y="1" Z="1" />
+            <Flag Name="NoGround" X="0" Z="0" />
             <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="1" Rot="All" />
             <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="-1" Rot="All" />
           </BlockVariantData>
