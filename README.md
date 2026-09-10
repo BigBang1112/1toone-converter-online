@@ -1,6 +1,14 @@
 # 1toOne Converter Online
 
-TODO
+1toOne Converter Online is a browser-based map converter for the TMOne title packs. Drop one or more compatible `.Challenge.Gbx` maps into the app, let it translate the supported blocks into the TMOne items, then download each result or all successful conversions in a ZIP file.
+
+The conversion happens locally in your browser. Your maps are not uploaded to a server, and you can use the site in offline mode.
+
+## Using the converter
+
+Open the site, add your map files, select a converted map, and download it (if the conversion succeeds). With several successful maps, use **Download all conversions** to receive a ZIP archive.
+
+The website is also installable as a progressive web app. After the first successful load, its application files and conversion definitions are cached.
 
 ## Disclaimer
 
