@@ -8,8 +8,11 @@ self.addEventListener('fetch', event => event.respondWith(onFetch(event)));
 
 const cacheNamePrefix = 'offline-cache-';
 const cacheName = `${cacheNamePrefix}${self.assetsManifest.version}`;
-const offlineAssetsInclude = [ /\.dll$/, /\.pdb$/, /\.wasm/, /\.html/, /\.js$/, /\.json$/, /\.css$/, /\.woff$/, /\.png$/, /\.jpe?g$/, /\.gif$/, /\.ico$/, /\.blat$/, /\.dat$/ ];
+const offlineAssetsInclude = [ /\.dll$/, /\.pdb$/, /\.wasm/, /\.html/, /\.js$/, /\.json$/, /\.css$/, /\.woff$/, /\.png$/, /\.jpe?g$/, /\.gif$/, /\.ico$/, /\.blat$/, /\.dat$/, /\.webmanifest$/ ];
 const offlineAssetsExclude = [ /^service-worker\.js$/ ];
+const base = "/";
+const baseUrl = new URL(base, self.origin);
+const manifestUrlList = self.assetsManifest.assets.map(asset => new URL(asset.url, baseUrl).href);
 
 async function onInstall(event) {
     console.info('Service worker: Install');
@@ -18,8 +21,15 @@ async function onInstall(event) {
     const assetsRequests = self.assetsManifest.assets
         .filter(asset => offlineAssetsInclude.some(pattern => pattern.test(asset.url)))
         .filter(asset => !offlineAssetsExclude.some(pattern => pattern.test(asset.url)))
-        .map(asset => new Request(asset.url, { integrity: asset.hash, cache: 'no-cache' }));
+        .map(asset => {
+            const isBrotliAsset = /\.(dll|wasm|pdb|dat)$/.test(asset.url);
+
+            return isBrotliAsset
+                ? new Request(`${asset.url}.br`, { cache: 'no-cache' })
+                : new Request(asset.url, { integrity: asset.hash, cache: 'no-cache' });
+        });
     await caches.open(cacheName).then(cache => cache.addAll(assetsRequests));
+    self.skipWaiting();
 }
 
 async function onActivate(event) {
@@ -33,17 +43,25 @@ async function onActivate(event) {
 }
 
 async function onFetch(event) {
-    let cachedResponse = null;
-    if (event.request.method === 'GET') {
-        // For all navigation requests, try to serve index.html from cache
-        // If you need some URLs to be server-rendered, edit the following check to exclude those URLs
-        const shouldServeIndexHtml = event.request.mode === 'navigate'
-            && !event.request.url.includes('/signin-discord');
-
-        const request = /*shouldServeIndexHtml*/false ? 'index.html' : event.request;
-        const cache = await caches.open(cacheName);
-        cachedResponse = await cache.match(request);
+    if (event.request.method !== 'GET') {
+        return fetch(event.request);
     }
 
+    const url = new URL(event.request.url);
+    const isNavigationRequest = event.request.mode === 'navigate';
+    const hasFileExtension = /\.[a-zA-Z0-9]+$/.test(url.pathname);
+    const shouldServeIndexHtml = isNavigationRequest
+        && !hasFileExtension
+        && !manifestUrlList.includes(event.request.url);
+    const cache = await caches.open(cacheName);
+
+    if (shouldServeIndexHtml) {
+        const cachedIndex = await cache.match(new URL('index.html', baseUrl).href);
+        if (cachedIndex) {
+            return cachedIndex;
+        }
+    }
+
+    const cachedResponse = await cache.match(event.request);
     return cachedResponse || fetch(event.request);
 }

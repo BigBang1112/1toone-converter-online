@@ -28,6 +28,30 @@
     <title>1toOne Converter</title>
     <base href="/" />
 
+    <!-- Start Single Page Apps for GitHub Pages -->
+    <script type="text/javascript">
+        // Single Page Apps for GitHub Pages
+        // https://github.com/rafrex/spa-github-pages
+        // Copyright (c) 2016 Rafael Pedicini, licensed under the MIT License
+        (function (l) {
+            if (l.search) {
+                var q = {};
+                l.search.slice(1).split('&').forEach(function (v) {
+                    var a = v.split('=');
+                    q[a[0]] = a.slice(1).join('=').replace(/~and~/g, '&');
+                });
+                if (q.p !== undefined) {
+                    window.history.replaceState(null, null,
+                        l.pathname.slice(0, -1) + (q.p || '') +
+                        (q.q ? ('?' + q.q) : '') +
+                        l.hash
+                    );
+                }
+            }
+        }(window.location));
+    </script>
+    <!-- End Single Page Apps for GitHub Pages -->
+
     <style>
         .loader {
             color: #ffffff;
@@ -130,6 +154,7 @@
     <script src="js/main.js"></script>
     <script src="js/download.js"></script>
     <script src="_framework/blazor.webassembly.js" autostart="false"></script>
+    <script>navigator.serviceWorker.register('service-worker.js', { updateViaCache: 'none' });</script>
     <script type="module">
         import { BrotliDecode } from './js/decode.min.js';
         Blazor.start({
@@ -152,7 +177,6 @@
             }
         });
     </script>
-    <!--<script>navigator.serviceWorker.register('service-worker.js');</script>-->
 </body>
 
 </html>
