@@ -1,22 +1,16 @@
 let dotNetObjRef;
-let tmp = 0;
 
 const dragenter = (e) => {
-    tmp = 1;
     e.currentTarget.classList.add('dragover', 'overflow');
 };
 
 const dragleave = (e) => {
-    tmp--;
-    if (tmp == 0) {
-        e.currentTarget.classList.remove('dragover');
+    const form = e.currentTarget;
+
+    if (!form.contains(e.relatedTarget)) {
+        form.classList.remove('dragover');
+        setTimeout(() => form.classList.remove('overflow'), 150);
     }
-
-    let form = e.currentTarget;
-
-    setTimeout(() => {
-        if (tmp == 0) form.classList.remove('overflow');
-    }, 150);
 };
 
 const getFiles = async (fileList) => {
@@ -70,18 +64,26 @@ function start(objRef) {
         form.addEventListener(e, (e) => {
             e.preventDefault();
             e.stopPropagation();
+
+            if (e.type === 'dragover') {
+                e.dataTransfer.dropEffect = 'copy';
+            }
         })
     );
 
-    [('cldragoverick', 'dragenter')].forEach((e) =>
+    ['dragenter'].forEach((e) =>
         form.addEventListener(e, dragenter)
     );
 
-    ['dragleave', 'dragend', 'drop'].forEach((e) =>
+    ['dragleave', 'dragend'].forEach((e) =>
         form.addEventListener(e, dragleave)
     );
 
-    form.addEventListener('drop', (e) => getFiles(e.dataTransfer.files));
+    form.addEventListener('drop', (e) => {
+        form.classList.remove('dragover');
+        form.classList.remove('overflow');
+        getFiles(e.dataTransfer.files);
+    });
     input.addEventListener('change', async (e) => {
         await getFiles(e.target.files);
         e.target.value = "";
