@@ -450,6 +450,45 @@
               <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
             </BlockTypeData>
           </BlockVariantData>
+          <BlockVariantData Variant="1">
+            <BlockTypeData ItemName="Valley\Z_Alpine\Y_AlpineRoadWood\X_AlpineRoadWoodSlope\Z_AlpineRoadWoodSlope\Z_AlpineRoadWoodSlopeAir\AlpineRoadWoodSlopeAir.Item.gbx" Type="Air">
+              <Pylon Type="Top" Pos="Both" X="0" Y="0" Z="1" Rot="2" />
+            </BlockTypeData>
+            <BlockTypeData ItemName="Valley\Z_Alpine\Y_AlpineRoadWood\X_AlpineRoadWoodSlope\Z_AlpineRoadWoodSlope\Y_AlpineRoadWoodSlopeGround\AlpineRoadWoodSlopeGround.Item.gbx" Type="Pri">
+              <Flag Name="NoGround" X="0" Z="0" />
+              <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
+            </BlockTypeData>
+            <BlockTypeData ItemName="Valley\Z_Alpine\Y_AlpineRoadWood\X_AlpineRoadWoodSlope\Z_AlpineRoadWoodSlope\X_AlpineRoadWoodSlopeGroundHill\AlpineRoadWoodSlopeGroundHill.Item.gbx" Type="Sec">
+              <Flag Name="NoGround" X="0" Z="0" />
+              <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
+            </BlockTypeData>
+          </BlockVariantData>
+          <BlockVariantData Variant="2">
+            <BlockTypeData ItemName="Valley\Z_Alpine\Y_AlpineRoadWood\X_AlpineRoadWoodSlope\Z_AlpineRoadWoodSlope\Z_AlpineRoadWoodSlopeAir\AlpineRoadWoodSlopeAir.Item.gbx" Type="Air">
+              <Pylon Type="Top" Pos="Both" X="0" Y="0" Z="1" Rot="2" />
+            </BlockTypeData>
+            <BlockTypeData ItemName="Valley\Z_Alpine\Y_AlpineRoadWood\X_AlpineRoadWoodSlope\Z_AlpineRoadWoodSlope\Y_AlpineRoadWoodSlopeGround\AlpineRoadWoodSlopeGround.Item.gbx" Type="Pri">
+              <Flag Name="NoGround" X="0" Z="0" />
+              <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
+            </BlockTypeData>
+            <BlockTypeData ItemName="Valley\Z_Alpine\Y_AlpineRoadWood\X_AlpineRoadWoodSlope\Z_AlpineRoadWoodSlope\X_AlpineRoadWoodSlopeGroundHill\AlpineRoadWoodSlopeGroundHill.Item.gbx" Type="Sec">
+              <Flag Name="NoGround" X="0" Z="0" />
+              <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
+            </BlockTypeData>
+          </BlockVariantData>
+          <BlockVariantData Variant="3">
+            <BlockTypeData ItemName="Valley\Z_Alpine\Y_AlpineRoadWood\X_AlpineRoadWoodSlope\Z_AlpineRoadWoodSlope\Z_AlpineRoadWoodSlopeAir\AlpineRoadWoodSlopeAir.Item.gbx" Type="Air">
+              <Pylon Type="Top" Pos="Both" X="0" Y="0" Z="1" Rot="2" />
+            </BlockTypeData>
+            <BlockTypeData ItemName="Valley\Z_Alpine\Y_AlpineRoadWood\X_AlpineRoadWoodSlope\Z_AlpineRoadWoodSlope\Y_AlpineRoadWoodSlopeGround\AlpineRoadWoodSlopeGround.Item.gbx" Type="Pri">
+              <Flag Name="NoGround" X="0" Z="0" />
+              <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
+            </BlockTypeData>
+            <BlockTypeData ItemName="Valley\Z_Alpine\Y_AlpineRoadWood\X_AlpineRoadWoodSlope\Z_AlpineRoadWoodSlope\X_AlpineRoadWoodSlopeGroundHill\AlpineRoadWoodSlopeGroundHill.Item.gbx" Type="Sec">
+              <Flag Name="NoGround" X="0" Z="0" />
+              <Pylon Type="Bottom" Pos="Both" X="0" Y="0" Z="0" Rot="All" />
+            </BlockTypeData>
+          </BlockVariantData>
           <Clip Name="AlpineRoadClip" X="0" Y="0" Z="1" Rot="2" />
           <Clip Name="AlpineRoadClip" X="0" Y="1" Z="-1" Rot="0" />
           <Pylon Type="Top" Pos="Both" X="0" Y="1" Z="-1" Rot="0" />
