@@ -6,7 +6,7 @@ The conversion happens locally in your browser. Your maps are not uploaded to a 
 
 ## Using the converter
 
-Open the site, add your map files, select a converted map, and download it (if the conversion succeeds). With several successful maps, use **Download all conversions** to receive a ZIP archive.
+Open the site, add your map files, select a converted map, and download it. With several maps, use **Download all conversions** to receive a ZIP archive.
 
 The website is also installable as a progressive web app. After the first successful load, its application files and conversion definitions are cached.
 
