@@ -1,0 +1,107 @@
+.not-found-page {
+    position: relative;
+    min-height: 100vh;
+    max-width: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    text-align: center;
+    background:
+        radial-gradient(circle at 50% 44%, rgba(58, 72, 95, 0.4), transparent 36rem),
+        #131820;
+}
+
+.not-found-brand {
+    position: absolute;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.not-found-brand img {
+    display: block;
+    width: auto;
+    height: 1.75rem;
+}
+
+.not-found-content {
+    position: relative;
+    z-index: 1;
+    max-width: 34rem;
+    padding: 2rem;
+}
+
+.not-found-code {
+    margin: 0 0 -1.75rem;
+    color: #232b39;
+    font-size: clamp(7rem, 25vw, 14rem);
+    font-weight: 900;
+    line-height: 0.85;
+    letter-spacing: 0;
+    user-select: none;
+}
+
+.not-found-content h1 {
+    position: relative;
+    margin: 0 0 0.75rem;
+    color: #f2f4f7;
+    font-size: clamp(2.25rem, 8vw, 4rem);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: 0;
+}
+
+.not-found-content > p[role="alert"] {
+    color: #a0aec5;
+}
+
+.not-found-action {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.25rem;
+    background-color: #da1b55;
+    box-shadow: 0 2px 5px #131820;
+    color: #f2f4f7;
+    font-size: 1.2rem;
+    transition: 0.15s background-color ease-in-out;
+}
+
+.not-found-action:hover {
+    background-color: #ac103f;
+    color: #f2f4f7;
+}
+
+.not-found-action:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 3px;
+}
+
+.not-found-track {
+    position: absolute;
+    right: -10vw;
+    bottom: 8vh;
+    left: -10vw;
+    height: 0.3rem;
+    transform: rotate(-3deg);
+    background: repeating-linear-gradient(90deg, #f2a644 0 5rem, transparent 5rem 8rem);
+    opacity: 0.8;
+}
+
+@media (max-width: 480px) {
+    .not-found-brand {
+        top: 1.5rem;
+    }
+
+    .not-found-content {
+        padding: 1.5rem;
+    }
+
+    .not-found-code {
+        margin-bottom: -0.75rem;
+    }
+}
