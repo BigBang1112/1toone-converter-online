@@ -103,6 +103,7 @@ public sealed class MediaTrackerConversion : Conversion
                         cameraGameBlock.GameCamId = cameraGameBlock.GameCamOld switch
                         {
                             CGameCtnMediaBlockCameraGame.EGameCamOld.Internal => "Internal",
+                            CGameCtnMediaBlockCameraGame.EGameCamOld.Orbital => "|Camera|CameraHelico",
                             _ => "<Default>"
                         };
                     }
