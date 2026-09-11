@@ -17,3 +17,4 @@ jobs:
     with:
       dotnet-version: 10.x.x
       project: 1toOneConverterOnline
+      patch-base: false
