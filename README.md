@@ -16,8 +16,8 @@ Every converted map includes script metadata traits. Gamemodes and map editor pl
 
 | Trait | Type | Value | Description |
 | --- | --- | --- | --- |
-| `MadeWith1toOneConverterOnline` | Boolean | `true` | The map was converted with 1toOne Converter Online. |
-| `Unbitn_1toOne_IsConverted` | Boolean | `true` | The map was converted with 1toOne Converter Online. |
+| `MadeWith1toOneConverterOnline` | Boolean | `True` | The map was converted with 1toOne Converter Online. |
+| `Unbitn_1toOne_IsConverted` | Boolean | `True` | The map was converted with 1toOne Converter Online. |
 | `Unbitn_1toOne_ConvertedAt` | Text | `2026-09-12T14:30:00` | Date and time of conversion in ISO 8601 format, always UTC. |
 | `Unbitn_1toOne_Phase` | Text | `Stable` | Current release phase of the converter. |
 | `Unbitn_1toOne_Environment` | Text | `Alpine` | Environment of the original map. |
