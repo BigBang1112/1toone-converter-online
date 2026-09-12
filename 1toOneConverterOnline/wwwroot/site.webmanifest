@@ -1,6 +1,9 @@
 {
   "name": "1toOne Converter Online",
   "short_name": "1toOne",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
