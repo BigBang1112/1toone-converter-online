@@ -184,6 +184,7 @@
 
         mapItem.Selected = true;
 
+        await OnMapItemClick.InvokeAsync(mapItem);
         MainPage?.Update();
     }
     
