@@ -13,7 +13,7 @@ public sealed class MetadataConversion : Conversion
         metadata.Declare("MadeWith1toOneConverterOnline", true);
         metadata.Declare("Unbitn_1toOne_IsConverted", true);
         metadata.Declare("Unbitn_1toOne_ConvertedAt", DateTime.UtcNow.ToString("s"));
-        metadata.Declare("Unbitn_1toOne_Phase", "Beta");
+        metadata.Declare("Unbitn_1toOne_Phase", "Stable");
         metadata.Declare("Unbitn_1toOne_Environment", map.Environment);
         metadata.Declare("Unbitn_1toOne_OriginalAuthorLogin", map.Challenge.AuthorLogin);
         metadata.Declare("Unbitn_1toOne_OriginalMapUid", map.Challenge.MapUid);
