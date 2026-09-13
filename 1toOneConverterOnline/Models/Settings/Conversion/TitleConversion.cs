@@ -14,6 +14,10 @@ public sealed class TitleConversion : Conversion
 
         m.CreateChunk<CGameCtnChallenge.HeaderChunk03043003>().Version = 11;
 
+        // To preserve Converted MapStyle
+        m.ChallengeParameters ??= new CGameCtnChallengeParameters();
+        m.ChallengeParameters.CreateChunk<CGameCtnChallengeParameters.Chunk0305B00E>();
+
         if (TitleUid?.Content is null)
         {
             throw new Exception("TitleConversion does not have a valid title ID");
