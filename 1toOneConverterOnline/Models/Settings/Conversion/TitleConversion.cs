@@ -25,7 +25,7 @@ public sealed class TitleConversion : Conversion
 
         m.TitleId = TitleUid.Content;
         m.MapStyle = "Converted";
-        m.AuthorNickname = m.AuthorLogin;
+        m.CreateChunk<CGameCtnChallenge.Chunk03043042>();
 
         var isValidated = m.Kind != CGameCtnChallenge.MapKind.InProgress ? 1 : 0;
 
