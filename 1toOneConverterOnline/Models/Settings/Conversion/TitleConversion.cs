@@ -17,6 +17,7 @@ public sealed class TitleConversion : Conversion
         // To preserve Converted MapStyle
         m.ChallengeParameters ??= new CGameCtnChallengeParameters();
         m.ChallengeParameters.CreateChunk<CGameCtnChallengeParameters.Chunk0305B00E>();
+        m.ChallengeParameters.IsValidatedForScriptModes = true;
 
         if (TitleUid?.Content is null)
         {
