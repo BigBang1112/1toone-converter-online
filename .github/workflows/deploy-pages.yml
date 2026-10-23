@@ -13,7 +13,7 @@ permissions:
 jobs:
   deploy:
     name: Deploy to Pages
-    uses: bigbang1112/workflows/.github/workflows/deploy-pages.yml@main
+    uses: bigbang1112/workflows/.github/workflows/blazor-wasm-github-pages.yml@main
     with:
       dotnet-version: 10.x.x
       project: 1toOneConverterOnline
